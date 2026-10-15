@@ -13,6 +13,7 @@ final class Registro
         public readonly ?string $parent = null,
         public readonly bool $useParentAsContext = false,
         public readonly ?string $extended = null,
+        public readonly ?string $fallback = null,
         public readonly bool $deferred = false,
         public readonly bool $build = false,
         public readonly bool $required = false,

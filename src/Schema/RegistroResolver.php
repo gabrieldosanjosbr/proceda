@@ -43,6 +43,9 @@ final class RegistroResolver
                     useParentAsContext: (bool) (
                         $data['useParentAsContext'] ?? false
                     ),
+                    fallback: isset($data['fallback'])
+                        ? (string) $data['fallback']
+                        : null,
                     deferred: $data['deferred'] ?? false,
                     build: $data['build'] ?? true,
                     required: $data['required'],
