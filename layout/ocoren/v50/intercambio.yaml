@@ -1,0 +1,35 @@
+class: Proceda\Intercambio
+registro: "000"
+required: true
+label: Intercâmbio
+
+remetente:
+  label: Remetente
+  length: 35
+  offset: 04
+  required: true
+
+destinatario:
+  label: Destinatário
+  length: 35
+  offset: 39
+  required: true
+
+data:
+  label: Data
+  length: 6
+  offset: 74
+  required: true
+
+hora:
+  label: Hora
+  type: time
+  length: 4
+  offset: 80
+  required: true
+
+identificacao:
+  label: Identificação
+  length: 12
+  offset: 84
+  required: true

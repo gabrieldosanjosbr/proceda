@@ -1,0 +1,21 @@
+path: documento/transportador
+class: Proceda\Transportador
+registro: "321"
+required: true
+label: Transportador
+
+empresa:
+  class: Proceda\Empresa
+  label: Empresa
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 04
+    required: true
+
+  nome:
+    label: Razão Social
+    length: 40
+    offset: 18
+    required: false

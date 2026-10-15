@@ -1,0 +1,74 @@
+path: embarcador/local-coleta-nota-fiscal
+class: Proceda\Empresa
+registro: "502"
+label: Local de Coleta da NF
+
+nome:
+  label: Nome da Empresa/Local de Coleta
+  length: 50
+  offset: 004
+  required: false
+  # NOME DA EMPRESA/LOCAL DE COLETA (RAZÃO SOCIAL) A 50 004 C
+
+cnpj:
+  label: CNPJ
+  length: 14
+  offset: 054
+  required: true
+  # CNPJ (CGC) N 14 054 M
+
+endereco:
+  label: Endereço
+  length: 50
+  offset: 068
+  required: false
+  # ENDEREÇO (LOGRADOURO) A 50 068 C
+
+bairro:
+  label: Bairro
+  length: 35
+  offset: 118
+  required: false
+  # BAIRRO A 35 118 C
+
+cidade:
+  label: Cidade
+  length: 35
+  offset: 153
+  required: false
+  # CIDADE (MUNICÍPIO) A 35 153 C
+
+cep:
+  label: Código Postal
+  length: 9
+  offset: 188
+  required: true
+  # CÓDIGO POSTAL A 9 188 M
+
+codigoMunicipio:
+  label: Código de Município
+  length: 9
+  offset: 197
+  required: false
+  # CÓDIGO DE MUNICÍPIO A 9 197 C
+
+uf:
+  label: Sigla do Estado (UF)
+  length: 9
+  offset: 206
+  required: false
+  # SIGLA DO ESTADO (UF) SUBENTIDADE DE PAÍS A 9 206 C
+
+numeroComunicacao:
+  label: Número de Comunicação
+  length: 35
+  offset: 215
+  required: false
+  # NÚMERO DE COMUNICAÇÃO A 35 215 C
+
+areaFrete:
+  label: Área de Frete
+  length: 4
+  offset: 250
+  required: false
+  # ÁREA DE FRETE A 4 250 C

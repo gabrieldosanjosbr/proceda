@@ -1,0 +1,54 @@
+path: ocorrencia/originador
+class: Proceda\Conhecimento
+registro: "545"
+required: false
+label: Conhecimento Originador
+
+contratante:
+  class: Proceda\Empresa
+  label: Contratante
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 004
+    required: true
+    # CNPJ DA EMPRESA CONTRATANTE DO FRETE N 14 004 M
+
+serie:
+  label: Série
+  length: 5
+  offset: 042
+  required: false
+  # SÉRIE DO CONHECIMENTO ORIGINADOR DA OCORRÊNCIA A 5 042 C
+
+numero:
+  label: Número
+  length: 12
+  offset: 047
+  required: true
+  # NÚMERO DO CONHECIMENTO ORIGINADOR DA OCORRÊNCIA A 12 047 M
+
+emissor:
+  class: Proceda\Empresa
+  label: Emissor
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 018
+    required: true
+    # CNPJ DA EMPRESA EMISSORA DO CONHECIMENTO
+    # ORIGINADOR DA OCORRÊNCIA
+    # N 14 018 M
+
+  filial:
+    class: Proceda\Unidade
+    label: Filial Emissora
+
+    identificacao:
+      label: Identificação
+      length: 10
+      offset: 032
+      required: false
+      # FILIAL EMISSOR DO CTRC ORIGINADOR DA OCORRÊNCIA A 10 032 C

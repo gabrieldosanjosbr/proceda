@@ -1,0 +1,40 @@
+path: nota-fiscal/entrega-casada
+class: Proceda\NotaFiscal
+registro: "509"
+collection: true
+inline: 3
+occurs: 1
+overflow: false
+label: Entrega Casada
+
+serie:
+  label: Série
+  length: 3
+  offset: 068
+  required: false
+  # SÉRIE DA NOTA FISCAL – 1 A 3 068 C
+
+numero:
+  label: Número
+  length: 9
+  offset: 071
+  required: false
+  # NÚMERO DA NOTA FISCAL - 1 N 9 071 C
+
+emissor:
+  class: Proceda\Empresa
+  label: Emissor
+
+  nome:
+    label: Razão Social
+    length: 50
+    offset: 018
+    required: false
+    # NOME DO EMISSOR DA NOTA (RAZÃO SOCIAL) – 1 A 50 018 C
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 004
+    required: false
+    # ENTREGA CASADA: CNPJ/CGC DO EMISSOR DA NOTA - 1 N 14 004 C

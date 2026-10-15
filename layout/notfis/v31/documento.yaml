@@ -1,0 +1,61 @@
+path: intercambio/documento
+class: Proceda\Documento\Notfis
+registro: "310"
+required: true
+collection: true
+occurs: 200
+label: Notfis
+
+identificacao:
+  label: Identificação
+  length: 14
+  offset: 04
+  required: true
+
+valorTotal:
+  label: Valor Total
+  registro: "318"
+  length: 15
+  offset: 04
+  required: true
+  decimals: 2
+
+pesoBruto:
+  label: Peso Bruto
+  registro: "318"
+  length: 15
+  offset: 19
+  required: true
+  decimals: 2
+
+pesoDensidadeCubagem:
+  label: Peso Densidade/Cubagem
+  registro: "318"
+  length: 15
+  offset: 34
+  required: false
+  decimals: 2
+
+totalVolumes:
+  label: Total de Volumes
+  registro: "318"
+  length: 15
+  offset: 49
+  required: true
+  decimals: 2
+
+valorCobradoCliente:
+  label: Valor Cobrado do Cliente
+  registro: "318"
+  length: 15
+  offset: 64
+  required: false
+  decimals: 2
+
+valorSeguro:
+  label: Valor do Seguro
+  registro: "318"
+  length: 15
+  offset: 79
+  required: false
+  decimals: 2

@@ -1,0 +1,204 @@
+path: destinatario/nota-fiscal
+class: Proceda\NotaFiscal
+registro: "505"
+required: true
+collection: true
+occurs: 500
+label: Nota Fiscal
+
+serie:
+  label: Série da Nota Fiscal
+  length: 3
+  offset: 004
+  required: false
+  # SÉRIE DA NOTA FISCAL A 3 004 C
+
+numero:
+  label: Número da Nota Fiscal
+  length: 8
+  offset: 007
+  required: true
+  # NÚMERO DA NOTA FISCAL N 9 007 M
+
+dataEmissao:
+  label: Data de Emissão
+  length: 8
+  offset: 016
+  required: true
+  # DATA DE EMISSÃO N 8 016 M
+
+codigoRota:
+  label: Código da Rota
+  length: 7
+  offset: 054
+  required: false
+  # CÓDIGO DA ROTA A 7 054 C
+
+meioTransporte:
+  label: Meio de Transporte
+  type: NotaFiscal/MeioTransporte
+  length: 1
+  offset: 061
+  required: false
+  # MEIO DE TRANSPORTE N 1 061 C
+
+desdobro:
+  label: Desdobro
+  length: 10
+  offset: 073
+  required: false
+  # DESDOBRO A 10 073 C
+
+documentoFiscal:
+  label: Tipo do Documento Fiscal
+  type: NotaFiscal/DocumentoFiscal
+  length: 1
+  offset: 084
+  required: false
+  # TIPO DO DOCUMENTO FISCAL N 1 084 C
+
+indicacaoBonificacao:
+  label: Indicação de Bonificação
+  length: 1
+  offset: 085
+  required: false
+  # INDICAÇÃO DE BONIFICAÇÃO (S/N) A 1 085 C
+
+cfop:
+  label: Código Fiscal de Operação (CFOP)
+  length: 4
+  offset: 086
+  required: false
+  # CÓDIGO FISCAL DE OPERAÇÃO (CFOP) N 4 086 C
+
+ufFatoGerador:
+  label: Sigla do Estado (UF) do Fato Gerador
+  length: 2
+  offset: 090
+  required: false
+  # SIGLA DO ESTADO (UF) DO FATO GERADOR A 2 090 C
+
+idPedidoCliente:
+  label: Identificação do Pedido do Cliente
+  length: 20
+  offset: 105
+  required: false
+  # IDENTIFICAÇÃO DO PEDIDO DO CLIENTE A 20 105 C
+
+embarque:
+  class: Proceda\Embarque
+  inline: 4
+  collection: true
+  label: Embarque
+
+  identificacao:
+    label: Identificação do Embarque
+    length: 20
+    offset: 125
+    required: false
+
+acaoDocumento:
+  label: Ação do Documento
+  type: Documento/Acao
+  length: 1
+  offset: 299
+  required: false
+  # AÇÃO DO DOCUMENTO A 1 299 C
+
+seguroEfetuado:
+  label: Seguro Efetuado
+  registro: "506"
+  length: 1
+  offset: 051
+  required: true
+  # 1 051 M
+
+quantidadeVolumes:
+  label: Quantidade de Volumes
+  registro: "506"
+  length: 8
+  offset: 004
+  required: true
+  decimals: 2
+  # N 6,2 004 M
+
+pesoBruto:
+  label: Peso Bruto
+  registro: "506"
+  length: 9
+  offset: 012
+  required: true
+  decimals: 3
+  # N 6,3 012 M
+
+pesoLiquido:
+  label: Peso Líquido
+  registro: "506"
+  length: 9
+  offset: 021
+  required: false
+  decimals: 3
+  # N 6,3 021 C
+
+pesoDensidadeCubagem:
+  label: Peso Densidade/Cubagem
+  registro: "506"
+  length: 10
+  offset: 030
+  required: false
+  decimals: 4
+  # N 6,4 030 C
+
+pesoCubado:
+  label: Peso Cubado
+  registro: "506"
+  length: 10
+  offset: 040
+  required: false
+  decimals: 4
+  # N 6,4 040 C
+
+valorCobradoCliente:
+  label: Valor Cobrado do Cliente
+  registro: "506"
+  length: 15
+  offset: 052
+  required: false
+  decimals: 2
+  # 13,2 052 C
+
+valor:
+  label: Valor Total
+  registro: "506"
+  length: 15
+  offset: 067
+  required: true
+  decimals: 2
+  # 13,2 067 M
+
+valorSeguro:
+  label: Valor do Seguro
+  registro: "506"
+  length: 15
+  offset: 082
+  required: false
+  decimals: 2
+  # 13,2 082 C
+
+valorTaxas:
+  label: Valor Total das Taxas
+  registro: "506"
+  length: 15
+  offset: 097
+  required: false
+  decimals: 2
+  # 13,2 097 C
+
+valorOutrasDespesasAcessorias:
+  label: Valor de Outras Despesas Acessórias
+  registro: "506"
+  length: 15
+  offset: 112
+  required: false
+  decimals: 2
+  # 13,2 112 C

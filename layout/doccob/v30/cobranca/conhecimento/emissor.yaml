@@ -1,0 +1,23 @@
+path: conhecimento/emissor
+class: Proceda\Empresa
+registro: "353"
+label: Emissor
+required: true
+
+cnpj:
+  label: CNPJ
+  length: 14
+  offset: 82
+  required: false
+  # CGC DO EMISSOR DO CONHECIMENTO (**) N 14 82 C
+
+filial:
+  class: Proceda\Unidade
+  label: Filial Emissora
+
+  identificacao:
+    label: Identificação
+    length: 10
+    offset: 04
+    required: true
+    # FILIAL EMISSORA DO DOCUMENTO A 10 04 M

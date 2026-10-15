@@ -1,0 +1,20 @@
+path: nota-fiscal/veiculo
+class: Proceda\Veiculo
+label: Veículo
+
+placa:
+  label: Número da Placa
+  registro: "313"
+  length: 7
+  offset: 145
+  required: false
+  # NO DA PLACA CAMINHÃO OU DA CARRETA A 7 145 C
+
+tipo:
+  label: Tipo do Veículo
+  registro: "333"
+  type: Veiculo/Tipo
+  length: 5
+  offset: 204
+  required: false
+  # TIPO DO VEÍCULO DE TRANSPORTE A 5 204 C

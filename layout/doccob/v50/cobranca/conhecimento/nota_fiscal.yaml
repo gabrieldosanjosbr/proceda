@@ -1,0 +1,73 @@
+path: cobranca/conhecimento/nota-fiscal
+class: Proceda\NotaFiscal
+registro: "556"
+collection: true
+occurs: 9999
+label: Nota Fiscal
+
+serie:
+  label: Série
+  length: 3
+  offset: 004
+  required: false
+  # SÉRIE A 3 004 C
+
+numero:
+  label: Número
+  length: 9
+  offset: 007
+  required: true
+  # NÚMERO DA NOTA FISCAL N 9 007 M
+
+dataEmissao:
+  label: Data de Emissão
+  length: 8
+  offset: 016
+  required: true
+  # DATA DE EMISSÃO DA NOTA FISCAL N 8 016 M
+
+devolucao:
+  label: Nota Fiscal de Devolução
+  length: 1
+  offset: 140
+  required: true
+  # NOTA FISCAL DE DEVOLUÇÃO? (S/N) A 1 140 M
+
+emissor:
+  class: Proceda\Empresa
+  label: Emissor
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 046
+    required: false
+    # CNPJ DO EMISSOR DA NOTA FISCAL N 14 046 C
+
+valor:
+  label: Valor
+  length: 15
+  offset: 031
+  decimals: 2
+  required: true
+  # VALOR DA NOTA FISCAL N 13,2 031 M
+
+pesoBruto:
+  label: Peso
+  length: 7
+  offset: 024
+  decimals: 2
+  required: true
+  # PESO DA NOTA FISCAL N 5,2 024 M
+
+embarque:
+  class: Proceda\Embarque
+  inline: 4
+  collection: true
+  label: Embarque
+
+  identificacao:
+    label: Identificação
+    length: 20
+    offset: 060
+    required: false

@@ -1,0 +1,55 @@
+path: conhecimento/resumo/frete/imposto
+class: Proceda\Imposto
+registro: "322"
+label: Imposto
+
+icms:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ICMS
+
+  valor:
+    label: Valor do ICMS
+    length: 15
+    offset: 81
+    decimals: 2
+    required: true
+    # VALOR DO ICMS N 13,2 081 M
+
+  aliquota:
+    label: Taxa do ICMS
+    length: 4
+    offset: 77
+    decimals: 2
+    required: true
+    # % DE TAXA DO ICMS N 2,2 077 M
+
+  baseCalculo:
+    label: Base de Cálculo para Apuração do ICMS
+    length: 15
+    offset: 62
+    decimals: 2
+    required: true
+    # BASE DE CÁLCULO PARA APURAÇÃO ICMS N 13,2 062 M
+
+  substituicaoTributaria:
+    label: Substituição Tributária
+    type: Imposto/SubstituicaoTributaria
+    length: 1
+    offset: 201
+    required: true
+    # SUBSTITUIÇÃO TRIBUTÁRIA? N 1 201 M
+
+iss:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ISS
+
+  valor:
+    label: Valor Total do ISS
+    registro: "329"
+    length: 15
+    offset: 024
+    decimals: 2
+    required: false
+    # VALOR TOTAL DO ISS N 13,2 024 C

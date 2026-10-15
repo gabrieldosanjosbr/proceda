@@ -1,0 +1,20 @@
+path: conhecimento/nota-fiscal
+class: Proceda\NotaFiscal
+registro: "322"
+inline: 40
+occurs: 1
+overflow: false
+collection: true
+label: Nota Fiscal
+
+serie:
+  label: Série
+  length: 3
+  offset: 233
+  required: false
+
+numero:
+  label: Número
+  length: 8
+  offset: 236
+  required: false

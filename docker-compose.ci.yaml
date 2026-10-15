@@ -1,0 +1,59 @@
+services:
+  proceda-reader:
+    build:
+      target: development
+    network_mode: "bridge"
+    environment:
+      PROCEDA_PROFILES_DIR: "/app/vendor/proceda/fixtures/profiles"
+      PROCEDA_WRITER_SOCKET: "/run/proceda/writer.sock"
+
+    volumes:
+      - proceda-runtime:/run/proceda
+
+  proceda-agent:
+    image: ghcr.io/gabrieldosanjosbr/proceda-agent:latest
+
+    environment:
+      PROCEDA_LICENSE_SERVER: "https://license-server.gabrieldosanjos-p.workers.dev"
+
+    volumes:
+      - proceda-agent-data:/var/lib/proceda
+      - proceda-runtime:/run/proceda
+      - /etc/machine-id:/host/etc/machine-id:ro
+
+  proceda-writer:
+    image: ghcr.io/gabrieldosanjosbr/proceda-runtime:php8.4
+    network_mode: "none"
+
+    depends_on:
+      proceda-agent:
+        condition: service_started
+
+    environment:
+      PROCEDA_WRITER_SOCKET: "/run/proceda/writer.sock"
+      PROCEDA_WRITER_FILE: "/app/build/writer.prcd"
+      PROCEDA_INSTANCE_ID: "writer-test-1"
+      PROCEDA_PROFILES_DIR: "/proceda/vendor/proceda/fixtures/profiles"
+      PROCEDA_AUTOLOAD_FILE: "/proceda/vendor/autoload.php"
+      PROCEDA_WRITER_SOCKET_GID: "82"
+
+    working_dir: /app
+
+    volumes:
+      - ./writer/build:/app/build:ro
+      - ./:/proceda:ro
+      - proceda-runtime:/run/proceda
+
+    command:
+      - sh
+      - -ec
+      - |
+        test -s /app/build/writer.prcd
+        exec php /proceda/writer/server.php
+
+volumes:
+  proceda-agent-data:
+
+  proceda-runtime:
+    external: true
+    name: proceda-runtime

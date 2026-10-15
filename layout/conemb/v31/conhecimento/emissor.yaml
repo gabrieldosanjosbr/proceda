@@ -1,0 +1,20 @@
+path: conhecimento/emissor
+class: Proceda\Empresa
+registro: "322"
+label: Emissor
+
+cnpj:
+  label: CNPJ
+  length: 14
+  offset: 205
+  required: true
+
+filial:
+  class: Proceda\Unidade
+  label: Filial Emissora
+
+  identificacao:
+    label: Identificação
+    length: 10
+    offset: 004
+    required: false

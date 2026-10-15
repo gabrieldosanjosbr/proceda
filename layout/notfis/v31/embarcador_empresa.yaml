@@ -1,0 +1,46 @@
+path: embarcador/empresa
+class: Proceda\Empresa
+registro: "311"
+label: Empresa
+
+cnpj:
+  label: CNPJ
+  length: 14
+  offset: 004
+  required: false
+
+inscricaoEstadual:
+  label: Inscrição Estadual
+  length: 15
+  offset: 018
+  required: false
+
+endereco:
+  label: Endereço
+  length: 40
+  offset: 033
+  required: false
+
+cidade:
+  label: Cidade
+  length: 35
+  offset: 073
+  required: false
+
+cep:
+  label: CEP
+  length: 9
+  offset: 108
+  required: false
+
+uf:
+  label: UF
+  length: 9
+  offset: 117
+  required: false
+
+nome:
+  label: Nome
+  length: 40
+  offset: 134
+  required: false

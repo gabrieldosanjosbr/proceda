@@ -1,0 +1,38 @@
+path: documento/transportador/conhecimento
+class: Proceda\Conhecimento
+registro: "322"
+collection: true
+occurs: 1000
+label: Conhecimento
+
+serie:
+  label: Série
+  length: 5
+  offset: 014
+  required: true
+
+numero:
+  label: Número
+  length: 12
+  offset: 19
+  required: true
+
+dataEmissao:
+  label: Data de Emissão
+  length: 8
+  offset: 31
+  required: true
+
+tipo:
+  label: Tipo do Conhecimento
+  type: Conhecimento/Tipo
+  length: 1
+  offset: 674
+  required: false
+
+acaoDocumento:
+  label: Ação do Documento
+  type: Documento/Acao
+  length: 1
+  offset: 673
+  required: false

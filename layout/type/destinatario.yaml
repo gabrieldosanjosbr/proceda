@@ -1,0 +1,946 @@
+Destinatario/Tipo:
+  - name: CNPJ
+    value: "1"
+    label: CNPJ
+
+  - name: CPF
+    value: "2"
+    label: CPF
+
+
+Destinatario/CodigoPais:
+  - name: Afeganistao
+    value: "0132"
+    label: 'Afeganistao'
+
+  - name: RepublicaAlbania
+    value: "0175"
+    label: 'República da Albania'
+
+  - name: Alemanha
+    value: "0230"
+    label: 'Alemanha'
+
+  - name: BurkinaFaso
+    value: "0310"
+    label: 'Burkina Faso'
+
+  - name: Andorra
+    value: "0370"
+    label: 'Andorra'
+
+  - name: Angola
+    value: "0400"
+    label: 'Angola'
+
+  - name: Anguilla
+    value: "0418"
+    label: 'Anguilla'
+
+  - name: AntiguaBarbuda
+    value: "0434"
+    label: 'Antigua E Barbuda'
+
+  - name: AntilhasHolandesas
+    value: "0477"
+    label: 'Antilhas Holandesas'
+
+  - name: ArabiaSaudita
+    value: "0531"
+    label: 'Arabia Saudita'
+
+  - name: Argelia
+    value: "0590"
+    label: 'Argelia'
+
+  - name: Argentina
+    value: "0639"
+    label: 'Argentina'
+
+  - name: Armenia
+    value: "0647"
+    label: 'República da Armenia'
+
+  - name: Aruba
+    value: "0655"
+    label: 'Aruba'
+
+  - name: Australia
+    value: "0698"
+    label: 'Australia'
+
+  - name: Austria
+    value: "0728"
+    label: 'Austria'
+
+  - name: Azerbaijao
+    value: "0736"
+    label: 'República do Azerbaijao'
+
+  - name: IlhasBahamas
+    value: "0779"
+    label: 'Ilhas Bahamas'
+
+  - name: IlhasBahrein
+    value: "0809"
+    label: 'Ilhas Bahrein'
+
+  - name: Bangladesh
+    value: "0817"
+    label: 'Bangladesh'
+
+  - name: Barbados
+    value: "0833"
+    label: 'Barbados'
+
+  - name: Belarus
+    value: "0850"
+    label: 'República da Belarus'
+
+  - name: Belgica
+    value: "0876"
+    label: 'Belgica'
+
+  - name: Belize
+    value: "0884"
+    label: 'Belize'
+
+  - name: Bermudas
+    value: "0906"
+    label: 'Bermudas'
+
+  - name: MianmarBirmania
+    value: "0930"
+    label: 'Mianmar (Birmania)'
+
+  - name: Bolivia
+    value: "0973"
+    label: 'Bolivia'
+
+  - name: BosniaHerzegovina
+    value: "0981"
+    label: 'Bosnia-Herzegovina'
+
+  - name: Botsuana
+    value: "1015"
+    label: 'Botsuana'
+
+  - name: Brasil
+    value: "1058"
+    label: 'Brasil'
+
+  - name: Brunei
+    value: "1082"
+    label: 'Brunei'
+
+  - name: Bulgaria
+    value: "1112"
+    label: 'República da Bulgaria'
+
+  - name: Burundi
+    value: "1155"
+    label: 'Burundi'
+
+  - name: Butao
+    value: "1198"
+    label: 'Butao'
+
+  - name: CaboVerde
+    value: "1279"
+    label: 'República de Cabo Verde'
+
+  - name: IlhasCayman
+    value: "1376"
+    label: 'Ilhas Cayman'
+
+  - name: Camboja
+    value: "1414"
+    label: 'Camboja'
+
+  - name: Camaroes
+    value: "1457"
+    label: 'Camaroes'
+
+  - name: Canada
+    value: "1490"
+    label: 'Canada'
+
+  - name: IlhasCanalJerseyGuernsey
+    value: "1504"
+    label: 'Ilhas do Canal (Jersey e Guernsey)'
+
+  - name: IlhasCanarias
+    value: "1511"
+    label: 'Ilhas Canarias'
+
+  - name: Cazaquistao
+    value: "1538"
+    label: 'República do Cazaquistao'
+
+  - name: Catar
+    value: "1546"
+    label: 'Catar'
+
+  - name: Chile
+    value: "1589"
+    label: 'Chile'
+
+  - name: China
+    value: "1600"
+    label: 'China'
+
+  - name: Taiwan
+    value: "1619"
+    label: 'Taiwan'
+
+  - name: Chipre
+    value: "1635"
+    label: 'Chipre'
+
+  - name: IlhasCocosKeeling
+    value: "1651"
+    label: 'Ilhas Cocos(Keeling)'
+
+  - name: Colombia
+    value: "1694"
+    label: 'Colombia'
+
+  - name: IlhasComores
+    value: "1732"
+    label: 'Ilhas Comores'
+
+  - name: Congo
+    value: "1775"
+    label: 'República do Congo'
+
+  - name: IlhasCook
+    value: "1830"
+    label: 'Ilhas Cook'
+
+  - name: CoreiaNorte
+    value: "1872"
+    label: 'República Popular Democrática da Coreia'
+
+  - name: CoreiaSul
+    value: "1902"
+    label: 'República da Coreia'
+
+  - name: CostaMarfim
+    value: "1937"
+    label: 'Costa Do Marfim'
+
+  - name: Croacia
+    value: "1953"
+    label: 'Croacia'
+
+  - name: CostaRica
+    value: "1961"
+    label: 'Costa Rica'
+
+  - name: Coveite
+    value: "1988"
+    label: 'Coveite'
+
+  - name: Cuba
+    value: "1996"
+    label: 'Cuba'
+
+  - name: Benin
+    value: "2291"
+    label: 'Benin'
+
+  - name: Dinamarca
+    value: "2321"
+    label: 'Dinamarca'
+
+  - name: IlhaDominica
+    value: "2356"
+    label: 'Ilha Dominica'
+
+  - name: Equador
+    value: "2399"
+    label: 'Equador'
+
+  - name: Egito
+    value: "2402"
+    label: 'Egito'
+
+  - name: EmiradosArabesUnidos
+    value: "2445"
+    label: 'Emirados Arabes Unidos'
+
+  - name: Espanha
+    value: "2453"
+    label: 'Espanha'
+
+  - name: Eslovenia
+    value: "2461"
+    label: 'Eslovenia'
+
+  - name:  Eslovaquia
+    value: "2470"
+    label: 'Eslováquia'
+
+  - name: EstadosUnidos
+    value: "2496"
+    label: 'Estados Unidos'
+
+  - name: Estonia
+    value: "2518"
+    label: 'Estonia'
+
+  - name: Etiopia
+    value: "2534"
+    label: 'Etiopia'
+
+  - name: IlhasFalklandMalvinas
+    value: "2550"
+    label: 'Ilhas Falkland (Malvinas)'
+
+  - name: IlhasFeroe
+    value: "2593"
+    label: 'Ilhas Feroe'
+
+  - name: Filipinas
+    value: "2674"
+    label: 'Filipinas'
+
+  - name: Finlandia
+    value: "2712"
+    label: 'Finlandia'
+
+  - name: Franca
+    value: "2755"
+    label: 'Franca'
+
+  - name: Gabao
+    value: "2810"
+    label: 'Gabao'
+
+  - name: Gambia
+    value: "2852"
+    label: 'Gambia'
+
+  - name: Gana
+    value: "2895"
+    label: 'Gana'
+
+  - name: Georgia
+    value: "2917"
+    label: 'República da Georgia'
+
+  - name: Gibraltar
+    value: "2933"
+    label: 'Gibraltar'
+
+  - name: Granada
+    value: "2976"
+    label: 'Granada'
+
+  - name: Grecia
+    value: "3018"
+    label: 'Grecia'
+
+  - name: Groenlandia
+    value: "3050"
+    label: 'Groenlandia'
+
+  - name: Guadalupe
+    value: "3093"
+    label: 'Guadalupe'
+
+  - name: Guam
+    value: "3131"
+    label: 'Guam'
+
+  - name: Guatemala
+    value: "3174"
+    label: 'Guatemala'
+
+  - name: GuianaFrancesa
+    value: "3255"
+    label: 'Guiana Francesa'
+
+  - name: Guine
+    value: "3298"
+    label: 'Guine'
+
+  - name: GuineEquatorial
+    value: "3310"
+    label: 'Guine-Equatorial'
+
+  - name: GuineBissau
+    value: "3344"
+    label: 'Guine-Bissau'
+
+  - name: Guiana
+    value: "3379"
+    label: 'Guiana'
+
+  - name: Haiti
+    value: "3417"
+    label: 'Haiti'
+
+  - name: Honduras
+    value: "3450"
+    label: 'Honduras'
+
+  - name: HongKong
+    value: "3514"
+    label: 'Hong Kong'
+
+  - name: Hungria
+    value: "3557"
+    label: 'República da Hungria'
+
+  - name: Iemen
+    value: "3573"
+    label: 'Iemen'
+
+  - name: IlhaMan
+    value: "3595"
+    label: 'Ilha de Man'
+
+  - name: India
+    value: "3611"
+    label: 'India'
+
+  - name: Indonesia
+    value: "3654"
+    label: 'Indonesia'
+
+  - name: Iraque
+    value: "3697"
+    label: 'Iraque'
+
+  - name: Ira
+    value: "3727"
+    label: 'Ira'
+
+  - name: Irlanda
+    value: "3751"
+    label: 'Irlanda'
+
+  - name: Islandia
+    value: "3794"
+    label: 'Islandia'
+
+  - name: Israel
+    value: "3832"
+    label: 'Israel'
+
+  - name: Italia
+    value: "3867"
+    label: 'Italia'
+
+  - name: Iugoslávia
+    value: "3883"
+    label: 'República Federativa da Iugoslávia'
+
+  - name: Jamaica
+    value: "3913"
+    label: 'Jamaica'
+
+  - name: IlhasJohnston
+    value: "3964"
+    label: 'Ilhas Johnston'
+
+  - name: Japao
+    value: "3999"
+    label: 'Japao'
+
+  - name: Jordania
+    value: "4030"
+    label: 'Jordania'
+
+  - name: Kiribati
+    value: "4111"
+    label: 'Kiribati'
+
+  - name: Laos
+    value: "4200"
+    label: 'República Popular Democrática do Laos'
+
+  - name: Lesoto
+    value: "4260"
+    label: 'Lesoto'
+
+  - name: Letonia
+    value: "4278"
+    label: 'República da Letonia'
+
+  - name: Libano
+    value: "4316"
+    label: 'Libano'
+
+  - name: Liberia
+    value: "4340"
+    label: 'Liberia'
+
+  - name: Libia
+    value: "4383"
+    label: 'Libia'
+
+  - name: Liechtenstein
+    value: "4405"
+    label: 'Liechtenstein'
+
+  - name: Lituania
+    value: "4421"
+    label: 'República da Lituania'
+
+  - name: Luxemburgo
+    value: "4456"
+    label: 'Luxemburgo'
+
+  - name: Macau
+    value: "4472"
+    label: 'Macau'
+
+  - name: IugoslavaMacedonia
+    value: "4499"
+    label: 'Antiga República Iugoslava da Macedônia'
+
+  - name: Madagascar
+    value: "4502"
+    label: 'Madagascar'
+
+  - name: IlhaMadeira
+    value: "4525"
+    label: 'Ilha da Madeira'
+
+  - name: Malasia
+    value: "4553"
+    label: 'Malasia'
+
+  - name: Malavi
+    value: "4588"
+    label: 'Malavi'
+
+  - name: Maldivas
+    value: "4618"
+    label: 'Maldivas'
+
+  - name: Mali
+    value: "4642"
+    label: 'Mali'
+
+  - name: Malta
+    value: "4677"
+    label: 'Malta'
+
+  - name: MarianasNorte
+    value: "4723"
+    label: 'Marianas Do Norte'
+
+  - name: Marrocos
+    value: "4740"
+    label: 'Marrocos'
+
+  - name: IlhasMarshall
+    value: "4766"
+    label: 'Ilhas Marshall'
+
+  - name: Martinica
+    value: "4774"
+    label: 'Martinica'
+
+  - name: Mauricio
+    value: "4855"
+    label: 'Mauricio'
+
+  - name: IlhasMidway
+    value: "4901"
+    label: 'Ilhas Midway'
+
+  - name: Mexico
+    value: "4936"
+    label: 'Mexico'
+
+  - name: Moldavia
+    value: "4944"
+    label: 'República da Moldavia'
+
+  - name: Monaco
+    value: "4952"
+    label: 'Monaco'
+
+  - name: Mongolia
+    value: "4979"
+    label: 'Mongolia'
+
+  - name: Micronesia
+    value: "4995"
+    label: 'Micronesia'
+
+  - name: IlhasMontserrat
+    value: "5010"
+    label: 'Ilhas Montserrat'
+
+  - name: Mocambique
+    value: "5053"
+    label: 'Mocambique'
+
+  - name: Namibia
+    value: "5070"
+    label: 'Namibia'
+
+  - name: Nauru
+    value: "5088"
+    label: 'Nauru'
+
+  - name: IlhaChristmasNavidad
+    value: "5118"
+    label: 'Ilha Christmas (Navidad)'
+
+  - name: Nepal
+    value: "5177"
+    label: 'Nepal'
+
+  - name: Nicaragua
+    value: "5215"
+    label: 'Nicaragua'
+
+  - name: Niger
+    value: "5258"
+    label: 'Niger'
+
+  - name: Nigeria
+    value: "5282"
+    label: 'Nigeria'
+
+  - name: IlhaNiue
+    value: "5312"
+    label: 'Ilha Niue'
+
+  - name: IlhaNorfolk
+    value: "5355"
+    label: 'Ilha Norfolk'
+
+  - name: Noruega
+    value: "5380"
+    label: 'Noruega'
+
+  - name: NovaCaledonia
+    value: "5428"
+    label: 'Nova Caledonia'
+
+  - name: PapuaNovaGuine
+    value: "5452"
+    label: 'Papua Nova Guine'
+
+  - name: NovaZelandia
+    value: "5487"
+    label: 'Nova Zelandia'
+
+  - name: Vanuatu
+    value: "5517"
+    label: 'Vanuatu'
+
+  - name: Oma
+    value: "5568"
+    label: 'Oma'
+
+  - name: IlhasPacificoPossessaoEUA
+    value: "5665"
+    label: 'Ilhas do Pacífico (Possessão dos EUA)'
+
+  - name: Holanda
+    value: "5738"
+    label: 'Países Baixos (Holanda)'
+
+  - name: Palau
+    value: "5754"
+    label: 'Palau'
+
+  - name: Paquistao
+    value: "5762"
+    label: 'Paquistao'
+
+  - name: Panama
+    value: "5800"
+    label: 'Panama'
+
+  - name: Paraguai
+    value: "5860"
+    label: 'Paraguai'
+
+  - name: Peru
+    value: "5894"
+    label: 'Peru'
+
+  - name: IlhaPitcairn
+    value: "5932"
+    label: 'Ilha Pitcairn'
+
+  - name: PolinesiaFrancesa
+    value: "5991"
+    label: 'Polinesia Francesa'
+
+  - name: Polonia
+    value: "6033"
+    label: 'República da Polonia'
+
+  - name: Portugal
+    value: "6076"
+    label: 'Portugal'
+
+  - name: PortoRico
+    value: "6114"
+    label: 'Porto Rico'
+
+  - name: Quenia
+    value: "6238"
+    label: 'Quenia'
+
+  - name: Quirguiz
+    value: "6254"
+    label: 'República Quirguiz'
+
+  - name: ReinoUnido
+    value: "6289"
+    label: 'Reino Unido'
+
+  - name: CentroAfricana
+    value: "6408"
+    label: 'Republica Centro-Africana'
+
+  - name: Dominicana
+    value: "6475"
+    label: 'Republica Dominicana'
+
+  - name: IlhaReuniao
+    value: "6602"
+    label: 'Ilha Reuniao'
+
+  - name: Zimbabue
+    value: "6653"
+    label: 'Zimbabue'
+
+  - name: Romenia
+    value: "6700"
+    label: 'Romenia'
+
+  - name: Ruanda
+    value: "6750"
+    label: 'Ruanda'
+
+  - name: Russia
+    value: "6769"
+    label: 'Federação da Russia'
+
+  - name: IlhasSalomao
+    value: "6777"
+    label: 'Ilhas Salomao'
+
+  - name: SaintKittsNevis
+    value: "6781"
+    label: 'Saint Kitts E Nevis'
+
+  - name: SaaraOcidental
+    value: "6858"
+    label: 'Saara Ocidental'
+
+  - name: ElSalvador
+    value: "6874"
+    label: 'El Salvador'
+
+  - name: SamoaAmericana
+    value: "6912"
+    label: 'Samoa Americana'
+
+  - name: IlhasSaoCristovaoNeves
+    value: "6955"
+    label: 'Ilhas Sao Cristovao E Neves'
+
+  - name: SanMarino
+    value: "6971"
+    label: 'San Marino'
+
+  - name: SaoPedroMiquelon
+    value: "7005"
+    label: 'Sao Pedro E Miquelon'
+
+  - name: SaoVicenteGranadinas
+    value: "7056"
+    label: 'Sao Vicente E Granadinas'
+
+  - name: SantaHelena
+    value: "7102"
+    label: 'Santa Helena'
+
+  - name: SantaLucia
+    value: "7153"
+    label: 'Santa Lucia'
+
+  - name: IlhasSaoTomePrincipe
+    value: "7200"
+    label: 'Ilhas Sao Tome E Principe'
+
+  - name: Senegal
+    value: "7285"
+    label: 'Senegal'
+
+  - name: Seychelles
+    value: "7315"
+    label: 'Seychelles'
+
+  - name: SerraLeoa
+    value: "7358"
+    label: 'Serra Leoa'
+
+  - name: Cingapura
+    value: "7412"
+    label: 'Cingapura'
+
+  - name: Siria
+    value: "7447"
+    label: 'Siria'
+
+  - name: Somalia
+    value: "7480"
+    label: 'Somalia'
+
+  - name: SriLanka
+    value: "7501"
+    label: 'Sri Lanka'
+
+  - name: Suazilandia
+    value: "7544"
+    label: 'Suazilandia'
+
+  - name: AfricaSul
+    value: "7560"
+    label: 'Africa Do Sul'
+
+  - name: Sudao
+    value: "7595"
+    label: 'Sudao'
+
+  - name: Suecia
+    value: "7641"
+    label: 'Suecia'
+
+  - name: Suica
+    value: "7676"
+    label: 'Suica'
+
+  - name: Suriname
+    value: "7706"
+    label: 'Suriname'
+
+  - name: Tadjiquistao
+    value: "7722"
+    label: 'República do Tadjiquistao'
+
+  - name: Tailandia
+    value: "7765"
+    label: 'Tailandia'
+
+  - name: TerritorioBritanicoOceanoIndico
+    value: "7820"
+    label: 'Território Britânico do Oceano Índico'
+
+  - name: Djibuti
+    value: "7838"
+    label: 'Djibuti'
+
+  - name: Chade
+    value: "7889"
+    label: 'Chade'
+
+  - name: Tcheca
+    value: "7919"
+    label: 'República Tcheca'
+
+  - name: TimorLeste
+    value: "7951"
+    label: 'Timor Leste'
+
+  - name: Togo
+    value: "8001"
+    label: 'Togo'
+
+  - name: IlhasToquelau
+    value: "8052"
+    label: 'Ilhas Toquelau'
+
+  - name: Tonga
+    value: "8109"
+    label: 'Tonga'
+
+  - name: TrinidadTobago
+    value: "8150"
+    label: 'Trinidad E Tobago'
+
+  - name: Tunisia
+    value: "8206"
+    label: 'Tunisia'
+
+  - name: IlhasTurcasCaicos
+    value: "8230"
+    label: 'Ilhas Turcas E Caicos'
+
+  - name: Turcomenistao
+    value: "8249"
+    label: 'República do Turcomenistao'
+
+  - name: Turquia
+    value: "8273"
+    label: 'Turquia'
+
+  - name: Tuvalu
+    value: "8281"
+    label: 'Tuvalu'
+
+  - name: Ucrania
+    value: "8311"
+    label: 'Ucrania'
+
+  - name: Uganda
+    value: "8338"
+    label: 'Uganda'
+
+  - name: Uruguai
+    value: "8451"
+    label: 'Uruguai'
+
+  - name: Uzbequistao
+    value: "8478"
+    label: 'República do Uzbequistao'
+
+  - name: EstadoCidadeVaticano
+    value: "8486"
+    label: 'Estado da Cidade do Vaticano'
+
+  - name: Venezuela
+    value: "8508"
+    label: 'Venezuela'
+
+  - name: Vietna
+    value: "8583"
+    label: 'Vietna'
+
+  - name: IlhasVirgensBritanicas
+    value: "8630"
+    label: 'Ilhas Virgens Britânicas'
+
+  - name: IlhasVirgensEUA
+    value: "8664"
+    label: 'Ilhas Virgens (EUA)'
+
+  - name: Fiji
+    value: "8702"
+    label: 'Fiji'
+
+  - name: IlhaWake
+    value: "8737"
+    label: 'Ilha Wake'
+
+  - name: Zambia
+    value: "8907"
+    label: 'Zambia'
+
+  - name: ZonaCanalPanama
+    value: "8958"
+    label: 'Zona Do Canal Do Panama'

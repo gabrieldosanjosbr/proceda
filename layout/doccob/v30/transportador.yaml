@@ -1,0 +1,23 @@
+path: documento/transportador
+class: Proceda\Transportador
+registro: "351"
+required: true
+label: Transportador
+
+empresa:
+  class: Proceda\Empresa
+  label: Empresa
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 04
+    required: true
+    # C.G.C. N 14 04 M
+
+  nome:
+    label: Razão Social
+    length: 40
+    offset: 18
+    required: false
+    # RAZÃO SOCIAL A 40 18 C

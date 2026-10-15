@@ -1,0 +1,136 @@
+path: destinatario/nota-fiscal
+class: Proceda\NotaFiscal
+registro: "313"
+required: true
+collection: true
+occurs: 40
+label: Nota Fiscal
+
+romaneio:
+  label: Número do Romaneio/Coleta/Resumo de Carga
+  length: 15
+  offset: 004
+  required: false
+  # NUM. ROMANEIO/COLETA.RESUMO DE CARGA A 15 004 C
+
+codigoRota:
+  label: Código da Rota
+  length: 7
+  offset: 019
+  required: false
+  # CÓDIGO DA ROTA A 7 019 C
+
+meioTransporte:
+  label: Meio de Transporte
+  type: NotaFiscal/MeioTransporte
+  length: 1
+  offset: 026
+  required: false
+  # MEIO DE TRANSPORTE N 1 026 C
+
+serie:
+  label: Série
+  length: 3
+  offset: 030
+  required: false
+  # SÉRIE DA NOTA FISCAL A 3 030 C
+
+numero:
+  label: Número
+  length: 8
+  offset: 033
+  required: true
+  # NÚMERO DA NOTA FISCAL N 8 033 M
+
+dataEmissao:
+  label: Data de Emissão
+  length: 8
+  offset: 041
+  required: true
+  # DATA DE EMISSÃO N 8 041 M
+
+seguroEfetuado:
+  label: Seguro Já Efetuado
+  length: 1
+  offset: 114
+  required: true
+  # SEGURO JÁ EFETUADO (S/N)? A 1 114 M
+
+acaoDocumento:
+  label: Ação do Documento
+  type: Documento/Acao
+  length: 1
+  offset: 213
+  required: false
+  # AÇÃO DO DOCUMENTO A 1 213 C
+
+indicacaoBonificacao:
+  label: Indicação de Bonificação
+  length: 1
+  offset: 238
+  required: false
+  # INDICAÇÃO DE BONIFICAÇÃO (S/N) A 1 238 C
+
+quantidadeVolumes:
+  label: Quantidade de Volumes
+  length: 7
+  offset: 079
+  required: true
+  decimals: 2
+  # QTDE DE VOLUMES N 5,2 079 M
+
+valor:
+  label: Valor Total
+  length: 15
+  offset: 086
+  required: true
+  decimals: 2
+  # VALOR TOTAL DA NOTA N 13,2 086 M
+
+pesoBruto:
+  label: Peso Total da Mercadoria a Transportar
+  length: 7
+  offset: 101
+  required: true
+  decimals: 2
+  # PESO TOTAL DA MERCADORIA A TRANSP. N 5,2 101 M
+
+pesoDensidadeCubagem:
+  label: Peso Densidade/Cubagem
+  length: 5
+  offset: 108
+  required: false
+  decimals: 2
+  # PESO DENSIDADE/CUBAGEM N 3,2 108 C
+
+valorSeguro:
+  label: Valor do Seguro
+  length: 15
+  offset: 115
+  required: false
+  decimals: 2
+  # VALOR DO SEGURO N 13,2 115 C
+
+valorCobradoCliente:
+  label: Valor a Ser Cobrado
+  length: 15
+  offset: 130
+  required: false
+  decimals: 2
+  # VALOR A SER COBRADO N 13,2 130 C
+
+valorTaxas:
+  label: Valor Total
+  length: 15
+  offset: 183
+  required: false
+  decimals: 2
+  # VALOR TOTAL DAS TAXAS N 13,2 183 C
+
+cfop:
+  label: Código da Operação Fiscal da Nota Fiscal
+  registro: "333"
+  length: 4
+  offset: 004
+  required: true
+  # CÓDIGO DA OPERAÇÃO FISCAL NOTA FISCAL N 4 004 M

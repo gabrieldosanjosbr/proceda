@@ -1,0 +1,74 @@
+path: nota-fiscal/consignatario
+class: Proceda\Empresa
+registro: "315"
+label: Consignatário
+
+nome:
+  label: Razão Social
+  length: 40
+  offset: 004
+  required: true
+#  RAZÃO SOCIAL A 40 004 M
+
+cnpj:
+  label: CNPJ
+  length: 14
+  offset: 044
+  required: true
+#  C.G.C. N 14 044 M
+
+inscricaoEstadual:
+  label: Inscrição Estadual
+  length: 15
+  offset: 058
+  required: false
+#  INSCRIÇÃO ESTADUAL A 15 058 C
+
+endereco:
+  label: Endereço
+  length: 40
+  offset: 073
+  required: true
+#  ENDEREÇO (LOGRADOURO) A 40 073 M
+
+bairro:
+  label: Bairro
+  length: 20
+  offset: 113
+  required: false
+#  BAIRRO A 20 113 C
+
+cidade:
+  label: Cidade
+  length: 35
+  offset: 133
+  required: true
+#  CIDADE (MUNICÍPIO) A 35 133 M
+
+cep:
+  label: CEP
+  length: 9
+  offset: 168
+  required: true
+#  CÓDIGO POSTAL A 9 168 M
+
+codigoMunicipio:
+  label: Código do Município
+  length: 9
+  offset: 177
+  required: false
+#  CÓDIGO DE MUNICÍPIO A 9 177 C
+
+uf:
+  label: UF
+  length: 9
+  offset: 186
+  required: true
+#  SUBENTIDADE DE PAÍS A 9 186 M
+
+numeroComunicacao:
+  label: Número de Comunicação
+  length: 35
+  offset: 195
+  required: false
+#  NÚMERO DE COMUNICAÇÃO A 35 195 C

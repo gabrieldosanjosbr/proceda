@@ -1,0 +1,74 @@
+path: nota-fiscal/transportador
+class: Proceda\Empresa
+registro: "515"
+label: Transportador
+
+nome:
+  label: Nome do Responsável pelo Frete
+  length: 50
+  offset: 004
+  required: true
+  # NOME DO RESPONSÁVEL PELO FRETE (RAZÃO SOCIAL) A 50 004 M
+
+cnpj:
+  label: CNPJ
+  length: 14
+  offset: 054
+  required: true
+  # CNPJ (CGC) N 14 054 M
+
+inscricaoEstadual:
+  label: Inscrição Estadual
+  length: 15
+  offset: 068
+  required: false
+  # INSCRIÇÃO ESTADUAL A 15 068 C
+
+endereco:
+  label: Endereço
+  length: 50
+  offset: 083
+  required: true
+  # ENDEREÇO (LOGRADOURO) A 50 083 M
+
+bairro:
+  label: Bairro
+  length: 35
+  offset: 133
+  required: false
+  # BAIRRO A 35 133 C
+
+cidade:
+  label: Cidade
+  length: 35
+  offset: 168
+  required: true
+  # CIDADE (MUNICÍPIO) A 35 168 M
+
+cep:
+  label: Código Postal
+  length: 9
+  offset: 203
+  required: true
+  # CÓDIGO POSTAL A 9 203 M
+
+codigoMunicipio:
+  label: Código de Município
+  length: 9
+  offset: 212
+  required: false
+  # CÓDIGO DE MUNICÍPIO A 9 212 C
+
+uf:
+  label: Sigla do Estado (UF)
+  length: 9
+  offset: 221
+  required: true
+  # SIGLA DO ESTADO (UF) SUBENTIDADE DE PAÍS A 9 221 M
+
+numeroComunicacao:
+  label: Número de Comunicação
+  length: 35
+  offset: 230
+  required: false
+  # NÚMERO DE COMUNICAÇÃO A 35 230 C

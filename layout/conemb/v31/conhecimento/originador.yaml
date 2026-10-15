@@ -1,0 +1,39 @@
+path: conhecimento/originador
+class: Proceda\Conhecimento
+registro: "329"
+label: Conhecimento Originador
+
+serie:
+  label: Série
+  length: 5
+  offset: 049
+  required: false
+  # SÉRIE DO CONHECIMENTO ORIGINADOR DESTE
+  # CONHECIMENTO – TRANSPORTADORA CONTRATANTE
+  # A 5 049 C
+
+numero:
+  label: Número
+  length: 12
+  offset: 054
+  required: false
+  # NÚMERO DO CONHECIMENTO ORIGINADOR DESTE
+  # CONHECIMENTO – TRANSPORTADORA CONTRATANTE
+  # A 12 054 C
+
+emissor:
+  class: Proceda\Empresa
+  label: Emissor
+
+  filial:
+    class: Proceda\Unidade
+    label: Filial
+
+    identificacao:
+      label: Identificação
+      length: 10
+      offset: 039
+      required: false
+      # FILIAL EMISSORA DO CONHECIMENTO ORIGINADOR DESTE
+      # CONHECIMENTO – TRANSPORTADORA CONTRATANTE
+      # A 10 039 C

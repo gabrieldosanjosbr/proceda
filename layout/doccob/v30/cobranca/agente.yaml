@@ -1,0 +1,39 @@
+path: cobranca/agente
+class: Proceda\Cobranca\Agente
+registro: "352"
+label: Agente de Cobrança
+
+nome:
+  label: Identificação
+  length: 35
+  offset: 115
+  required: true
+  # IDENTIFICAÇÃO DO AGENTE DE COBRANÇA A 35 115 M
+
+agencia:
+  label: Número da Agência Bancária
+  length: 4
+  offset: 150
+  required: false
+  # NÚMERO DA AGÊNCIA BANCÁRIA N 4 150 C
+
+digitoAgencia:
+  label: Dígito Verificador da Agência
+  length: 1
+  offset: 154
+  required: false
+  # DÍGITO VERIFICADOR NUM. DA AGÊNCIA A 1 154 C
+
+conta:
+  label: Número da Conta Corrente
+  length: 10
+  offset: 155
+  required: false
+  # NÚMERO DA CONTA CORRENTE N 10 155 C
+
+digitoConta:
+  label: Dígito Verificador da Conta Corrente
+  length: 2
+  offset: 165
+  required: false
+  # DÍGITO VERIFICADOR CONTA CORRENTE A 2 165 C

@@ -1,0 +1,55 @@
+path: conhecimento/nota-fiscal
+class: Proceda\NotaFiscal
+registro: "354"
+collection: true
+occurs: 40
+required: false
+label: Nota Fiscal
+
+serie:
+  label: Série
+  length: 3
+  offset: 004
+  required: false
+  # SÉRIE A 3 04 C
+
+numero:
+  label: Número
+  length: 8
+  offset: 007
+  required: true
+  # NÚMERO DA NOTA FISCAL N 8 07 M
+
+dataEmissao:
+  label: Data de Emissão
+  length: 8
+  offset: 015
+  required: true
+  # DATA DE EMISSÃO DA NOTA FISCAL N 8 15 M
+
+emissor:
+  class: Proceda\Empresa
+  label: Emissor
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 045
+    required: false
+    # CGC DO EMISSOR DA NOTA FISCAL N 14 45 C
+
+valor:
+  label: Valor da Mercadoria
+  length: 15
+  offset: 030
+  decimals: 2
+  required: true
+  # VALOR DA MERCADORIA NA NOTA FISCAL N 13,2 30 M
+
+pesoBruto:
+  label: Peso
+  length: 7
+  offset: 023
+  decimals: 2
+  required: true
+  # PESO DA NOTA FISCAL N 5,2 23 M

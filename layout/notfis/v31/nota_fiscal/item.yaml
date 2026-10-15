@@ -1,0 +1,30 @@
+path: nota-fiscal/item
+class: Proceda\NotaFiscal\Item
+registro: "314"
+collection: true
+overflow: true
+inline: 4
+occurs: 5
+label: Item (Mercadoria)
+
+quantidade:
+  label: Quantidade de Volumes
+  length: 7
+  offset: 004
+  required: true
+  decimals: 2
+  # QUANTIDADE DE VOLUMES N 5,2 004 M
+
+acondicionamento:
+  label: Espécie de Acondicionamento
+  length: 15
+  offset: 011
+  required: true
+  # ESPÉCIE DE ACONDICIONAMENTO A 15 011 M
+
+descricao:
+  label: Descrição da Mercadoria
+  length: 30
+  offset: 026
+  required: true
+  # MERCADORIA DA NOTA FISCAL A 30 026 M

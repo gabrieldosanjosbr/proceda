@@ -1,0 +1,115 @@
+path: embarcador/destinatario
+class: Proceda\Destinatario
+registro: "503"
+collection: true
+required: true
+occurs: 500
+label: Destinatário
+
+nome:
+  label: Razão Social ou Nome do Destinatário
+  length: 50
+  offset: 004
+  required: true
+  # RAZÃO SOCIAL OU NOME DO DESTINATÁRIO A 50 004 M
+
+documento:
+  label: CNPJ/CPF
+  length: 14
+  offset: 054
+  required: true
+  # CNPJ (CGC)/CPF N 14 054 M
+
+inscricaoEstadual:
+  label: Inscrição Estadual
+  length: 15
+  offset: 068
+  required: false
+  # INSCRIÇÃO ESTADUAL A 15 068 C
+
+inscricaoSuframa:
+  label: Inscrição na SUFRAMA
+  length: 15
+  offset: 083
+  required: false
+  # INSCRIÇÃO NA SUFRAMA A 15 083 C
+
+endereco:
+  label: Endereço
+  length: 50
+  offset: 098
+  required: false
+  # ENDEREÇO (LOGRADOURO) A 50 098 C
+
+bairro:
+  label: Bairro
+  length: 35
+  offset: 148
+  required: false
+  # BAIRRO A 35 148 C
+
+cidade:
+  label: Cidade
+  length: 35
+  offset: 183
+  required: false
+  # CIDADE (MUNICÍPIO) A 35 183 C
+
+cep:
+  label: Código Postal
+  length: 9
+  offset: 218
+  required: true
+  # CÓDIGO POSTAL A 9 218 M
+
+codigoMunicipio:
+  label: Código de Município
+  length: 9
+  offset: 227
+  required: false
+  # CÓDIGO DE MUNICÍPIO A 9 227 C
+
+uf:
+  label: Sigla do Estado (UF)
+  length: 9
+  offset: 236
+  required: true
+  # SIGLA DO ESTADO (UF) SUBENTIDADE DE PAÍS A 9 236 M
+
+numeroComunicacao:
+  label: Número de Comunicação
+  length: 35
+  offset: 245
+  required: false
+  # NÚMERO DE COMUNICAÇÃO A 35 245 C
+
+codigoPais:
+  label: Código de País
+  type: Destinatario/CodigoPais
+  length: 4
+  offset: 280
+  required: false
+  # CÓDIGO DE PAÍS A 4 280 C
+
+areaFrete:
+  label: Área de Frete
+  length: 4
+  offset: 284
+  required: false
+  # ÁREA DE FRETE A 4 284 C
+
+tipo:
+  label: Tipo de Identificação do Destinatário
+  type: Destinatario/Tipo
+  length: 1
+  offset: 288
+  required: false
+  # TIPO DE IDENTIFICAÇÃO DO DESTINATÁRIO A 1 288 C
+
+estabelecimentoDestino:
+  label: Tipo do Estabelecimento Destino da Mercadoria
+  type: NotaFiscal/Carga/EstabelecimentoDestino
+  length: 1
+  offset: 289
+  required: false
+  # TIPO DO ESTABELECIMENTO DESTINO DA MERCADORIA A 1 289 C

@@ -1,0 +1,28 @@
+path: documento/embarcador
+class: Proceda\Embarcador
+registro: "501"
+required: true
+collection: true
+occurs: 100
+label: Embarcador
+
+dataEmbarque:
+  label: Data do Embarque
+  length: 8
+  offset: 260
+  required: false
+  # DATA DO EMBARQUE DAS MERCADORIAS N 8 260 C
+
+inscricaoEstadualSubstitutoTributario:
+  label: Inscrição Estadual do Substituto Tributário
+  length: 15
+  offset: 083
+  required: false
+  # INSCRIÇÃO ESTADUAL DO SUBSTITUTO TRIBUTÁRIO A 15 083 C
+
+contatoEmergencia:
+  label: Contato para Emergências
+  length: 25
+  offset: 272
+  required: false
+  # CONTATO PARA EMERGÊNCIAS A 25 272 C

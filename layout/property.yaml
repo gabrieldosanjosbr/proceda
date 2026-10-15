@@ -1,0 +1,15 @@
+collection:
+  documento: documentos
+  embarcador: embarcadoras
+  destinatario: destinatarios
+  notaFiscal: notasFiscais
+  item: items
+  embarque: embarques
+  volume: volumes
+  entregaCasada: entregasCasadas
+  ocorrencia: ocorrencias
+  cobranca: cobrancas
+  conhecimento: conhecimentos
+  tributo: tributos
+  textoLivre: textosLivres
+  evento: eventos

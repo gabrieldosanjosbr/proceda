@@ -1,0 +1,25 @@
+path: cobranca/nfe
+class: Proceda\Nfe
+registro: "552"
+label: NF-e
+
+codigo:
+  label: Código Numérico da Chave de Acesso da NF-e
+  length: 9
+  offset: 192
+  required: false
+  # CÓDIGO NUMÉRICO CHAVE DE ACESSO DA NF-e N 9 192 C
+
+chaveAcesso:
+  label: Chave de Acesso da NF-e com D/V
+  length: 45
+  offset: 201
+  required: false
+  # CHAVE DE ACESSO DA NF-e COM D/V A 45 201 C
+
+protocolo:
+  label: Número do Protocolo da NF-e
+  length: 15
+  offset: 246
+  required: false
+  # NÚMERO DO PROTOCOLO DA NF-e A 15 246 C

@@ -1,0 +1,110 @@
+Imposto/DireitoFiscal:
+  - name: Exportacao
+    value: "IC3"
+    label: Exportação
+
+  - name: ComSubstituicaoTributaria
+    value: "Z23"
+    label: Com substituição tributária
+
+  - name: SemSubstituicaoTributaria
+    value: "IC0"
+    label: Sem substituição tributária
+
+
+Imposto/CondicaoTributaria:
+  - name: ICM3
+    value: "ICM3"
+    label: ICM3
+
+  - name: ICM1
+    value: "ICM1"
+    label: ICM1
+
+
+Imposto/IncidenciaIcms:
+  - name: Sim
+    value: "S"
+    label: Sim
+
+  - name: Nao
+    value: "N"
+    label: Não
+
+  - name: Isento
+    value: "I"
+    label: Isento
+
+
+Imposto/Tratamento:
+  - name: Diferido
+    value: "D"
+    label: Diferido
+
+  - name: Reduzido
+    value: "R"
+    label: Reduzido
+
+  - name: Presumido
+    value: "P"
+    label: Presumido
+
+  - name: Substituicao
+    value: "T"
+    label: Substituição
+
+  - name: Standard
+    value: "S"
+    label: Standard
+
+  - name: Isento
+    value: "N"
+    label: Isento
+
+
+Imposto/SubstituicaoTributaria:
+  - name: Sim
+    value: "1"
+    label: Sim
+
+  - name: Nao
+    value: "2"
+    label: Não
+
+  - name: IsentoOperacaoDentroEstado
+    value: "3"
+    label: Isento — operação dentro do estado
+
+
+Imposto/Tributo/Tipo:
+  - name: Icms
+    value: "icms"
+    label: ICMS
+
+  - name: IcmsSt
+    value: "icmsSt"
+    label: ICMS ST
+
+  - name: Iss
+    value: "iss"
+    label: ISS
+
+  - name: Ir
+    value: "ir"
+    label: IR
+
+  - name: Ii
+    value: "ii"
+    label: Imposto de Importação
+
+  - name: Ipi
+    value: "ipi"
+    label: IPI
+
+  - name: Pis
+    value: "pis"
+    label: PIS
+
+  - name: Cofins
+    value: "cofins"
+    label: COFINS

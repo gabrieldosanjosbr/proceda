@@ -1,0 +1,13 @@
+path: intercambio/documento
+class: Proceda\Documento\Ocoren
+registro: "340"
+occurs: 200
+collection: true
+required: true
+label: Ocoren
+
+identificacao:
+  label: Identificação
+  length: 14
+  offset: 04
+  required: true

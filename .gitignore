@@ -1,0 +1,11 @@
+/vendor/
+/.phpunit.cache/
+/.idea/
+/.vscode/
+/build/
+/fixtures/
+/playground/
+.env
+.php-cs-fixer.cache
+docker-compose.override.yaml
+/.secrets/

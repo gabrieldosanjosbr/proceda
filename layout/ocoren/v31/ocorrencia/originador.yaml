@@ -1,0 +1,37 @@
+path: ocorrencia/originador
+class: Proceda\Conhecimento
+registro: "343"
+required: false
+label: Conhecimento Originador
+
+serie:
+  label: Série
+  length: 5
+  offset: 028
+  required: false
+
+numero:
+  label: Número
+  length: 12
+  offset: 033
+  required: false
+
+emissor:
+  class: Proceda\Empresa
+  label: Emissor
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 004
+    required: false
+
+  filial:
+    class: Proceda\Unidade
+    label: Filial Emissora
+
+    identificacao:
+      label: Identificação
+      length: 10
+      offset: 018
+      required: false

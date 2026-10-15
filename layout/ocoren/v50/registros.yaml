@@ -1,0 +1,47 @@
+- identificacao: "000"
+  length: 250
+  required: true
+
+- identificacao: "540"
+  length: 250
+  parent: "000"
+  required: true
+
+- identificacao: "541"
+  length: 250
+  parent: "540"
+  build: false
+  required: true
+
+- identificacao: "542"
+  length: 250
+  parent: "541"
+  required: true
+
+- identificacao: "543"
+  length: 250
+  parent: "542"
+  useParentAsContext: true
+  build: false
+  required: false
+
+- identificacao: "544"
+  length: 250
+  parent: "542"
+  required: false
+
+- identificacao: "545"
+  length: 250
+  parent: "542"
+  useParentAsContext: true
+  deferred: true
+  build: false
+  required: false
+
+- identificacao: "549"
+  length: 250
+  parent: "540"
+  useParentAsContext: true
+  deferred: true
+  build: false
+  required: true

@@ -1,0 +1,26 @@
+path: ocorrencia/nota-fiscal
+class: Proceda\NotaFiscal
+registro: "342"
+label: Nota Fiscal
+
+serie:
+  label: Série
+  length: 3
+  offset: 18
+  required: false
+
+numero:
+  label: Número
+  length: 8
+  offset: 21
+  required: true
+
+emissor:
+  class: Proceda\Empresa
+  label: Emissor
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 04
+    required: false

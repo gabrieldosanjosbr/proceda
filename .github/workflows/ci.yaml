@@ -1,0 +1,175 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: proceda-ci
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: read
+  id-token: write
+
+jobs:
+  tests:
+    name: PHP 8.4
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Download writer
+        env:
+          GH_TOKEN: ${{ secrets.PROCEDA_WRITER_TOKEN }}
+        run: |
+          mkdir -p writer/build
+
+          gh release download writer-latest \
+            --repo gabrieldosanjosbr/proceda-writer \
+            --pattern writer.prcd \
+            --dir writer/build
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create shared runtime volume
+        run: docker volume create proceda-runtime
+
+      - name: Activate ephemeral Proceda Agent
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          OIDC_TOKEN="$(
+            curl --fail --silent --show-error \
+              -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+              "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=proceda-license-server" \
+              | jq -er '.value'
+          )"
+
+          ACTIVATION_TOKEN="$(
+            jq -n --arg token "$OIDC_TOKEN" \
+              '{oidc_token: $token}' |
+            curl --fail --silent --show-error \
+              -X POST \
+              -H 'Content-Type: application/json' \
+              --data-binary @- \
+              https://license-server.gabrieldosanjos-p.workers.dev/v1/ci/activation \
+              | jq -er '.activation_token'
+          )"
+
+          echo "::add-mask::$ACTIVATION_TOKEN"
+
+          docker compose \
+            -f docker-compose.yaml \
+            -f docker-compose.ci.yaml \
+            run --rm --no-deps \
+            proceda-agent \
+            activate "$ACTIVATION_TOKEN"
+
+      - name: Start Reader
+        run: |
+          docker compose \
+            -f docker-compose.yaml \
+            -f docker-compose.ci.yaml \
+            up -d --build --no-deps proceda-reader
+
+      - name: Configure Composer authentication
+        env:
+          FIXTURES_TOKEN: ${{ secrets.PROCEDA_FIXTURES_TOKEN }}
+        run: |
+          docker compose \
+            -f docker-compose.yaml \
+            -f docker-compose.ci.yaml \
+            exec -T proceda-reader \
+            composer config --global github-oauth.github.com "$FIXTURES_TOKEN"
+
+      - name: Install dependencies
+        run: |
+          docker compose \
+            -f docker-compose.yaml \
+            -f docker-compose.ci.yaml \
+            exec -T proceda-reader \
+            composer install --prefer-dist --no-interaction
+
+      - name: Start services
+        run: |
+          docker compose \
+            -f docker-compose.yaml \
+            -f docker-compose.ci.yaml \
+            up -d
+
+      - name: Wait for Writer
+        run: |
+          for i in $(seq 1 30); do
+            if docker compose \
+              -f docker-compose.yaml \
+              -f docker-compose.ci.yaml \
+              exec -T proceda-reader \
+              test -S /run/proceda/writer.sock
+            then
+              echo "Writer is ready"
+              exit 0
+            fi
+
+            sleep 1
+          done
+
+          echo "Writer did not become ready"
+
+          docker compose \
+            -f docker-compose.yaml \
+            -f docker-compose.ci.yaml \
+            logs proceda-writer proceda-agent
+
+          exit 1
+
+      - name: Run tests with coverage
+        run: |
+          docker compose \
+            -f docker-compose.yaml \
+            -f docker-compose.ci.yaml \
+            exec -T \
+            -e XDEBUG_MODE=coverage \
+            proceda-reader \
+            vendor/bin/phpunit \
+            --coverage-clover build/coverage.xml
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: gabrieldosanjosbr/proceda
+          files: ./build/coverage.xml
+          fail_ci_if_error: true
+
+      - name: Run Writer tests
+        run: |
+          docker compose \
+            -f docker-compose.yaml \
+            -f docker-compose.ci.yaml \
+            exec -T proceda-reader \
+            composer test:writer
+
+      - name: PHPStan
+        run: |
+          docker compose \
+            -f docker-compose.yaml \
+            -f docker-compose.ci.yaml \
+            exec -T proceda-reader \
+            vendor/bin/phpstan analyse
+
+      - name: Logs
+        if: failure()
+        run: |
+          docker compose \
+            -f docker-compose.yaml \
+            -f docker-compose.ci.yaml \
+            logs

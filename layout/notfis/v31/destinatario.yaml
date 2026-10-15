@@ -1,0 +1,80 @@
+path: embarcador/destinatario
+class: Proceda\Destinatario
+registro: "312"
+required: true
+collection: true
+occurs: 500
+label: Destinatário
+
+nome:
+  label: Nome
+  length: 40
+  offset: 004
+  required: false
+
+documento:
+  label: CNPJ/CPF
+  length: 14
+  offset: 044
+  required: true
+
+inscricaoEstadual:
+  label: Inscrição Estadual
+  length: 15
+  offset: 058
+  required: false
+
+endereco:
+  label: Endereço
+  length: 40
+  offset: 073
+  required: false
+
+bairro:
+  label: Bairro
+  length: 20
+  offset: 113
+  required: false
+
+cidade:
+  label: Cidade
+  length: 35
+  offset: 133
+  required: false
+
+cep:
+  label: CEP
+  length: 9
+  offset: 168
+  required: true
+
+codigoMunicipio:
+  label: Código do Município
+  length: 9
+  offset: 177
+  required: false
+
+uf:
+  label: UF
+  length: 9
+  offset: 186
+  required: false
+
+areaFrete:
+  label: Área de Frete
+  length: 4
+  offset: 195
+  required: false
+
+numeroComunicacao:
+  label: Número de Comunicação
+  length: 35
+  offset: 199
+  required: false
+
+tipo:
+  label: Tipo de Destinatário
+  type: Destinatario/Tipo
+  length: 1
+  offset: 234
+  required: false

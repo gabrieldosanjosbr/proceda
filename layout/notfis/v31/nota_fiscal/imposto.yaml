@@ -1,0 +1,33 @@
+path: nota-fiscal/imposto
+class: Proceda\Imposto
+registro: "313"
+label: Imposto
+
+tratamento:
+  label: Tipo de ICMS
+  type: Imposto/Tratamento
+  length: 1
+  offset: 113
+  required: true
+  # TIPO DE ICMS A 1 113 M
+
+icms:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ICMS
+
+  valor:
+    label: Valor do ICMS
+    length: 12
+    offset: 214
+    required: false
+    decimals: 2
+    # VALOR DO ICMS N 10,2 214 C
+
+  valorRetido:
+    label: Valor do ICMS Retido
+    length: 12
+    offset: 226
+    required: false
+    decimals: 2
+    # VALOR DO ICMS RETIDO N 10,2 226 C

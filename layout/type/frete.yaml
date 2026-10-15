@@ -1,0 +1,74 @@
+Frete/Condicao:
+  - name: CIF
+    value: "C"
+    label: CIF
+
+  - name: FOB
+    value: "F"
+    label: FOB
+
+
+Frete/Modalidade:
+  - name: Distribuicao
+    value: "01"
+    label: Distribuição
+
+  - name: DistribuicaoForaPerimetro
+    value: "03"
+    label: Distribuição Fora do Perímetro
+
+  - name: DistribuicaoPulverizada
+    value: "04"
+    label: Distribuição Pulverizada
+
+  - name: FretePago
+    value: "05"
+    label: Frete Pago
+
+  - name: Viagem
+    value: "06"
+    label: Viagem
+
+  - name: Retira
+    value: "07"
+    label: Retira
+
+  - name: MaquinasTintometricas
+    value: "08"
+    label: Máquinas Tintométricas
+
+  - name: MateriaPrima
+    value: "09"
+    label: Matéria Prima
+
+  - name: FretePagar
+    value: "10"
+    label: Frete a Pagar
+
+  - name: Exportacao
+    value: "11"
+    label: Exportação
+
+  - name: Armazenamento
+    value: "12"
+    label: Armazenamento
+
+  - name: Tracerco
+    value: "13"
+    label: Tracerco
+
+  - name: Mensal
+    value: "14"
+    label: Mensal
+
+  - name: Transferencia
+    value: "15"
+    label: Transferência
+
+  - name: MercadoriaDireta
+    value: "16"
+    label: Mercadoria Direta
+
+  - name: SinistroRouboMercadoria
+    value: "99"
+    label: Sinistro/Roubo de Mercadoria

@@ -1,0 +1,85 @@
+path: conhecimento/resumo/frete
+class: Proceda\Frete
+registro: "322"
+label: Frete
+
+condicao:
+  label: Condição de Frete
+  type: Frete/Condicao
+  length: 1
+  offset: 39
+  required: true
+  # CONDIÇÃO DE FRETE A 1 039 M
+
+valor:
+  label: Valor Total do Frete
+  length: 15
+  offset: 47
+  decimals: 2
+  required: true
+  # VALOR TOTAL DO FRETE N 13,2 047 M
+
+valorPesoVolume:
+  label: Valor do Frete por Peso/Volume
+  length: 15
+  offset: 96
+  decimals: 2
+  required: true
+  # VALOR DO FRETE POR PESO/VOLUME N 13,2 096 M
+
+adValorem:
+  label: Frete Valor
+  length: 15
+  offset: 111
+  decimals: 2
+  required: true
+  # FRETE VALOR N 13,2 111 M
+
+valorSecCat:
+  label: Valor SEC - CAT
+  length: 15
+  offset: 126
+  decimals: 2
+  required: false
+  # VALOR SEC - CAT N 13,2 126 C
+
+valorItr:
+  label: Valor ITR/GRIS
+  length: 15
+  offset: 141
+  decimals: 2
+  required: false
+  # VALOR ITR/GRIS N 13,2 141 C
+
+valorDespacho:
+  label: Valor do Despacho
+  length: 15
+  offset: 156
+  decimals: 2
+  required: false
+  # VALOR DO DESPACHO N 13,2 156 C
+
+valorPedagio:
+  label: Valor do Pedágio
+  length: 15
+  offset: 171
+  decimals: 2
+  required: false
+  # VALOR DO PEDÁGIO N 13,2 171 C
+
+valorAdeme:
+  label: Valor ADEME
+  length: 15
+  offset: 186
+  decimals: 2
+  required: false
+  # VALOR ADEME N 13,2 186 C
+
+valorDespesasExtrasAdicionais:
+  label: Valor Total de Despesas Extras/Adicionais
+  registro: "329"
+  length: 15
+  offset: 009
+  decimals: 2
+  required: false
+  # VALOR TOTAL DE DESPESAS EXTRAS/ADICIONAIS N 13,2 009 C

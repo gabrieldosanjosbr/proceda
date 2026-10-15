@@ -1,0 +1,23 @@
+path: documento/transportador
+class: Proceda\Transportador
+registro: "551"
+required: true
+label: Transportador
+
+empresa:
+  class: Proceda\Empresa
+  label: Empresa
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 004
+    required: true
+    # CNPJ DA TRANSPORTADORA N 14 004 M
+
+  nome:
+    label: Razão Social
+    length: 50
+    offset: 018
+    required: false
+    # RAZÃO SOCIAL A 50 018 C

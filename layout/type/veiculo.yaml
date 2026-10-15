@@ -1,0 +1,140 @@
+Veiculo/Tipo:
+  - name: NavioTanque
+    value: "12"
+    label: Navio Tanque
+
+  - name: VagaoFerroviarioTanque
+    value: "21"
+    label: Vagão Ferroviário Tanque
+
+  - name: VagaoFerroviarioGraneleiro
+    value: "23"
+    label: Vagão Ferroviário Graneleiro
+
+  - name: ExpressoFerroviario
+    value: "25"
+    label: Expresso Ferroviário
+
+  - name: Caminhao
+    value: "31"
+    label: Caminhão (Mercadoria Seca)
+
+  - name: CaminhaoTanque
+    value: "32"
+    label: Caminhão Tanque (Mercadoria Líquida)
+
+  - name: RemessaExpressaRodoviaria
+    value: "34"
+    label: Remessa Expressa Rodoviária
+
+  - name: FreteAereo
+    value: "41"
+    label: Frete Aéreo
+
+  - name: ExpressoAereo
+    value: "43"
+    label: Expresso Aéreo
+
+  - name: EncomendaPostal
+    value: "51"
+    label: Encomenda Postal
+
+  - name: CorreioExpresso
+    value: "52"
+    label: Correio Expresso
+
+  - name: CorreioAereo
+    value: "55"
+    label: Correio Aéreo
+
+  - name: MensageiroExpresso
+    value: "101"
+    label: Mensageiro Expresso
+
+  - name: Perua
+    value: "BR01"
+    label: Peruas (Kombi, Besta, etc.)
+
+  - name: CaminhoneteMeiaTonelada
+    value: "BR02"
+    label: Caminhonete 0,5 Ton (Saveiro, etc.)
+
+  - name: TocoAberto
+    value: "BR03"
+    label: Toco Aberto
+
+  - name: TocoFechado
+    value: "BR04"
+    label: Toco Fechado
+
+  - name: TruckAberto
+    value: "BR05"
+    label: Truck Aberto
+
+  - name: TruckFechado
+    value: "BR06"
+    label: Truck Fechado
+
+  - name: CarretaAberta
+    value: "BR07"
+    label: Carreta Aberta
+
+  - name: CarretaFechada
+    value: "BR08"
+    label: Carreta Fechada
+
+  - name: TruckRefrigerado
+    value: "BR10"
+    label: Truck Refrigerado
+
+  - name: CarretaRefrigerada
+    value: "BR11"
+    label: Carreta Refrigerada
+
+  - name: TruckSider
+    value: "BR12"
+    label: Truck Sider
+
+  - name: CarretaSider
+    value: "BR13"
+    label: Carreta Sider
+
+  - name: FurgaoTresMeiaToneladas
+    value: "BR50"
+    label: Furgão 3,5 Ton. (Sprinter, etc.)
+
+  - name: CaminhoneteUmaTonelada
+    value: "BR51"
+    label: Caminhonete 1 Ton (F1000, S10, etc.)
+
+  - name: Carreta60MetrosCubicos
+    value: "BR60"
+    label: Carreta 60 Metros Cúbicos
+
+  - name: Carreta80MetrosCubicos
+    value: "BR80"
+    label: Carreta 80 Metros Cúbicos
+
+  - name: ContainerBuggy
+    value: "CTB"
+    label: Container Buggy
+
+  - name: Container20Pes
+    value: "C20"
+    label: Container 20 Pés
+
+  - name: Container40Pes
+    value: "C40"
+    label: Container 40 Pés
+
+  - name: Container40PesHC
+    value: "C4H"
+    label: Container 40 Pés HC
+
+  - name: Container20PesRefrigerado
+    value: "C2R"
+    label: Container 20 Pés Refrigerado
+
+  - name: Container40PesRefrigerado
+    value: "C4R"
+    label: Container 40 Pés Refrigerado

@@ -1,0 +1,164 @@
+path: nota-fiscal/frete
+class: Proceda\Frete
+registro: "505"
+required: true
+label: Frete
+
+condicao:
+  label: Condição de Frete
+  type: Frete/Condicao
+  length: 1
+  offset: 064
+  required: true
+  # CONDIÇÃO DE FRETE A 1 064 M
+
+calculoDiferenciado:
+  label: Cálculo de Frete Diferenciado
+  length: 1
+  offset: 092
+  required: false
+  # CÁLCULO DE FRETE DIFERENCIADO? (S/N) A 1 092 C
+
+tabela:
+  label: Tabela de Frete
+  length: 10
+  offset: 093
+  required: false
+  # TABELA DE FRETE A 10 093 C
+
+modalidade:
+  label: Modalidade de Frete
+  type: Frete/Modalidade
+  length: 2
+  offset: 103
+  required: false
+  # MODALIDADE DE FRETE A 2 103 C
+
+quantidadeVolumes:
+  label: Quantidade de Volumes
+  registro: "507"
+  length: 8
+  offset: 004
+  required: true
+  decimals: 2
+  # N 6,2 004 M
+
+pesoBruto:
+  label: Peso Bruto
+  registro: "507"
+  length: 9
+  offset: 012
+  required: true
+  decimals: 3
+  # N 6,3 012 M
+
+pesoCubado:
+  label: Peso Cubado
+  registro: "507"  # N 6,4 021 C
+  length: 10
+  offset: 021
+  required: false
+  decimals: 4
+
+pesoDensidadeCubagem:
+  label: Peso Densidade/Cubagem
+  registro: "507"  # N 6,4 031 C
+  length: 10
+  offset: 031
+  required: false
+  decimals: 4
+
+valor:
+  label: Valor Total do Frete
+  registro: "507"  # N 13,2 041 M
+  length: 15
+  offset: 041
+  required: true
+  decimals: 2
+  fallback:
+    registro: "506" # N 13,2 262 C
+    length: 15
+    offset: 262
+    required: false
+    decimals: 2
+
+valorPesoVolume:
+  label: Valor do Frete por Peso/Volume
+  registro: "507"
+  length: 15
+  offset: 056
+  required: false
+  decimals: 2
+  # N 13,2 056 C
+
+freteValor:
+  label: Frete Valor
+  registro: "507"
+  length: 15
+  offset: 071
+  required: false
+  decimals: 2
+  # N 13,2 071 C
+
+adValorem:
+  label: Ad Valorem
+  registro: "507"
+  length: 15
+  offset: 086
+  required: false
+  decimals: 2
+  # N 13,2 086 C
+
+valorSecCat:
+  label: Valor SEC - CAT
+  registro: "507"
+  length: 15
+  offset: 101
+  required: false
+  decimals: 2
+  # N 13,2 101 C
+
+valorItr:
+  label: Valor ITR/GRIS
+  registro: "507"
+  length: 15
+  offset: 116
+  required: false
+  decimals: 2
+  # N 13,2 116 C
+
+valorDespacho:
+  label: Valor do Despacho
+  registro: "507"
+  length: 15
+  offset: 131
+  required: false
+  decimals: 2
+  # N 13,2 131 C
+
+valorPedagio:
+  label: Valor do Pedágio
+  registro: "507"
+  length: 15
+  offset: 146
+  required: false
+  decimals: 2
+  # N 13,2 146 C
+
+valorAdeme:
+  label: Valor ADEME
+  registro: "507"
+  length: 15
+  offset: 161
+  required: false
+  decimals: 2
+  # N 13,2 161 C
+
+valorDespesasExtrasAdicionais:
+  label: Valor Total de Despesas Extras/Adicionais
+  registro: "507"
+  length: 15
+  offset: 176
+  required: false
+  decimals: 2
+  # N 13,2 176 C

@@ -1,0 +1,104 @@
+path: cobranca/imposto
+class: Proceda\Imposto
+registro: "553"
+label: Imposto
+
+icms:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ICMS
+
+  valor:
+    label: Valor Total do ICMS
+    length: 15
+    offset: 004
+    decimals: 2
+    required: false
+    # VALOR TOTAL DO ICMS N 13,2 004 C
+
+  aliquota:
+    label: Alíquota do ICMS
+    length: 5
+    offset: 019
+    decimals: 2
+    required: false
+    # ALIQUOTA ICMS N 3,2 019 ?
+
+  baseCalculo:
+    label: Base de Cálculo do ICMS
+    length: 15
+    offset: 24
+    decimals: 2
+    required: false
+    # BASE CÁLCULO ICMS N 13,2 024 ?
+
+icmsSt:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ICMS - Substituição Tributária
+
+  valor:
+    label: Valor Total do ICMS - Substituição Tributária
+    length: 15
+    offset: 074
+    decimals: 2
+    required: false
+    # VALOR TOTAL DO ICMS – SUBSTITUIÇÃO TRIBUTÁRIA N 13,2 074 ?
+
+  aliquota:
+    label: Alíquota do ICMS - Substituição Tributária
+    length: 5
+    offset: 089
+    decimals: 2
+    required: false
+    # ALIQUOTA ICMS – SUBSTITUIÇÃO TRIBUTÁRIA N 3,2 089 ?
+
+  baseCalculo:
+    label: Base de Cálculo do ICMS - Substituição Tributária
+    length: 15
+    offset: 094
+    decimals: 2
+    required: false
+    # BASE CÁLCULO ICMS – SUBSTITUIÇÃO TRIBUTÁRIA N 13,2 094 ?
+
+iss:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ISS
+
+  valor:
+    label: Valor Total do ISS
+    length: 15
+    offset: 039
+    decimals: 2
+    required: false
+    # VALOR TOTAL ISS N 13,2 039 ?
+
+  aliquota:
+    label: Alíquota do ISS
+    length: 5
+    offset: 054
+    decimals: 2
+    required: false
+    # ALIQUOTA ISS N 3,2 054 ?
+
+  baseCalculo:
+    label: Base de Cálculo do ISS
+    length: 15
+    offset: 059
+    decimals: 2
+    required: false
+    # BASE CÁLCULO ISS N 13,2 059 ?
+
+ir:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: IR
+
+  valor:
+    label: Valor Total do IR
+    length: 15
+    offset: 109
+    decimals: 2
+    required: false
+    # VALOR TOTAL IR N 13,2 109 ?

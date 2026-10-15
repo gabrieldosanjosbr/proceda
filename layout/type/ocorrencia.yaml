@@ -1,0 +1,512 @@
+Ocorrencia/IndicacaoEntrega:
+  - name: PrimeiraEntrega
+    value: "1"
+    label: Primeira entrega
+
+  - name: ReentregaPedidoEmbarcador
+    value: "2"
+    label: Reentrega a pedido do embarcador
+
+  - name: ReentregaPedidoDestinatario
+    value: "3"
+    label: Reentrega a pedido do destinatário
+
+  - name: ReentregaPedidoTransportadorOrigem
+    value: "4"
+    label: Reentrega a pedido transportador de origem
+
+
+Ocorrencia/ObservacaoEntrada:
+  - name: DevolucaoTotal
+    value: "1"
+    label: Devolução/recusa total
+
+  - name: DevolucaoParcial
+    value: "2"
+    label: Devolução/recusa parcial
+
+  - name: AceitePorAcordo
+    value: "3"
+    label: Aceite/entrega por acordo
+
+  - name: DevolucaoTotalComNF
+    value: "4"
+    label: Devolução/recusa total com NF devolução emitida pelo destinatário
+
+  - name: DevolucaoParcialComNF
+    value: "5"
+    label: Devolução/recusa parcial com NF devolução emitida pelo destinatário
+
+
+Ocorrencia/Codigo:
+  - name: ProcessoTransporteIniciado
+    value: "0"
+    label: Processo de Transporte já Iniciado
+
+  - name: RealizadaNormalmente
+    value: "1"
+    label: Ocorrencia Realizada Normalmente
+
+  - name: ForaDataProgramada
+    value: "2"
+    label: Ocorrencia Fora da Data Programada
+
+  - name: RecusaFaltaPedidoCompra
+    value: "3"
+    label: Recusa por Falta de Pedido de Compra
+
+  - name: RecusaPedidoCompraCancelado
+    value: "4"
+    label: Recusa por Pedido de Compra Cancelado
+
+  - name: FaltaEspacoFisico
+    value: "5"
+    label: Falta de Espaço Físico no Depósito do Cliente Destino
+
+  - name: EnderecoDestinoNaoLocalizado
+    value: "6"
+    label: Endereço do Cliente Destino não Localizado
+
+  - name: DevolucaoNaoAutorizada
+    value: "7"
+    label: Devolução não Autorizada pelo Cliente
+
+  - name: PrecoMercadoriaDesacordo
+    value: "8"
+    label: Preço Mercadoria em Desacordo com o Pedido Compra
+
+  - name: MercadoriaDesacordo
+    value: "9"
+    label: Mercadoria em Desacordo com o Pedido Compra
+
+  - name: DestinoRecebeSomenteFretePago
+    value: "10"
+    label: Cliente Destino somente Recebe Mercadoria com Frete Pago
+
+  - name: RecusaDeficienciaEmbalagem
+    value: "11"
+    label: Recusa por Deficiência Embalagem Mercadoria
+
+  - name: RedespachoNaoIndicado
+    value: "12"
+    label: Redespacho não Indicado
+
+  - name: TransportadoraNaoAtendeCidade
+    value: "13"
+    label: Transportadora não Atende a Cidade do Cliente Destino
+
+  - name: MercadoriaSinistrada
+    value: "14"
+    label: Mercadoria Sinistrada
+
+  - name: EmbalagemSinistrada
+    value: "15"
+    label: Embalagem Sinistrada
+
+  - name: PedidoCompraDuplicidade
+    value: "16"
+    label: Pedido de Compras em Duplicidade
+
+  - name: MercadoriaForaEmbalagemAtacadista
+    value: "17"
+    label: Mercadoria fora da Embalagem de Atacadista
+
+  - name: MercadoriasTrocadas
+    value: "18"
+    label: Mercadorias Trocadas
+
+  - name: ReentregaSolicitadaCliente
+    value: "19"
+    label: Reentrega Solicitada pelo Cliente
+
+  - name: FaltaTempoHabil
+    value: "20"
+    label: Ocorrencia Prejudicada por Horário/Falta de Tempo Hábil
+
+  - name: EstabelecimentoFechado
+    value: "21"
+    label: Estabelecimento Fechado
+
+  - name: ReentregaSemCobranca
+    value: "22"
+    label: Reentrega sem Cobrança do Cliente
+
+  - name: ExtravioMercadoriaTransito
+    value: "23"
+    label: Extravio de Mercadoria em Trânsito
+
+  - name: MercadoriaReentregueDestino
+    value: "24"
+    label: Mercadoria Reentregue ao Cliente Destino
+
+  - name: MercadoriaDevolvidaOrigem
+    value: "25"
+    label: Mercadoria Devolvida ao Cliente de Origem
+
+  - name: NotaFiscalRetidaFiscalizacao
+    value: "26"
+    label: Nota Fiscal Retida pela Fiscalização
+
+  - name: RouboMercadoria
+    value: "27"
+    label: Roubo de Mercadoria
+
+  - name: MercadoriaRetidaSegundaOrdem
+    value: "28"
+    label: Mercadoria Retida até Segunda Ordem
+
+  - name: ClienteRetiraTransportadora
+    value: "29"
+    label: Cliente Retira Mercadoria na Transportadora
+
+  - name: ProblemaDocumentacao
+    value: "30"
+    label: Problema com a Documentação (Nota Fiscal e/ou CTRC)
+
+  - name: IndenizacaoEfetuada
+    value: "31"
+    label: Ocorrencia com Indenização Efetuada
+
+  - name: FaltaSolicitacaoReposicao
+    value: "32"
+    label: Falta com Solicitação de Reposição
+
+  - name: FaltaBuscaReconferencia
+    value: "33"
+    label: Falta com Busca/Reconferência
+
+  - name: ClienteFechadoBalanco
+    value: "34"
+    label: Cliente Fechado para Balanço
+
+  - name: QuantidadeProdutoDesacordo
+    value: "35"
+    label: Quantidade de Produto em Desacordo (Nota Fiscal e/ou Pedido)
+
+  - name: ExtravioDocumentosCiaAerea
+    value: "36"
+    label: Extravio de documentos pela Cia. Aérea
+
+  - name: ExtravioCargaCiaAerea
+    value: "37"
+    label: Extravio de carga pela Cia. Aérea
+
+  - name: CorteCargaPista
+    value: "39"
+    label: Corte de carga na pista
+
+  - name: AeroportoFechadoOrigem
+    value: "40"
+    label: Aeroporto fechado na origem
+
+  - name: PedidoCompraIncompleto
+    value: "41"
+    label: Pedido de Compra Incompleto
+
+  - name: NotaFiscalProdutosSetoresDiferentes
+    value: "42"
+    label: Nota Fiscal com Produtos de Setores Diferentes
+
+  - name: Feriado
+    value: "43"
+    label: Feriado Local/Nacional
+
+  - name: ExcessoVeiculos
+    value: "44"
+    label: Excesso de Veículos
+
+  - name: ClienteDestinoEncerrouAtividades
+    value: "45"
+    label: Cliente Destino Encerrou Atividades
+
+  - name: ResponsavelRecebimentoAusente
+    value: "46"
+    label: Responsável de Recebimento Ausente
+
+  - name: ClienteDestinoGreve
+    value: "47"
+    label: Cliente Destino em Greve
+
+  - name: AeroportoFechadoDestino
+    value: "48"
+    label: Aeroporto fechado no destino
+
+  - name: VooCancelado
+    value: "49"
+    label: Vôo cancelado
+
+  - name: GreveNacional
+    value: "50"
+    label: Greve nacional (Greve Geral)
+
+  - name: MercadoriaVencida
+    value: "51"
+    label: Mercadoria Vencida (Data de Validade Expirada)
+
+  - name: MercadoriaRedespachada
+    value: "52"
+    label: Mercadoria Redespachada (Entregue para Redespacho)
+
+  - name: MercadoriaNaoEmbarcada
+    value: "53"
+    label: Mercadoria não foi Embarcada, Permanecendo na Origem
+
+  - name: MercadoriaEmbarcadaSemCTRC
+    value: "54"
+    label: Mercadoria Embarcada sem CTRC ou CTRC não Embarcado
+
+  - name: EnderecoRedespachoNaoLocalizado
+    value: "55"
+    label: Endereço Transp. de Redespacho não localizado/não informado
+
+  - name: ClienteNaoAceitaReembolso
+    value: "56"
+    label: Cliente não Aceita Mercadoria com Pagamento de Reembolso
+
+  - name: TransportadoraNaoAtendeRedespacho
+    value: "57"
+    label: Transportadora não atende a cidade da transportadora de redespacho
+
+  - name: QuebraVeiculo
+    value: "58"
+    label: Quebra do Veículo de Ocorrencia
+
+  - name: ClienteSemVerbaFrete
+    value: "59"
+    label: Cliente sem Verba para Pagar o Frete
+
+  - name: EnderecoErrado
+    value: "60"
+    label: Endereço de Ocorrencia Errado
+
+  - name: ClienteSemVerbaReembolso
+    value: "61"
+    label: Cliente sem Verba para Reembolso
+
+  - name: RecusaFreteErrado
+    value: "62"
+    label: Recusa da Mercadoria por Valor de Frete Errado
+
+  - name: IdentificacaoClienteInsuficiente
+    value: "63"
+    label: Identificação do Cliente não Informada/Enviada/Insuficiente
+
+  - name: ClienteNaoIdentificado
+    value: "64"
+    label: Cliente não Identificado/Cadastrado
+
+  - name: ContatarComprador
+    value: "65"
+    label: Entrar em Contato com o Comprador
+
+  - name: TrocaNaoDisponivel
+    value: "66"
+    label: Troca não Disponível
+
+  - name: FinsEstatisticos
+    value: "67"
+    label: Fins Estatísticos
+
+  - name: DataOcorrenciaDiferentePedido
+    value: "68"
+    label: Data de Ocorrencia Diferente do Pedido
+
+  - name: SubstituicaoTributaria
+    value: "69"
+    label: Substituição Tributária
+
+  - name: SistemaForaAr
+    value: "70"
+    label: Sistema Fora do Ar
+
+  - name: DestinoNaoRecebePedidoParcial
+    value: "71"
+    label: Cliente Destino não Recebe Pedido Parcial
+
+  - name: DestinoSomenteRecebePedidoParcial
+    value: "72"
+    label: Cliente Destino só Recebe Pedido Parcial
+
+  - name: RedespachoSomenteFretePago
+    value: "73"
+    label: Redespacho somente com Frete Pago
+
+  - name: FuncionarioNaoAutorizadoReceber
+    value: "74"
+    label: Funcionário não autorizado a Receber Mercadorias
+
+  - name: MercadoriaRotaIndevida
+    value: "75"
+    label: Mercadoria Embarcada para Rota Indevida
+
+  - name: AcessoInterditado
+    value: "76"
+    label: Estrada/Entrada de Acesso Interditada
+
+  - name: ClienteDestinoMudouEndereco
+    value: "77"
+    label: Cliente Destino Mudou de Endereço
+
+  - name: AvariaTotal
+    value: "78"
+    label: Avaria Total
+
+  - name: AvariaParcial
+    value: "79"
+    label: Avaria Parcial
+
+  - name: ExtravioTotal
+    value: "80"
+    label: Extravio Total
+
+  - name: ExtravioParcial
+    value: "81"
+    label: Extravio Parcial
+
+  - name: SobraMercadoriaSemNotaFiscal
+    value: "82"
+    label: Sobra de Mercadoria sem Nota Fiscal
+
+  - name: MercadoriaSuframa
+    value: "83"
+    label: Mercadoria em poder da SUFRAMA para Internação
+
+  - name: MercadoriaRetiradaConferencia
+    value: "84"
+    label: Mercadoria Retirada para Conferência
+
+  - name: ApreensaoFiscal
+    value: "85"
+    label: Apreensão Fiscal da Mercadoria
+
+  - name: ExcessoMercadoriaPeso
+    value: "86"
+    label: Excesso de Mercadoria/Peso
+
+  - name: FeriasColetivas
+    value: "87"
+    label: Férias Coletivas
+
+  - name: RecusadoAguardandoNegociacao
+    value: "88"
+    label: Recusado, aguardando negociação
+
+  - name: AguardandoRefaturamento
+    value: "89"
+    label: Aguardando refaturamento das mercadorias
+
+  - name: RecusadoRedespachante
+    value: "90"
+    label: Recusado pelo Redespachante
+
+  - name: OcorrenciaProgramada
+    value: "91"
+    label: Ocorrencia Programada
+
+  - name: ProblemasFiscais
+    value: "92"
+    label: Problemas Fiscais
+
+  - name: AguardandoCartaCorrecao
+    value: "93"
+    label: Aguardando carta de correção
+
+  - name: RecusaCondicoesPagamento
+    value: "94"
+    label: Recusa por divergência nas condições de pagamento
+
+  - name: MercadoriaAguardandoVooConexao
+    value: "95"
+    label: Mercadoria aguardando vôo conexão
+
+  - name: MercadoriaSemEmbalagemTransporteAereo
+    value: "96"
+    label: Mercadoria sem embalagem própria para transp. Aéreo
+
+  - name: MercadoriaDimensaoSuperiorPorao
+    value: "97"
+    label: Mercadoria com dimensão superior ao porão da aeronave
+
+  - name: ChegadaCidadeDestino
+    value: "98"
+    label: Chegada na cidade ou filial de destino
+
+  - name: Outros
+    value: "99"
+    label: Outros tipos de ocorrências não especificados acima
+
+  - name: DevolucaoNaoCumprimentoAgendamento
+    value: "100"
+    label: Devolução por não cumprimento do agendamento
+
+  - name: DevolucaoPedidoEmbarcador
+    value: "101"
+    label: Devolução/não entrega a pedido do embarcador
+
+  - name: DevolucaoPedidoDestinatario
+    value: "102"
+    label: Devolução/não entrega a pedido do destinatário
+
+  - name: DevolucaoPedidoTransportadoraRedespacho
+    value: "103"
+    label: Devolução/não entrega a pedido transportadora de redespacho
+
+  - name: OcorrenciaTransportadoraRedespacho
+    value: "104"
+    label: Ocorrencia efetuada na Transportadora de Redespacho
+
+  - name: OcorrenciaClienteRedespacho
+    value: "105"
+    label: Ocorrencia efetuada no cliente pela Transportadora de Redespacho
+
+  - name: DataRetiradaManaus
+    value: "201"
+    label: Data da retirada em Manaus
+
+  - name: PlacaCarreta
+    value: "202"
+    label: Placa da carreta responsável pelo transporte
+
+  - name: NomeBalsa
+    value: "203"
+    label: Nome da balsa
+
+  - name: NomeEmpurrador
+    value: "204"
+    label: Nome do empurrador
+
+  - name: NumeroFrota
+    value: "205"
+    label: Número da frota
+
+  - name: DataChegadaBelem
+    value: "206"
+    label: Data de chegada em Belém
+
+  - name: DataSaidaBelem
+    value: "207"
+    label: Data de saída de Belém
+
+  - name: DataChegadaTransportadora
+    value: "208"
+    label: Data de chegada na Transportadora
+
+  - name: DataSaidaTransportadora
+    value: "209"
+    label: Data de saída da Transportadora
+
+  - name: DataChegadaPorto
+    value: "210"
+    label: Data de chegada no Porto
+
+  - name: DataSaidaPorto
+    value: "211"
+    label: Data de saída do Porto
+
+  - name: DataChegadaSegundaTransportadora
+    value: "212"
+    label: Data de chegada na segunda Transportadora
+
+  - name: DataSaidaSegundaTransportadora
+    value: "213"
+    label: Data de saída da segunda Transportadora (redespacho)

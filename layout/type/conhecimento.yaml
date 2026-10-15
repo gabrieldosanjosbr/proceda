@@ -1,0 +1,62 @@
+Conhecimento/CodigoIva:
+  - name: Exportacao
+    value: "Z2"
+    label: Exportação
+
+  - name: SemSubstituicaoTributaria
+    value: "Z3"
+    label: Sem substituição tributária
+
+  - name: ComSubstituicaoTributaria
+    value: "Z4"
+    label: Com substituição tributária
+
+
+Conhecimento/Tipo:
+  - name: Normal
+    value: "N"
+    label: Normal
+
+  - name: Complementar
+    value: "C"
+    label: Complementar
+
+  - name: Devolucao
+    value: "D"
+    label: Conhecimento de devolução
+
+  - name: NormalEntrada
+    value: "E"
+    label: Normal de entrada
+
+  - name: NormalRetorno
+    value: "O"
+    label: Normal de retorno
+
+  - name: Reentrega
+    value: "R"
+    label: Conhecimento de reentrega
+
+  - name: NormalSaida
+    value: "S"
+    label: Normal de saída
+
+  - name: NormalTransferenciaInterna
+    value: "T"
+    label: Normal de transferência interna
+
+  - name: ComplementarRetorno
+    value: "W"
+    label: Complementar de retorno
+
+  - name: ComplementarEntrada
+    value: "X"
+    label: Complementar de entrada
+
+  - name: ComplementarSaida
+    value: "Y"
+    label: Complementar de saída
+
+  - name: ComplementarTransferenciaInterna
+    value: "Z"
+    label: Complementar de transferência interna

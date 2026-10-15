@@ -1,0 +1,214 @@
+path: transportador/ocorrencia
+class: Proceda\Ocorrencia
+registro: "542"
+occurs: 9999
+collection: true
+required: true
+label: Ocorrência
+
+codigo:
+  label: Código de Ocorrência na Entrega
+  type: Ocorrencia/Codigo
+  length: 3
+  offset: 030
+  required: true
+  # CÓDIGO DE OCORRÊNCIA NA ENTREGA N 3 030 M
+
+data:
+  label: Data da Ocorrência
+  length: 8
+  offset: 033
+  required: true
+  # DATA DA OCORRÊNCIA N 8 033 M
+
+hora:
+  label: Hora da Ocorrência
+  type: time
+  length: 4
+  offset: 041
+  required: false
+  # HORA DA OCORRÊNCIA N 4 041 C
+
+observacaoEntrada:
+  label: Código de Observação de Ocorrência na Entrada
+  type: Ocorrencia/ObservacaoEntrada
+  length: 2
+  offset: 045
+  required: false
+  # CÓDIGO DE OBSERVAÇÃO DE OCORRÊNCIA NA ENTRADA N 2 045 C
+
+indicacaoEntrega:
+  label: Indicação do Tipo de Entrega
+  type: Ocorrencia/IndicacaoEntrega
+  length: 1
+  offset: 154
+  required: false
+  # INDICAÇÃO DO TIPO DE ENTREGA A 1 154 C
+
+chegadaDestino:
+  class: Proceda\Evento
+  collection: true
+  label: Chegada no Destino
+
+  data:
+    label: Data
+    length: 8
+    offset: 165
+    required: false
+    # DATA DA CHEGADA NO DESTINO DA NF N 8 165 C
+
+  hora:
+    label: Hora
+    type: time
+    length: 4
+    offset: 173
+    required: false
+    # HORA DA CHEGADA NO DESTINO DA NF N 4 173 C
+
+inicioDescarregamento:
+  class: Proceda\Evento
+  collection: true
+  label: Início do Descarregamento
+
+  data:
+    label: Data
+    length: 8
+    offset: 177
+    required: false
+    # DATA DO INÍCIO DO DESCARREGAMENTO NO DESTINO N 8 177 C
+
+  hora:
+    label: Hora
+    type: time
+    length: 4
+    offset: 185
+    required: false
+    # HORA DO INÍCIO DO DESCARREGAMENTO NO DESTINO N 4 185 C
+
+terminoDescarregamento:
+  class: Proceda\Evento
+  collection: true
+  label: Término do Descarregamento
+
+  data:
+    label: Data
+    length: 8
+    offset: 189
+    required: false
+    # DATA DO TÉRMINO DO DESCARREGAMENTO NO DESTINO N 8 189 C
+
+  hora:
+    label: Hora
+    type: time
+    length: 4
+    offset: 197
+    required: false
+    # HORA DO TÉRMINO DO DESCARREGAMENTO NO DESTINO N 4 197 C
+
+saidaDestino:
+  class: Proceda\Evento
+  collection: true
+  label: Saída do Destino
+
+  data:
+    label: Data
+    length: 8
+    offset: 201
+    required: false
+    # DATA DA SAÍDA DO DESTINO DA NF N 8 201 C
+
+  hora:
+    label: Hora
+    type: time
+    length: 4
+    offset: 209
+    required: false
+    # HORA DA SAÍDA DO DESTINO DA NF N 4 209 C
+
+embarque:
+  class: Proceda\Embarque
+  inline: 4
+  collection: true
+  label: Embarque
+
+  identificacao:
+    label: Identificação
+    length: 20
+    offset: 047
+    required: false
+
+conhecimento:
+  class: Proceda\Conhecimento
+  label: Conhecimento
+
+  serie:
+    label: Série
+    length: 5
+    offset: 137
+    required: false
+    # SÉRIE DO CONHECIMENTO A 5 137 C
+
+  numero:
+    label: Número
+    length: 12
+    offset: 142
+    required: false
+    # NÚMERO DO CONHECIMENTO A 12 142 C
+
+  emissor:
+    class: Proceda\Empresa
+    label: Emissor
+
+    filial:
+      class: Proceda\Unidade
+      label: Filial Emissora
+
+      identificacao:
+        label: Identificação
+        length: 10
+        offset: 127
+        required: false
+        # FILIAL EMISSORA DO CONHECIMENTO A 10 127 C
+
+devolucao:
+  class: Proceda\NotaFiscal
+  label: Nota Fiscal de Devolução
+
+  serie:
+    label: Série
+    length: 3
+    offset: 227
+    required: false
+    # SÉRIE DA NOTA FISCAL DEVOLUÇÃO A 3 227 C
+
+  numero:
+    label: Número
+    length: 9
+    offset: 230
+    required: false
+    # NÚMERO DA NOTA FISCAL DEVOLUÇÃO N 9 230 C
+
+  emissor:
+    class: Proceda\Empresa
+    label: Emissor
+
+    cnpj:
+      label: CNPJ
+      length: 14
+      offset: 213
+      required: false
+      # CNPJ (CGC) DO EMISSOR DA NOTA FISCAL DEVOLUÇÃO N 14 213 C
+
+textoLivre:
+  class: Proceda\TextoLivre
+  registro: "543"
+  inline: 3
+  collection: true
+  label: Texto Livre
+
+  texto:
+    label: Texto Livre
+    length: 70
+    offset: 004
+    required: true
+    # TEXTO LIVRE – 1 A 70 004 M

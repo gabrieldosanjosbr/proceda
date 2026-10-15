@@ -1,0 +1,25 @@
+path: nota-fiscal/nfe
+class: Proceda\Nfe
+registro: "505"
+label: NF-e
+
+codigo:
+  label: Código Numérico da Chave de Acesso da NF-e
+  length: 9
+  offset: 230
+  required: false
+  # CÓDIGO NUMÉRICO CHAVE DE ACESSO DA NF-e N 9 230 C
+
+chaveAcesso:
+  label: Chave de Acesso da NF-e com D/V
+  length: 45
+  offset: 239
+  required: false
+  # CHAVE DE ACESSO DA NF-e COM D/V A 45 239 C
+
+protocolo:
+  label: Número do Protocolo da NF-e
+  length: 15
+  offset: 284
+  required: false
+  # NÚMERO DO PROTOCOLO DA NF-e A 15 284 C

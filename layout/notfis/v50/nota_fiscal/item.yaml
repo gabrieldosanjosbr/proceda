@@ -1,0 +1,88 @@
+path: nota-fiscal/item
+class: Proceda\NotaFiscal\Item
+registro: "511"
+collection: true
+occurs: 5000
+label: Item/Mercadoria
+
+quantidade:
+  label: Quantidade
+  length: 8
+  offset: 004
+  required: true
+  decimals: 2
+  # N 6,2 004 M
+
+acondicionamento:
+  label: Espécie de Acondicionamento
+  length: 15
+  offset: 012
+  required: true
+  # A 15 012 M
+
+codigo:
+  label: Código do Item
+  length: 20
+  offset: 027
+  required: true
+  # A 20 027 M
+
+descricao:
+  label: Descrição do Item
+  length: 50
+  offset: 047
+  required: true
+  # A 50 047 M
+
+cfop:
+  label: CFOP
+  length: 4
+  offset: 097
+  required: false
+  # N 4 097 C
+
+lote:
+  label: Lote
+  length: 20
+  offset: 101
+  required: false
+  # N 20 101 C
+
+dataValidade:
+  label: Data de Validade
+  length: 8
+  offset: 121
+  required: false
+  # N 8 121 C
+
+idPedidoCliente:
+  label: Identificação do Pedido do Cliente
+  length: 20
+  offset: 279
+  required: false
+  # A 20 279 C
+
+volume:
+  class: Proceda\NotaFiscal\Volume
+  label: Volume
+
+  marca:
+    label: Marca
+    length: 50
+    offset: 129
+    required: false
+    # A 50 129 C
+
+  numeracao:
+    label: Numeração
+    length: 50
+    offset: 179
+    required: false
+    # A 50 179 C
+
+  lacre:
+    label: Número do Lacre
+    length: 50
+    offset: 229
+    required: false
+    # A 50 229 C

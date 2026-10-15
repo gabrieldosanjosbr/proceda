@@ -1,0 +1,62 @@
+- identificacao: "000"
+  length: 240
+  required: true
+
+- identificacao: "310"
+  length: 240
+  parent: "000"
+  required: true
+
+- identificacao: "311"
+  length: 240
+  parent: "310"
+  required: true
+
+- identificacao: "312"
+  length: 240
+  parent: "311"
+  required: true
+
+- identificacao: "313"
+  length: 240
+  parent: "312"
+  required: true
+
+- identificacao: "333"
+  length: 240
+  parent: "313"
+  useParentAsContext: true
+  build: false
+  required: false
+
+- identificacao: "314"
+  length: 240
+  parent: "313"
+  build: false
+  required: false
+
+- identificacao: "315"
+  length: 240
+  parent: "313"
+  build: false
+  required: false
+
+- identificacao: "316"
+  length: 240
+  parent: "313"
+  build: false
+  required: false
+
+- identificacao: "317"
+  length: 240
+  parent: "313"
+  build: false
+  required: false
+
+- identificacao: "318"
+  length: 240
+  parent: "310"
+  useParentAsContext: true
+  deferred: true
+  build: false
+  required: true

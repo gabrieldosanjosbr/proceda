@@ -1,0 +1,42 @@
+- identificacao: "000"
+  length: 280
+  required: true
+
+- identificacao: "550"
+  length: 280
+  parent: "000"
+  required: true
+
+- identificacao: "551"
+  length: 280
+  parent: "550"
+  build: false
+  required: true
+
+- identificacao: "552"
+  length: 280
+  parent: "551"
+  required: true
+
+- identificacao: "553"
+  length: 280
+  parent: "552"
+  required: false
+
+- identificacao: "555"
+  length: 280
+  parent: "552"
+  required: true
+
+- identificacao: "556"
+  length: 280
+  parent: "552"
+  required: false
+
+- identificacao: "559"
+  length: 280
+  parent: "550"
+  useParentAsContext: true
+  deferred: true
+  build: false
+  required: true

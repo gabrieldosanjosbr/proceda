@@ -1,0 +1,17 @@
+services:
+  proceda-reader:
+    build:
+      context: .
+      target: base
+
+    network_mode: "none"
+
+    environment:
+      PROCEDA_PROFILES_DIR: "${PROCEDA_PROFILES_DIR:-/app/profiles}"
+
+    working_dir: /app
+
+    volumes:
+      - ./:/app
+
+    command: ["sleep", "infinity"]

@@ -1,0 +1,37 @@
+path: ocorrencia/nota-fiscal/item
+class: Proceda\NotaFiscal\Item
+registro: "544"
+occurs: 9999
+collection: true
+required: false
+label: Item/Mercadoria
+
+quantidade:
+  label: Quantidade de Volumes
+  length: 8
+  offset: 004
+  required: true
+  decimals: 2
+  # QUANTIDADE DE VOLUMES DA NOTA N 6,2 004 M
+
+quantidadeEntregue:
+  label: Quantidade de Volumes Entregues
+  length: 8
+  offset: 012
+  required: true
+  decimals: 2
+  # QUANTIDADE DE VOLUMES ENTREGUES N 6,2 012 M
+
+codigo:
+  label: Código do Item
+  length: 20
+  offset: 020
+  required: true
+  # CÓDIGO DO ITEM DA NOTA FISCAL A 20 020 M
+
+descricao:
+  label: Descrição do Item
+  length: 50
+  offset: 040
+  required: true
+  # DESCRIÇÃO DO ITEM DA NOTA FISCAL A 50 040 M

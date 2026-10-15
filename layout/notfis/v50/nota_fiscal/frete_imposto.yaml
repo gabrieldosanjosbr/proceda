@@ -1,0 +1,135 @@
+path: nota-fiscal/frete/imposto
+class: Proceda\Imposto
+registro: "507"
+label: Imposto
+
+condicaoTributaria:
+  label: Condição Tributária
+  type: Imposto/CondicaoTributaria
+  length: 4
+  offset: 315
+  required: false
+
+direitoFiscal:
+  label: Direito Fiscal
+  type: Imposto/DireitoFiscal
+  length: 3
+  offset: 312
+  required: false
+
+icms:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ICMS
+
+  valor:
+    label: Valor do ICMS
+    length: 15
+    offset: 211
+    required: false
+    decimals: 2
+    fallback:
+      registro: "506"
+      length: 13
+      offset: 277
+      required: false
+      decimals: 2
+
+  aliquota:
+    label: Alíquota do ICMS
+    length: 5
+    offset: 206
+    required: false
+    decimals: 2
+
+  baseCalculo:
+    label: Base de Cálculo do ICMS
+    length: 15
+    offset: 191
+    required: false
+    decimals: 2
+
+icmsSt:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ICMS - Substituição Tributária
+
+  valor:
+    label: Valor do ICMS
+    length: 15
+    offset: 247
+    required: false
+    decimals: 2
+    fallback:
+      registro: "506"
+      length: 13
+      offset: 290
+      required: false
+      decimals: 2
+      # N 11,2 290 C
+
+  aliquota:
+    label: Alíquota do ICMS
+    length: 5
+    offset: 242
+    required: false
+    decimals: 2
+
+  baseCalculo:
+    label: Base de Cálculo do ICMS
+    length: 15
+    offset: 227
+    required: false
+    decimals: 2
+
+  substituicaoTributaria:
+    label: Substituição Tributária
+    type: Imposto/SubstituicaoTributaria
+    length: 1
+    offset: 226
+    required: true
+
+iss:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ISS
+
+  valor:
+    label: Valor do ISS
+    length: 15
+    offset: 282
+    required: false
+    decimals: 2
+    fallback:
+      registro: "506"
+      length: 13
+      offset: 303
+      required: false
+      decimals: 2
+      # N 11,2 303 C
+
+  aliquota:
+    label: Alíquota do ISS
+    length: 5
+    offset: 277
+    required: false
+    decimals: 2
+
+  baseCalculo:
+    label: Base de Cálculo do ISS
+    length: 15
+    offset: 262
+    required: false
+    decimals: 2
+
+ir:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: IR
+
+  valor:
+    label: Valor do IR
+    length: 15
+    offset: 297
+    required: false
+    decimals: 2

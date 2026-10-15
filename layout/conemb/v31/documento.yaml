@@ -1,0 +1,28 @@
+path: intercambio/documento
+class: Proceda\Documento\Conemb
+registro: "320"
+collection: true
+occurs: 200
+required: true
+label: Conemb
+
+identificacao:
+  label: Identificação
+  length: 14
+  offset: 04
+  required: true
+
+qtdDocumentos:
+  label: Quantidade Total
+  registro: "323"
+  length: 4
+  offset: 04
+  required: true
+
+valorTotal:
+  label: Valor Total
+  registro: "323"
+  length: 15
+  offset: 08
+  decimals: 2
+  required: true

@@ -1,0 +1,10 @@
+path: conhecimento/contratante
+class: Proceda\Empresa
+registro: "322"
+label: Contratante
+
+cnpj:
+  label: CNPJ da Embarcadora (Remetente)
+  length: 14
+  offset: 219
+  required: true

@@ -1,0 +1,13 @@
+path: documento/embarcador
+class: Proceda\Embarcador
+registro: "311"
+required: true
+collection: true
+occurs: 10
+label: Embarcador
+
+dataEmbarque:
+  label: Data de Embarque
+  length: 8
+  offset: 126
+  required: false

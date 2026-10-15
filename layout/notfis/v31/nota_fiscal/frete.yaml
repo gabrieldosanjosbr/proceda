@@ -1,0 +1,61 @@
+path: nota-fiscal/frete
+class: Proceda\Frete
+registro: "313"
+label: Frete
+
+condicao:
+  label: Condição de Frete
+  type: Frete/Condicao
+  length: 1
+  offset: 029
+  required: true
+  # CONDIÇÃO DE FRETE A 1 029 M
+
+valorPesoVolume:
+  label: Valor do Frete Peso-Volume
+  length: 15
+  offset: 153
+  required: false
+  decimals: 2
+  # VALOR DO FRETE PESO-VOLUME N 13,2 153 C
+
+adValorem:
+  label: Valor Ad Valorem
+  length: 15
+  offset: 168
+  required: false
+  decimals: 2
+  # VALOR AD VALOREM N 13,2 168 C
+
+valor:
+  label: Valor Total do Frete
+  length: 15
+  offset: 198
+  required: false
+  decimals: 2
+  # VALOR TOTAL DO FRETE N 13,2 198 C
+
+valorDespesasExtrasAdicionais:
+  label: Valor de Despesas Adicionais de Transporte
+  registro: "333"
+  length: 15
+  offset: 189
+  required: false
+  decimals: 2
+  # VALOR DE DESPESAS ADICIONAIS DE TRANSPORTE N 13,2 189 C
+
+calculoDiferenciado:
+  label: Cálculo de Frete Diferenciado
+  registro: "333"
+  length: 1
+  offset: 048
+  required: true
+  # CÁLCULO DE FRETE DIFERENCIADO? (S/N) A 1 048 M
+
+tabela:
+  label: Identificação da Tabela de Preço de Frete
+  registro: "333"
+  length: 10
+  offset: 049
+  required: false
+  # IDENTIFICAÇÃO TABELA DE PREÇO DE FRETE A 10 049 C

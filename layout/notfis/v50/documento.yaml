@@ -1,0 +1,49 @@
+path: intercambio/documento
+class: Proceda\Documento\Notfis
+registro: "500"
+required: true
+collection: true
+occurs: 200
+label: Notfis
+
+identificacao:
+  label: Identificação
+  length: 14
+  offset: 004
+  required: true
+  # IDENTIFICAÇÃO DO DOCUMENTO A 14 004 M
+
+valorTotal:
+  label: Valor Total
+  registro: "519"
+  length: 15
+  offset: 004
+  required: true
+  decimals: 2
+  # VALOR TOTAL DAS NOTAS FISCAIS N 13,2 004 M
+
+pesoBruto:
+  label: Peso Bruto Total
+  registro: "519"
+  length: 15
+  offset: 019
+  required: true
+  decimals: 2
+  # PESO BRUTO TOTAL DAS NOTAS FISCAIS N 13,2 019 M
+
+totalVolumes:
+  label: Quantidade Total de Volumes
+  registro: "519"
+  length: 15
+  offset: 034
+  required: true
+  decimals: 2
+  # QUANTIDADE TOTAL DE VOLUMES N 13,2 034 M
+
+qtdDocumentos:
+  label: Quantidade de Documentos
+  registro: "519"
+  length: 10
+  offset: 049
+  required: false
+  # NÚMERO DE NOTAS N 10 049 C

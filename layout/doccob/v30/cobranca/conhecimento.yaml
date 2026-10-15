@@ -1,0 +1,28 @@
+path: cobranca/conhecimento
+class: Proceda\Conhecimento
+registro: "353"
+collection: true
+occurs: 100
+required: true
+label: Conhecimento
+
+serie:
+  label: Série
+  length: 5
+  offset: 14
+  required: false
+  # SÉRIE DO CONHECIMENTO A 5 14 C
+
+numero:
+  label: Número
+  length: 12
+  offset: 19
+  required: true
+  # NÚMERO DO CONHECIMENTO A 12 19 M
+
+dataEmissao:
+  label: Data de Emissão
+  length: 8
+  offset: 46
+  required: false
+  # DATA DE EMISSÃO DO CONHECIMENTO (*) N 8 46 C

@@ -1,0 +1,114 @@
+path: nota-fiscal/imposto
+class: Proceda\Imposto
+registro: "506"
+label: Imposto
+
+incidenciaIcms:
+  label: Incidência de ICMS
+  type: Imposto/IncidenciaIcms
+  length: 1
+  offset: 050
+  required: true
+  # A 1 050 M
+
+icms:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ICMS
+
+  valor:
+    label: Valor do ICMS
+    length: 15
+    offset: 142
+    required: false
+    decimals: 2
+    # N 13,2 142 C
+
+  valorRetido:
+    label: Valor do ICMS Retido
+    length: 15
+    offset: 187
+    required: false
+    decimals: 2
+    # N 13,2 187 C
+
+  baseCalculo:
+    label: Base de Cálculo do ICMS
+    length: 15
+    offset: 127
+    required: false
+    decimals: 2
+    # N 13,2 127 C
+
+icmsSt:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ICMS - Substituição Tributária
+
+  valor:
+    label: Valor do ICMS
+    length: 15
+    offset: 172
+    required: false
+    decimals: 2
+    # N 13,2 172 C
+
+  baseCalculo:
+    label: Base de Cálculo do ICMS
+    length: 15
+    offset: 157
+    required: false
+    decimals: 2
+    # N 13,2 157 C
+
+ii:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: Imposto de Importação
+
+  valor:
+    label: Valor Total
+    length: 15
+    offset: 202
+    required: false
+    decimals: 2
+    # VALOR TOTAL IMPORTAÇÃO
+
+ipi:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: IPI
+
+  valor:
+    label: Valor do IPI
+    length: 15
+    offset: 217
+    required: false
+    decimals: 2
+    # N 13,2 217 C
+
+pis:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: PIS
+
+  valor:
+    label: Valor do PIS
+    length: 15
+    offset: 232
+    required: false
+    decimals: 2
+    # N 13,2 232 C
+
+cofins:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: COFINS
+
+  valor:
+    label: Valor da COFINS
+    length: 15
+    offset: 247
+    required: false
+    decimals: 2
+    # N 13,2 247 C

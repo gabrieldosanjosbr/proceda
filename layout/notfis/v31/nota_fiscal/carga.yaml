@@ -1,0 +1,98 @@
+path: nota-fiscal/carga
+class: Proceda\NotaFiscal\Carga
+registro: "313"
+label: Carga
+
+modalidade:
+  label: Tipo do Transporte da Carga
+  type: NotaFiscal/Carga/Modalidade
+  length: 1
+  offset: 027
+  required: false
+  # TIPO DO TRANSPORTE DA CARGA N 1 027 C
+
+tipo:
+  label: Tipo de Carga
+  type: NotaFiscal/Carga/Tipo
+  length: 1
+  offset: 028
+  required: false
+  # TIPO DE CARGA N 1 028 C
+
+natureza:
+  label: Natureza da Mercadoria
+  length: 15
+  offset: 049
+  required: true
+  # NATUREZA (TIPO) DA MERCADORIA A 15 049 M
+
+acondicionamento:
+  label: Espécie de Acondicionamento
+  length: 15
+  offset: 064
+  required: true
+  # ESPÉCIE DE ACONDICIONAMENTO A 15 064 M
+
+planoCargaRapida:
+  label: Plano de Carga Rápida
+  length: 1
+  offset: 152
+  required: false
+  # PLANO DE CARGA RÁPIDA (S/N)? A 1 152 C
+
+localDesembarque:
+  label: Identificação do Local de Desembarque
+  registro: "333"
+  length: 15
+  offset: 033
+  required: false
+  # IDENTIFICAÇÃO DO LOCAL DE DESEMBARQUE A 15 033 C
+
+condicaoPeriodoEntrega:
+  label: Tipo de Período de Entrega
+  type: NotaFiscal/Carga/CondicaoPeriodoEntrega
+  registro: "333"
+  length: 1
+  offset: 008
+  required: true
+  # TIPO DE PERÍODO DE ENTREGA N 1 008 M
+
+inicioEntrega:
+  class: Proceda\Evento
+  registro: "333"
+  label: Início da Entrega
+
+  data:
+    label: Data
+    length: 8
+    offset: 009
+    required: false
+    # DATA INICIAL DE ENTREGA N 8 009 C
+
+  hora:
+    label: Hora
+    type: time
+    length: 4
+    offset: 017
+    required: false
+    # HORA INICIAL DE ENTREGA N 4 017 C
+
+fimEntrega:
+  class: Proceda\Evento
+  registro: "333"
+  label: Fim da Entrega
+
+  data:
+    label: Data
+    length: 8
+    offset: 021
+    required: false
+    # DATA FINAL DE ENTREGA N 8 021 C
+
+  hora:
+    label: Hora
+    type: time
+    length: 4
+    offset: 029
+    required: false
+    # HORA FINAL DE ENTREGA N 4 029 C

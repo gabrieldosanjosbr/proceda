@@ -1,0 +1,19 @@
+path: conhecimento/resumo
+class: Proceda\NotaFiscal
+registro: "322"
+label: Resumo da Nota Fiscal
+
+cfop:
+  label: Código Fiscal da Natureza de Operação
+  length: 4
+  offset: 675
+  required: true
+  # CÓDIGO FISCAL DA NATUREZA DE OPERAÇÃO A 4 675 M
+
+pesoBruto:
+  label: Peso Transportado
+  length: 7
+  offset: 40
+  decimals: 2
+  required: true
+  # PESO TRANSPORTADO N 5,2 040 M

@@ -1,0 +1,24 @@
+Evento/Tipo:
+  - name: InicioEntrega
+    value: "InicioEntrega"
+    label: Início da entrega
+
+  - name: FimEntrega
+    value: "FimEntrega"
+    label: Fim da entrega
+
+  - name: ChegadaDestino
+    value: "ChegadaDestino"
+    label: Chegada ao destino
+
+  - name: InicioDescarregamento
+    value: "InicioDescarregamento"
+    label: Início do descarregamento
+
+  - name: TerminoDescarregamento
+    value: "TerminoDescarregamento"
+    label: Término do descarregamento
+
+  - name: SaidaDestino
+    value: "SaidaDestino"
+    label: Saída do destino

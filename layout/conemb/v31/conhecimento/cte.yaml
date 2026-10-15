@@ -1,0 +1,22 @@
+path: conhecimento/cte
+class: Proceda\Conhecimento\Cte
+registro: "322"
+label: CT-e
+
+modelo:
+  label: Modelo de Conhecimento
+  length: 2
+  offset: 679
+  required: true
+
+chaveAcesso:
+  label: Chave de Acesso CT-e
+  length: 44
+  offset: 681
+  required: true
+
+protocolo:
+  label: Protocolo de Autorização CT-e
+  length: 15
+  offset: 725
+  required: false

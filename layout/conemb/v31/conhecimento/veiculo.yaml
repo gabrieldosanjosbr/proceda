@@ -1,0 +1,12 @@
+path: conhecimento/veiculo
+class: Proceda\Veiculo
+registro: "329"
+label: Veículo
+
+tipo:
+  label: Tipo do Veículo de Transporte
+  type: Veiculo/Tipo
+  length: 5
+  offset: 004
+  required: false
+  # TIPO DO VEÍCULO DE TRANSPORTE A 5 004 C

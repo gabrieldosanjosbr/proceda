@@ -1,0 +1,47 @@
+path: transportador/ocorrencia
+class: Proceda\Ocorrencia
+registro: "342"
+occurs: 5000
+collection: true
+label: Ocorrência
+
+codigo:
+  label: Código da Ocorrência
+  type: Ocorrencia/Codigo
+  length: 2
+  offset: 29
+  required: true
+  allowed: 1..99
+  excluded: [ 36, 37, 38, 39, 40 ]
+
+data:
+  label: Data da Ocorrência
+  length: 8
+  offset: 31
+  required: true
+
+hora:
+  label: Hora da Ocorrência
+  type: time
+  length: 4
+  offset: 39
+  required: false
+
+observacaoEntrada:
+  label: Observação de Entrada
+  type: Ocorrencia/ObservacaoEntrada
+  length: 2
+  offset: 43
+  required: false
+  allowed: [ 1, 2, 3 ]
+
+textoLivre:
+  class: Proceda\TextoLivre
+  collection: true
+  label: Texto Livre
+
+  texto:
+    label: Texto
+    length: 70
+    offset: 45
+    required: false

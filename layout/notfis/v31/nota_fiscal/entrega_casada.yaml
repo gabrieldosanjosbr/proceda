@@ -1,0 +1,33 @@
+path: nota-fiscal/entrega-casada
+class: Proceda\NotaFiscal
+registro: "333"
+collection: true
+inline: 5
+occurs: 1
+overflow: false
+label: Entrega Casada
+
+serie:
+  label: Série
+  length: 3
+  offset: 074
+  required: false
+  # SÉRIE DA NOTA FISCAL A 3 074 C
+
+numero:
+  label: Número
+  length: 8
+  offset: 077
+  required: false
+  # NÚMERO DA NOTA FISCAL N 8 077 C
+
+emissor:
+  class: Proceda\Empresa
+  label: Emissor
+
+  cnpj:
+    label: CNPJ
+    length: 15
+    offset: 059
+    required: false
+    # C.G.C. DO EMISSOR DA NOTA FISCAL A SER ENTREGUE N 15 059 C

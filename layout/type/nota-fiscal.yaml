@@ -1,0 +1,94 @@
+NotaFiscal/DocumentoFiscal:
+  - name: Entrada
+    value: "0"
+    label: Entrada
+
+  - name: Saida
+    value: "1"
+    label: Saída
+
+
+NotaFiscal/Carga/EstabelecimentoDestino:
+  - name: Comercial
+    value: "C"
+    label: Comercial
+
+  - name: Industrial
+    value: "I"
+    label: Industrial
+
+  - name: NaoContribuinte
+    value: "N"
+    label: Não contribuinte
+
+
+NotaFiscal/Carga/CondicaoPeriodoEntrega:
+  - name: SemDataEntregaDefinida
+    value: "0"
+    label: Sem data de entrega definida
+
+  - name: NaData
+    value: "1"
+    label: Na data
+
+  - name: AteData
+    value: "2"
+    label: Até a data
+
+  - name: PartirData
+    value: "3"
+    label: A partir da data
+
+  - name: NoPeriodo
+    value: "4"
+    label: No período
+
+
+NotaFiscal/Carga/Tipo:
+  - name: Fria
+    value: "1"
+    label: Mercadoria Fria
+
+  - name: Seca
+    value: "2"
+    label: Mercadoria Seca
+
+  - name: Mista
+    value: "3"
+    label: Mercadoria Mista
+
+
+NotaFiscal/Carga/Modalidade:
+  - name: Fechada
+    value: "1"
+    label: Carga fechada
+
+  - name: Fracionada
+    value: "2"
+    label: Carga fracionada
+
+
+NotaFiscal/MeioTransporte:
+  - name: Rodoviario
+    value: "1"
+    label: Rodoviário
+
+  - name: Aereo
+    value: "2"
+    label: Aéreo
+
+  - name: Maritimo
+    value: "3"
+    label: Marítimo
+
+  - name: Fluvial
+    value: "4"
+    label: Fluvial
+
+  - name: Ferroviario
+    value: "5"
+    label: Ferroviário
+
+  - name: Multimodal
+    value: "6"
+    label: Multimodal

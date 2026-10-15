@@ -1,0 +1,30 @@
+path: cobranca/conhecimento/emissor
+class: Proceda\Empresa
+registro: "555"
+required: true
+label: Emissor
+
+cnpj:
+  label: CNPJ
+  length: 14
+  offset: 82
+  required: false
+  # CNPJ/CGC DO EMISSOR DO CONHECIMENTO N 14 082 C
+
+filial:
+  class: Proceda\Unidade
+  label: Filial Emissora
+
+  identificacao:
+    label: Identificação
+    length: 10
+    offset: 04
+    required: true
+    # FILIAL EMISSORA DO DOCUMENTO A 10 04 M
+
+  uf:
+    label: UF
+    length: 2
+    offset: 98
+    required: false
+    # UF DA UNIDADE EMISSORA DO CONHECIMENTO A 2 098 C

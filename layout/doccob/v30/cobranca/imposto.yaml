@@ -1,0 +1,18 @@
+path: cobranca/imposto
+class: Proceda\Imposto
+registro: "352"
+required: true
+label: Imposto
+
+icms:
+  class: Proceda\Imposto\Tributo
+  collection: true
+  label: ICMS
+
+  valor:
+    label: Valor Total
+    length: 15
+    offset: 062
+    decimals: 2
+    required: true
+    # VALOR TOTAL DO ICMS N 13,2 062 M

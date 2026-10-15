@@ -1,0 +1,27 @@
+path: nota-fiscal/volume
+class: Proceda\NotaFiscal\Volume
+registro: "508"
+collection: true
+occurs: 50
+label: Volume
+
+marca:
+  label: Marca dos Volumes
+  length: 50
+  offset: 004
+  required: false
+  # MARCA DOS VOLUMES TRANSPORTADOS A 50 004 C
+
+numeracao:
+  label: Numeração dos Volumes
+  length: 50
+  offset: 054
+  required: false
+  # NUMERAÇÃO DOS VOLUMES TRANSPORTADOS A 50 054 C
+
+lacre:
+  label: Número dos Lacres
+  length: 50
+  offset: 104
+  required: false
+  # NÚMERO DOS LACRES A 50 104 C

@@ -1,0 +1,21 @@
+path: intercambio/documento
+class: Proceda\Documento\Ocoren
+registro: "540"
+occurs: 200
+collection: true
+required: true
+label: Ocoren
+
+identificacao:
+  label: Identificação
+  length: 14
+  offset: 004
+  required: true
+
+qtdDocumentos:
+  label: Quantidade de Documentos
+  registro: "549"
+  length: 4
+  offset: 004
+  required: true
+  # NÚMERO DE REGISTRO DE OCORRÊNCIA N 4 004 M

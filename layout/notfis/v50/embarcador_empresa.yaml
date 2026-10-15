@@ -1,0 +1,81 @@
+path: embarcador/empresa
+class: Proceda\Empresa
+registro: "501"
+label: Empresa
+
+nome:
+  label: Razão Social
+  length: 50
+  offset: 004
+  required: false
+  # NOME DA EMPRESA EMBARCADORA (RAZÃO SOCIAL) A 50 004 C
+
+cnpj:
+  label: CNPJ
+  length: 14
+  offset: 054
+  required: true
+  # CNPJ (CGC) N 14 054 M
+
+inscricaoEstadual:
+  label: Inscrição Estadual da Embarcadora
+  length: 15
+  offset: 068
+  required: false
+  # INSCRIÇÃO ESTADUAL EMBARCADORA A 15 068 C
+
+inscricaoMunicipal:
+  label: Inscrição Municipal
+  length: 15
+  offset: 098
+  required: false
+  # INSCRIÇÃO MUNICIPAL A 15 098 C
+
+endereco:
+  label: Endereço
+  length: 50
+  offset: 113
+  required: false
+  # ENDEREÇO (LOGRADOURO) A 50 113 C
+
+bairro:
+  label: Bairro
+  length: 35
+  offset: 163
+  required: false
+  # BAIRRO A 35 163 C
+
+cidade:
+  label: Cidade
+  length: 35
+  offset: 198
+  required: false
+  # CIDADE (MUNICÍPIO) A 35 198 C
+
+cep:
+  label: Código Postal
+  length: 9
+  offset: 233
+  required: true
+  # CÓDIGO POSTAL A 9 233 M
+
+codigoMunicipio:
+  label: Código de Município
+  length: 9
+  offset: 242
+  required: false
+  # CÓDIGO DE MUNICÍPIO A 9 242 C
+
+uf:
+  label: Sigla do Estado (UF)
+  length: 9
+  offset: 251
+  required: false
+  # SIGLA DO ESTADO (UF) SUBENTIDADE DE PAÍS A 9 251 C
+
+areaFrete:
+  label: Área de Frete
+  length: 4
+  offset: 268
+  required: false
+  # ÁREA DE FRETE A 4 268 C

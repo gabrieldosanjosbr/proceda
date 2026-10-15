@@ -1,0 +1,12 @@
+Documento/Acao:
+  - name: Inclusao
+    value: "I"
+    label: Inclusão
+
+  - name: Completar
+    value: "C"
+    label: Completar
+
+  - name: Exclusao
+    value: "E"
+    label: Exclusão

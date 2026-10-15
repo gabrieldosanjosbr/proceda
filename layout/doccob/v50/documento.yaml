@@ -1,0 +1,31 @@
+path: intercambio/documento
+class: Proceda\Documento\Doccob
+registro: "550"
+required: true
+collection: true
+occurs: 200
+label: Doccob
+
+identificacao:
+  label: Identificação
+  length: 14
+  offset: 004
+  required: true
+  # IDENTIFICAÇÃO DO DOCUMENTO A 14 004 M
+
+qtdDocumentos:
+  label: Quantidade Total
+  registro: "559"
+  length: 4
+  offset: 004
+  required: true
+  # QTDE. TOTAL DOCTOS. DE COBRANÇA N 4 004 M
+
+valorTotal:
+  label: Valor Total
+  registro: "559"
+  length: 15
+  offset: 008
+  decimals: 2
+  required: true
+  # VALOR TOTAL DOCTOS. DE COBRANÇA N 13,2 008 M

@@ -1,0 +1,134 @@
+path: documento/transportador/cobranca
+class: Proceda\Cobranca
+registro: "552"
+required: true
+collection: true
+occurs: 500
+label: Cobrança
+
+serie:
+  label: Série
+  length: 3
+  offset: 015
+  required: false
+  # SÉRIE DO DOCUMENTO DE COBRANÇA A 3 015 C
+
+numero:
+  label: Número
+  length: 10
+  offset: 018
+  required: true
+  # NÚMERO DO DOCUMENTO DE COBRANÇA N 10 018 M
+
+documento:
+  label: Tipo do Documento
+  type: Cobranca/Documento
+  length: 1
+  offset: 014
+  required: true
+  # TIPO DO DOCUMENTO DE COBRANÇA N 1 014 M
+
+dataEmissao:
+  label: Data de Emissão da Fatura
+  length: 8
+  offset: 028
+  required: true
+  # DATA DE EMISSÃO DA FATURA N 8 028 M
+
+dataVencimento:
+  label: Data de Vencimento da Fatura
+  length: 8
+  offset: 036
+  required: true
+  # DATA DE VENCIMENTO DA FATURA N 8 036 M
+
+valor:
+  label: Valor Total
+  length: 15
+  offset: 044
+  decimals: 2
+  required: true
+  # VALOR TOTAL DO DOCUMENTO DE COBRANÇA N 13,2 044 M
+
+tipo:
+  label: Tipo de Cobrança
+  type: Cobranca/Tipo
+  length: 3
+  offset: 059
+  required: true
+  # TIPO DE COBRANÇA A 3 059 M
+
+multaPorAtraso:
+  label: Percentual da Multa por Atraso
+  length: 4
+  offset: 062
+  decimals: 2
+  required: true
+  # PERCENTUAL DA MULTA POR ATRASO N 2,2 062 C
+
+valorJurosDiaAtraso:
+  label: Valor - Juros por Dia de Atraso
+  length: 15
+  offset: 066
+  decimals: 2
+  required: false
+  # VALOR – JUROS POR DIA DE ATRASO N 13,2 066 C
+
+dataLimitePagamentoDesconto:
+  label: Data Limite para Pagamento com Desconto
+  length: 8
+  offset: 081
+  required: false
+  # DATA LIMITE P/ PAGTO C/ DESCONTO N 8 081 C
+
+valorDesconto:
+  label: Valor do Desconto
+  length: 15
+  offset: 089
+  decimals: 2
+  required: false
+  # VALOR DO DESCONTO N 13,2 089 C
+
+acaoDocumento:
+  label: Ação do Documento
+  type: Documento/Acao
+  length: 1
+  offset: 156
+  required: false
+  # AÇÃO DO DOCUMENTO A 1 156 C
+
+identificacaoPreFaturaCliente:
+  label: Identificação Pré-Fatura do Cliente
+  length: 10
+  offset: 157
+  required: false
+  # IDENTIFICAÇÃO PRÉ FATURA DO CLIENTE N 10 157 C
+
+complementarPreFatura:
+  label: Identificação Complementar da Pré-Fatura
+  length: 20
+  offset: 167
+  required: false
+  # IDENTIFICAÇÃO COMPLEMENTAR DA PRÉ-FATURA A 20 167 C
+
+cfop:
+  label: CFOP - Código Fiscal de Operação
+  length: 5
+  offset: 187
+  required: false
+  # CFOP – CÓDIGO FISCAL DE OPERAÇÃO A 5 187 C
+
+emissor:
+  class: Proceda\Empresa
+  label: Emissor
+
+  filial:
+    class: Proceda\Unidade
+    label: Filial
+
+    identificacao:
+      label: Filial Emissora do Documento
+      length: 10
+      offset: 004
+      required: true
+      # FILIAL EMISSORA DO DOCUMENTO A 10 004 M

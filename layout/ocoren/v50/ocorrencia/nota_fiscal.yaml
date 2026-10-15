@@ -1,0 +1,47 @@
+path: ocorrencia/nota-fiscal
+class: Proceda\NotaFiscal
+registro: "542"
+label: Nota Fiscal
+
+serie:
+  label: Série
+  length: 3
+  offset: 018
+  required: false
+  # SÉRIE DA NOTA FISCAL A 3 018 C
+
+numero:
+  label: Número
+  length: 9
+  offset: 021
+  required: true
+  # NÚMERO DA NOTA FISCAL N 9 021 M
+
+emissor:
+  class: Proceda\Empresa
+  label: Emissor
+
+  codigo:
+    label: Código da Empresa
+    length: 5
+    offset: 155
+    required: false
+    # CÓDIGO DA EMPRESA EMISSORA DA NOTA FISCAL A 5 155 C
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 004
+    required: true
+    # CNPJ (CGC) DO EMISSOR DA NOTA FISCAL N 14 004 M
+
+  filial:
+    class: Proceda\Unidade
+    label: Filial Emissora
+
+    identificacao:
+      label: Identificação
+      length: 5
+      offset: 160
+      required: false
+      # CÓDIGO DA FILIAL DA EMPRESSA EMISSORA DA NF A 5 160 C

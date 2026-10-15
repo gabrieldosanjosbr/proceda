@@ -1,0 +1,41 @@
+path: nota-fiscal/redespacho
+class: Proceda\Conhecimento
+registro: "509"
+occurs: 50
+label: Redespacho
+
+serie:
+  label: Série
+  length: 5
+  offset: 242
+  required: false
+  # REDESPACHO: SÉRIE CONHECIMENTO A 5 242 C
+
+numero:
+  label: Número
+  length: 12
+  offset: 247
+  required: false
+  # REDESPACHO: NÚMERO DO CONHECIMENTO A 12 247 C
+
+emissor:
+  class: Proceda\Empresa
+  label: Emissor
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 259
+    required: false
+    # REDESPACHO: CNPJ/CGC DA TRANSP. CONTRATANTE N 14 259 C
+
+  filial:
+    class: Proceda\Unidade
+    label: Filial Emissora
+
+    identificacao:
+      label: Identificação
+      length: 10
+      offset: 232
+      required: false
+      # REDESPACHO: FILIAL EMISSORA CONHECIMENTO A 10 232 C

@@ -1,0 +1,18 @@
+Cobranca/Tipo:
+  - name: CobrancaBancaria
+    value: "BCO"
+    label: Cobrança Bancária
+
+  - name: Carteira
+    value: "CAR"
+    label: Carteira
+
+
+Cobranca/Documento:
+  - name: Fatura
+    value: "0"
+    label: Fatura
+
+  - name: Romaneio
+    value: "1"
+    label: Romaneio

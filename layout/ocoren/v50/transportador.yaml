@@ -1,0 +1,21 @@
+path: documento/transportador
+class: Proceda\Transportador
+registro: "541"
+required: true
+label: Transportador
+
+empresa:
+  class: Proceda\Empresa
+  label: Empresa
+
+  nome:
+    label: Razão Social
+    length: 50
+    offset: 18
+    required: false
+
+  cnpj:
+    label: CNPJ
+    length: 14
+    offset: 04
+    required: true

@@ -1,0 +1,32 @@
+services:
+  proceda-writer:
+    image: ghcr.io/gabrieldosanjosbr/proceda-writer:latest
+    network_mode: "none"
+
+    environment:
+      PROCEDA_INSTANCE_ID: "${PROCEDA_INSTANCE_ID:?Defina o identificador da instância}"
+      PROCEDA_PROFILES_DIR: "/opt/proceda/profiles"
+      PROCEDA_WRITER_SOCKET_GID: "82"
+
+    volumes:
+      - ../profiles:/opt/proceda/profiles:ro
+      - proceda-runtime:/run/proceda
+
+    depends_on:
+      - proceda-agent
+
+  proceda-agent:
+    image: ghcr.io/gabrieldosanjosbr/proceda-agent:latest
+    environment:
+      PROCEDA_LICENSE_SERVER: "https://license-server.gabrieldosanjos-p.workers.dev"
+
+    volumes:
+      - proceda-agent-data:/var/lib/proceda
+      - proceda-runtime:/run/proceda
+      - /etc/machine-id:/host/etc/machine-id:ro
+
+volumes:
+  proceda-agent-data:
+  proceda-runtime:
+    external: true
+    name: proceda-runtime

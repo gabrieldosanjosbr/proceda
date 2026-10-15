@@ -1,0 +1,65 @@
+path: nota-fiscal/transportador
+class: Proceda\Empresa
+registro: "317"
+required: false
+label: Transportador
+
+nome:
+  label: Nome
+  length: 40
+  offset: 004
+  required: true
+
+cnpj:
+  label: CNPJ
+  length: 14
+  offset: 044
+  required: true
+
+inscricaoEstadual:
+  label: Inscrição Estadual
+  length: 15
+  offset: 058
+  required: false
+
+endereco:
+  label: Endereço
+  length: 40
+  offset: 073
+  required: true
+
+bairro:
+  label: Bairro
+  length: 20
+  offset: 113
+  required: false
+
+cidade:
+  label: Cidade
+  length: 35
+  offset: 133
+  required: true
+
+cep:
+  label: CEP
+  length: 9
+  offset: 168
+  required: true
+
+codigoMunicipio:
+  label: Código do Município
+  length: 9
+  offset: 177
+  required: false
+
+uf:
+  label: UF
+  length: 9
+  offset: 186
+  required: true
+
+numeroComunicacao:
+  label: Número de Comunicação
+  length: 35
+  offset: 195
+  required: false
