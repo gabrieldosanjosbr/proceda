@@ -166,10 +166,9 @@ A separação por profiles permite reutilizar os DTOs e a API do Reader para var
 
 ## Playground
 
-O **PROCEDA Playground** é uma interface web interativa para explorar os layouts PROCEDA e experimentar as funcionalidades da biblioteca.
+O **[PROCEDA Playground](https://proceda-playground.pages.dev/)** é uma interface web interativa para explorar os layouts PROCEDA e experimentar as funcionalidades da biblioteca.
 
 Além da leitura e validação de arquivos EDI, o Playground disponibiliza o **Layout Explorer**, uma ferramenta de visualização da estrutura dos layouts, permitindo navegar por registros, campos, propriedades e relacionamentos entre os schemas.
-
 
 ## Writer
 
@@ -228,7 +227,6 @@ Mais detalhes estão disponíveis na documentação de arquitetura.
 - [x] Integração com o PROCEDA Writer e testes de round-trip
 - [x] Ampliação dos cenários de teste e dos arquivos TXT de exemplo
 - [x] Playground desenvolvido e testado (publicação em preparação)
-- [ ] Revisão e ampliação da documentação técnica
 - [ ] Bibliotecas de integração para outras linguagens, incluindo Java (proceda-java) e C#/.NET (proceda-csharp)
 
 Novos layouts, versões e integrações poderão ser avaliados futuramente conforme a demanda, sem cronograma anunciado.
