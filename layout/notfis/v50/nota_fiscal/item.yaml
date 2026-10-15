@@ -3,7 +3,7 @@ class: Proceda\NotaFiscal\Item
 registro: "511"
 collection: true
 occurs: 5000
-label: Item/Mercadoria
+label: Item (Mercadoria)
 
 quantidade:
   label: Quantidade

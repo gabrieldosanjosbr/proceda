@@ -4,7 +4,7 @@ registro: "544"
 occurs: 9999
 collection: true
 required: false
-label: Item/Mercadoria
+label: Item (Mercadoria)
 
 quantidade:
   label: Quantidade de Volumes
