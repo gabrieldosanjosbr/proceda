@@ -36,13 +36,13 @@
   length: 320
   parent: "505"
   useParentAsContext: true
-  fallback: "506"
   build: false
   required: true
 
 - identificacao: "507"
   length: 320
   parent: "505"
+  fallback: "506"
   useParentAsContext: true
   build: false
   required: false

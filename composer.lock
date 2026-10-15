@@ -2795,12 +2795,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:gabrieldosanjosbr/proceda-fixtures.git",
-                "reference": "6a554234de043da2474123fa81e6575feb3aed1d"
+                "reference": "aaf913e8ba8ee5108edb50afb6cad9180035b156"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gabrieldosanjosbr/proceda-fixtures/zipball/6a554234de043da2474123fa81e6575feb3aed1d",
-                "reference": "6a554234de043da2474123fa81e6575feb3aed1d",
+                "url": "https://api.github.com/repos/gabrieldosanjosbr/proceda-fixtures/zipball/aaf913e8ba8ee5108edb50afb6cad9180035b156",
+                "reference": "aaf913e8ba8ee5108edb50afb6cad9180035b156",
                 "shasum": ""
             },
             "require": {
@@ -2823,7 +2823,7 @@
                 "source": "https://github.com/gabrieldosanjosbr/proceda-fixtures/tree/main",
                 "issues": "https://github.com/gabrieldosanjosbr/proceda-fixtures/issues"
             },
-            "time": "2026-10-13T17:46:37+00:00"
+            "time": "2026-10-15T16:31:00+00:00"
         },
         {
             "name": "psr/event-dispatcher",
