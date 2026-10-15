@@ -53,7 +53,7 @@ Os layouts oficiais são definidos declarativamente em YAML. A arquitetura separ
 ## Instalação
 
 ```bash
-composer require gabrieldosanjosbr/proceda
+composer require proceda/proceda
 ```
 
 ## Layouts suportados
