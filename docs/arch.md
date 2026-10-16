@@ -466,32 +466,6 @@ Por exemplo, a ausência de um registro obrigatório pode existir sem haver uma
 linha correspondente, enquanto o excesso de ocorrências inline
 acontece durante a materialização de uma linha concreta.
 
-### Localização dos erros
-
-Erros associados a linhas são inicialmente armazenados na própria
-`Line`.
-
-Como o número definitivo só é conhecido depois que a estrutura final do
-arquivo foi produzida, o resultado pode fornecer a linha final ao erro
-ao agregar as validações.
-
-``` text
-Writer
-    ↓
-Line(error sem número definitivo)
-    ↓
-reordenação / flush
-    ↓
-Line #17
-    ↓
-Result::getValidationErrors()
-    ↓
-error->withLine(Line #17)
-```
-
-Assim, a validação não depende da posição intermediária da linha durante
-a escrita.
-
 ------------------------------------------------------------------------
 
 ## Types
