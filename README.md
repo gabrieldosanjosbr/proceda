@@ -226,7 +226,7 @@ Mais detalhes estão disponíveis na documentação de arquitetura.
 - [x] Profiles para personalização de layouts, registros, propriedades e tipos
 - [x] Integração com o PROCEDA Writer e testes de round-trip
 - [x] Ampliação dos cenários de teste e dos arquivos TXT de exemplo
-- [x] Playground desenvolvido e testado (publicação em preparação)
+- [x] Playground desenvolvido, testado e publicado.
 - [ ] Bibliotecas de integração para outras linguagens, incluindo Java (proceda-java) e C#/.NET (proceda-csharp)
 
 Novos layouts, versões e integrações poderão ser avaliados futuramente conforme a demanda, sem cronograma anunciado.
