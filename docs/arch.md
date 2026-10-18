@@ -466,6 +466,8 @@ Por exemplo, a ausência de um registro obrigatório pode existir sem haver uma
 linha correspondente, enquanto o excesso de ocorrências inline
 acontece durante a materialização de uma linha concreta.
 
+A detecção de registros obrigatórios ausentes depende das regras estruturais do layout e pode apresentar limitações em estruturas hierárquicas com registros repetidos ou extensões. As limitações específicas dessa validação são documentadas em [Reader](reader.md#limitações-conhecidas).
+
 ------------------------------------------------------------------------
 
 ## Types
