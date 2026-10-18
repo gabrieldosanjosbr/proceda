@@ -142,6 +142,16 @@ Validation
 
 A forma exata de consultar ou apresentar os erros depende da API pública de `Validation` e `Result`, que deve ser conferida antes de adicionar exemplos de iteração ou formatação.
 
+### Limitações conhecidas
+
+A validação de registros obrigatórios ausentes (`MISSING_REQUIRED_REGISTRO`) possui suporte parcial.
+
+Em layouts com estruturas hierárquicas, registros repetidos ou extensões, determinadas ausências podem não ser identificadas automaticamente.
+
+Essa limitação não impede a interpretação do arquivo, mas significa que a ausência de erros de validação não garante, por si só, a presença de todos os registros obrigatórios.
+
+Quando necessária, a integridade estrutural completa deve ser verificada pela aplicação integradora.
+
 ## Profiles e versões
 
 A leitura utiliza as definições compiladas do layout selecionado. Os Profiles permitem fornecer definições específicas de uma integração sem alterar as definições originais.
