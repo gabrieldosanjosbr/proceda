@@ -2791,16 +2791,16 @@
         },
         {
             "name": "proceda/fixtures",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gabrieldosanjosbr/proceda-fixtures.git",
-                "reference": "eb645c80e70fb9c22f923888b500596a8510bc8b"
+                "reference": "01468c4e00075b1ba036db79fc949352343fe758"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gabrieldosanjosbr/proceda-fixtures/zipball/eb645c80e70fb9c22f923888b500596a8510bc8b",
-                "reference": "eb645c80e70fb9c22f923888b500596a8510bc8b",
+                "url": "https://api.github.com/repos/gabrieldosanjosbr/proceda-fixtures/zipball/01468c4e00075b1ba036db79fc949352343fe758",
+                "reference": "01468c4e00075b1ba036db79fc949352343fe758",
                 "shasum": ""
             },
             "require": {
@@ -2821,9 +2821,9 @@
             "description": "Fixtures and test data generators for Proceda.",
             "support": {
                 "issues": "https://github.com/gabrieldosanjosbr/proceda-fixtures/issues",
-                "source": "https://github.com/gabrieldosanjosbr/proceda-fixtures/tree/v1.0.0"
+                "source": "https://github.com/gabrieldosanjosbr/proceda-fixtures/tree/v1.0.1"
             },
-            "time": "2026-10-15T17:57:48+00:00"
+            "time": "2026-10-19T20:02:03+00:00"
         },
         {
             "name": "psr/event-dispatcher",
