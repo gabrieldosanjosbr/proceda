@@ -2,7 +2,6 @@ path: cobranca/conhecimento
 class: Proceda\Conhecimento
 registro: "353"
 collection: true
-occurs: 100
 required: true
 label: Conhecimento
 

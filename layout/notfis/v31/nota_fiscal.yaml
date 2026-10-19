@@ -3,7 +3,6 @@ class: Proceda\NotaFiscal
 registro: "313"
 required: true
 collection: true
-occurs: 40
 label: Nota Fiscal
 
 romaneio:

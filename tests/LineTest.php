@@ -41,6 +41,9 @@ final class LineTest extends TestCase
         );
     }
 
+    /**
+     * @throws RandomException
+     */
     public function testWithContent(): void
     {
         $registro = new Registro(

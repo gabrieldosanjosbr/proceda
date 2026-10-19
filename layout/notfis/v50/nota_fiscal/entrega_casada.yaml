@@ -3,7 +3,6 @@ class: Proceda\NotaFiscal
 registro: "509"
 collection: true
 inline: 3
-occurs: 1
 overflow: false
 label: Entrega Casada
 

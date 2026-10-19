@@ -3,7 +3,6 @@ class: Proceda\Destinatario
 registro: "503"
 collection: true
 required: true
-occurs: 500
 label: Destinatário
 
 nome:

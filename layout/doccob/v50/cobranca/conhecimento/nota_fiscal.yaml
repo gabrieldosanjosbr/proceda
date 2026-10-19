@@ -2,7 +2,6 @@ path: cobranca/conhecimento/nota-fiscal
 class: Proceda\NotaFiscal
 registro: "556"
 collection: true
-occurs: 9999
 label: Nota Fiscal
 
 serie:

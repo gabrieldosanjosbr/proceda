@@ -466,8 +466,6 @@ Por exemplo, a ausência de um registro obrigatório pode existir sem haver uma
 linha correspondente, enquanto o excesso de ocorrências inline
 acontece durante a materialização de uma linha concreta.
 
-A detecção de registros obrigatórios ausentes depende das regras estruturais do layout e pode apresentar limitações em estruturas hierárquicas com registros repetidos ou extensões. As limitações específicas dessa validação são documentadas em [Reader](reader.md#limitações-conhecidas).
-
 ------------------------------------------------------------------------
 
 ## Types
@@ -545,71 +543,6 @@ alternativas.
 
 Essas regras permanecem na camada de schema/processamento e não são
 incorporadas aos objetos de domínio.
-
-------------------------------------------------------------------------
-
-## Separação de responsabilidades
-
-A arquitetura procura manter cada conceito responsável por uma única
-camada do processamento:
-
-``` text
-YamlSource
-    ↓
-carregamento das definições YAML
-
-Compiler
-    ↓
-compilação e normalização
-
-Manager (Schema)
-    ↓
-acesso ao layout compilado
-
-Schema
-    ↓
-estrutura e relações
-
-Field
-    ↓
-definição dos campos
-
-TypeResolver
-    ↓
-valores definidos pelo layout
-
-Reader
-    ↓
-arquivo → objetos
-
-Builder
-    ↓
-construção dos objetos
-
-Writer
-    ↓
-objetos → arquivo
-
-Line
-    ↓
-representação física das linhas
-
-FieldError / LayoutError
-    ↓
-representação dos erros encontrados
-
-Validation
-    ↓
-agrupamento dos erros de validação
-
-Objetos de domínio
-    ↓
-representação do domínio
-```
-
-Essa separação permite evoluir Reader, Writer, layouts, types e
-validações sem transferir detalhes de infraestrutura para os objetos de
-domínio.
 
 ------------------------------------------------------------------------
 

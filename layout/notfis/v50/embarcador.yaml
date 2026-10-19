@@ -3,7 +3,6 @@ class: Proceda\Embarcador
 registro: "501"
 required: true
 collection: true
-occurs: 100
 label: Embarcador
 
 dataEmbarque:

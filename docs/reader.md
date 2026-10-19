@@ -16,8 +16,6 @@ $intercambio = $result->intercambio;
 $validation = $result->validation;
 ```
 
-> **Nota:** o exemplo pressupõe uma instância de `Layout` já criada. A assinatura de criação/configuração de `Layout` não foi fornecida neste trecho de código e deve ser acrescentada conforme a API pública atual. Os acessos às propriedades do resultado também pressupõem que elas sejam públicas; caso sejam encapsuladas, use os métodos expostos pela classe `Result`.
-
 A operação devolve um `Result` contendo o `Intercambio` construído e a `Validation` que reúne os erros encontrados.
 
 ## Fluxo de leitura
@@ -86,31 +84,6 @@ A associação respeita a propriedade `required` do Schema:
 
 Para coleções, o Reader procura no Builder pai um método `add{Propriedade}`; se não existir, tenta `add{NomeDaClasse}`.
 
-## Coleções e ocorrências inline
-
-Duas propriedades do Schema têm responsabilidades diferentes durante a leitura:
-
-| Propriedade | Significado |
-|---|---|
-| `occurs` | Cardinalidade máxima da coleção. |
-| `inline` | Quantidade de itens representados dentro de uma linha física. |
-
-Na leitura de uma estrutura inline, o Reader processa até `inline` posições, ajustando o deslocamento de cada item pelo `span` calculado:
-
-```text
-offset da ocorrência = offset base + (índice × span)
-```
-
-Builders inline que não receberam valores são descartados; os preenchidos são adicionados à coleção correspondente.
-
-A validação de `occurs` depende da estrutura da coleção. Para coleções não inline, o limite é aplicado à quantidade de ocorrências da relação.
-
-Nas coleções inline, quando `overflow: true`, o Writer também respeita `occurs`, limitando a quantidade de linhas físicas disponíveis para distribuir os itens.
-
-Por exemplo, com `inline: 4` e `occurs: 5`, podem ser representados até 20 itens em cinco linhas. Caso esse limite seja ultrapassado, é registrado um `LayoutError` do tipo `OCCURS_LIMIT_EXCEEDED`.
-
-A propriedade `overflow` é utilizada exclusivamente pelo Writer. O Reader utiliza `inline` e `span` para interpretar as ocorrências presentes nas linhas físicas, sem utilizar `overflow`.
-
 ## Obrigatoriedade: registro, objeto e campo
 
 A obrigatoriedade existe em níveis distintos e não deve ser confundida:
@@ -142,16 +115,6 @@ Validation
 
 A forma exata de consultar ou apresentar os erros depende da API pública de `Validation` e `Result`, que deve ser conferida antes de adicionar exemplos de iteração ou formatação.
 
-### Limitações conhecidas
-
-A validação de registros obrigatórios ausentes (`MISSING_REQUIRED_REGISTRO`) possui suporte parcial.
-
-Em layouts com estruturas hierárquicas, registros repetidos ou extensões, determinadas ausências podem não ser identificadas automaticamente.
-
-Essa limitação não impede a interpretação do arquivo, mas significa que a ausência de erros de validação não garante, por si só, a presença de todos os registros obrigatórios.
-
-Quando necessária, a integridade estrutural completa deve ser verificada pela aplicação integradora.
-
 ## Profiles e versões
 
 A leitura utiliza as definições compiladas do layout selecionado. Os Profiles permitem fornecer definições específicas de uma integração sem alterar as definições originais.
@@ -169,5 +132,3 @@ Consulte [Perfis de customização](profiles.md), [Registros](registros.md) e [M
 - **`Builder` / `BuilderRegistry`**: construção e associação de objetos e coleções.
 - **`Validation`**: agrupamento dos erros encontrados.
 - **`Result`**: entrega do `Intercambio` e da validação.
-
-> Esta documentação descreve o fluxo com base nas implementações fornecidas de `Reader::read()`, `Reader::getResult()`, seus métodos auxiliares e `Layout::read()`. A criação de `Layout` e a interface pública completa de `Result` e `Validation` ainda precisam ser confirmadas para finalizar os exemplos de utilização.

@@ -1,37 +1,44 @@
 - identificacao: "000"
   length: 280
   required: true
+  occurs: 1
 
 - identificacao: "550"
   length: 280
   parent: "000"
   required: true
+  occurs: 200
 
 - identificacao: "551"
   length: 280
   parent: "550"
   build: false
   required: true
+  occurs: 1
 
 - identificacao: "552"
   length: 280
   parent: "551"
   required: true
+  occurs: 500
 
 - identificacao: "553"
   length: 280
   parent: "552"
   required: false
+  occurs: 1
 
 - identificacao: "555"
   length: 280
   parent: "552"
   required: true
+  occurs: 5000
 
 - identificacao: "556"
   length: 280
   parent: "552"
   required: false
+  occurs: 9999
 
 - identificacao: "559"
   length: 280
@@ -40,3 +47,4 @@
   deferred: true
   build: false
   required: true
+  occurs: 1

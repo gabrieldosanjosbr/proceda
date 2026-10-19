@@ -2,7 +2,6 @@ path: conhecimento/nota-fiscal
 class: Proceda\NotaFiscal
 registro: "322"
 inline: 40
-occurs: 1
 overflow: false
 collection: true
 label: Nota Fiscal

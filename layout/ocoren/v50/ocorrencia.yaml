@@ -1,7 +1,6 @@
 path: transportador/ocorrencia
 class: Proceda\Ocorrencia
 registro: "542"
-occurs: 9999
 collection: true
 required: true
 label: Ocorrência

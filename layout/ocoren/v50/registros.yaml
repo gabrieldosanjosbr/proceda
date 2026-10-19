@@ -1,22 +1,26 @@
 - identificacao: "000"
   length: 250
   required: true
+  occurs: 1
 
 - identificacao: "540"
   length: 250
   parent: "000"
   required: true
+  occurs: 200
 
 - identificacao: "541"
   length: 250
   parent: "540"
   build: false
   required: true
+  occurs: 1
 
 - identificacao: "542"
   length: 250
   parent: "541"
   required: true
+  occurs: 9999
 
 - identificacao: "543"
   length: 250
@@ -24,19 +28,21 @@
   useParentAsContext: true
   build: false
   required: false
+  occurs: 1
 
 - identificacao: "544"
   length: 250
   parent: "542"
   required: false
+  occurs: 9999
 
 - identificacao: "545"
   length: 250
   parent: "542"
   useParentAsContext: true
-  deferred: true
   build: false
   required: false
+  occurs: 1
 
 - identificacao: "549"
   length: 250
@@ -45,3 +51,4 @@
   deferred: true
   build: false
   required: true
+  occurs: 1

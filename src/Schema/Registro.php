@@ -10,6 +10,7 @@ final class Registro
     public function __construct(
         public readonly string $identificacao,
         public readonly int $length,
+        public readonly int $occurs = 1,
         public readonly ?string $parent = null,
         public readonly bool $useParentAsContext = false,
         public readonly ?string $extended = null,

@@ -1,32 +1,38 @@
 - identificacao: "000"
   length: 170
   required: true
+  occurs: 1
 
 - identificacao: "350"
   length: 170
   parent: "000"
   required: true
+  occurs: 200
 
 - identificacao: "351"
   length: 170
   parent: "350"
   build: false
   required: true
+  occurs: 1
 
 - identificacao: "352"
   length: 170
   parent: "351"
   required: true
+  occurs: 100
 
 - identificacao: "353"
   length: 170
   parent: "352"
   required: true
+  occurs: 100
 
 - identificacao: "354"
   length: 170
   parent: "353"
   required: false
+  occurs: 40
 
 - identificacao: "355"
   length: 170
@@ -35,3 +41,4 @@
   deferred: true
   build: false
   required: true
+  occurs: 1

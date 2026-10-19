@@ -2,7 +2,6 @@ path: transportador/cobranca
 class: Proceda\Cobranca
 registro: "352"
 collection: true
-occurs: 100
 required: true
 label: Cobrança
 

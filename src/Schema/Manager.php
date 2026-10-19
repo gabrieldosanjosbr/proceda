@@ -196,7 +196,6 @@ final class Manager
             collection: $context['collection'] ?? false,
             registro: $registro,
             required: $context['required'] ?? false,
-            occurs: $context['occurs'],
             inline: $context['inline'],
             overflow: $context['overflow'] ?? false,
             span: $context['span'] ?? 0,

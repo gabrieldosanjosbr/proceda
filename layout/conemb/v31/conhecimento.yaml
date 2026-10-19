@@ -2,7 +2,6 @@ path: documento/transportador/conhecimento
 class: Proceda\Conhecimento
 registro: "322"
 collection: true
-occurs: 1000
 label: Conhecimento
 
 serie:

@@ -1,36 +1,43 @@
 - identificacao: "000"
   length: 320
   required: true
+  occurs: 1
 
 - identificacao: "500"
   length: 320
   parent: "000"
   required: true
+  occurs: 200
 
 - identificacao: "501"
   length: 320
   parent: "500"
   required: true
+  occurs: 100
 
 - identificacao: "502"
   length: 320
   parent: "501"
   required: false
+  occurs: 1
 
 - identificacao: "503"
   length: 320
   parent: "501"
   required: true
+  occurs: 500
 
 - identificacao: "504"
   length: 320
   parent: "503"
   required: false
+  occurs: 1
 
 - identificacao: "505"
   length: 320
   parent: "503"
   required: true
+  occurs: 500
 
 - identificacao: "506"
   length: 320
@@ -38,6 +45,7 @@
   useParentAsContext: true
   build: false
   required: true
+  occurs: 1
 
 - identificacao: "507"
   length: 320
@@ -46,42 +54,49 @@
   useParentAsContext: true
   build: false
   required: false
+  occurs: 1
 
 - identificacao: "508"
   length: 320
   parent: "505"
   build: false
   required: false
+  occurs: 50
 
 - identificacao: "509"
   length: 320
   parent: "505"
   build: false
   required: false
+  occurs: 50
 
 - identificacao: "511"
   length: 320
   parent: "505"
   build: false
   required: false
+  occurs: 5000
 
 - identificacao: "513"
   length: 320
   parent: "505"
   build: false
   required: false
+  occurs: 1
 
 - identificacao: "514"
   length: 320
   parent: "505"
   build: false
   required: false
+  occurs: 1
 
 - identificacao: "515"
   length: 320
   parent: "505"
   build: false
   required: false
+  occurs: 1
 
 - identificacao: "519"
   length: 320
@@ -90,3 +105,4 @@
   deferred: true
   build: false
   required: true
+  occurs: 1

@@ -37,6 +37,9 @@ final class RegistroResolver
                 $registro = new Registro(
                     identificacao: (string) $data['identificacao'],
                     length: (int) $data['length'],
+                    occurs: isset($data['occurs'])
+                        ? (int) $data['occurs']
+                        : 1,
                     parent: isset($data['parent'])
                         ? (string) $data['parent']
                         : null,

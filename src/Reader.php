@@ -15,8 +15,6 @@ final class Reader
 {
     private Line $line;
 
-    private Validation $validation;
-
     /** @var Line[] */
     private array $lines = [];
 
@@ -24,9 +22,8 @@ final class Reader
         private readonly Manager         $schemaManager,
         private readonly BuilderRegistry $builderRegistry,
         private readonly TypeResolver    $typeResolver,
-    ) {
-        $this->validation = new Validation();
-    }
+        private readonly Validation      $validation = new Validation(),
+    ) {}
 
     /**
      * @throws \ReflectionException
@@ -319,7 +316,7 @@ final class Reader
 
         if (
             $schema->isInline() === false &&
-            count($collection) > $schema->occurs
+            count($collection) > $schema->registro->occurs
         ) {
             $this->validation->add(
                 new LayoutError(
@@ -327,7 +324,7 @@ final class Reader
                     schema: $schema,
                     registro: $schema->registro,
                     parameters: [
-                        'maximum' => $schema->occurs,
+                        'maximum' => $schema->registro->occurs,
                         'actual' => count($collection),
                     ],
                 )
@@ -343,183 +340,157 @@ final class Reader
         $parentBuilder->setFilled(true);
     }
 
-    public function validateMissingRegistros(): void
+    public function validateRequiredRegistros(): void
     {
+        $positions = [];
+        $reported  = [];
+        $lines     = array_reverse($this->lines);
         $registros = $this->schemaManager
             ->getRegistroResolver()
             ->getRegistros();
 
-        $rootRegistro = reset($registros);
-
-        $hasRoot = array_any(
-            $this->lines,
-            static fn (Line $line): bool =>
-                $line->registro->identificacao
-                === $rootRegistro->identificacao,
-        );
-
-        if (!$hasRoot) {
-            $this->validation->add(
-                new LayoutError(
-                    type: LayoutErrorType::MISSING_REQUIRED_REGISTRO,
-                    registro: $rootRegistro,
-                )
-            );
+        foreach ($lines as $index => $line) {
+            $positions[$line->registro->identificacao][] = $index;
         }
 
-        $lines = array_reverse($this->lines, true);
-
-        $this->validateRequiredParents(
-            $registros,
-            $lines,
+        $this->validateRequiredParent(
+            lines: $lines,
+            positions: $positions,
+            registros: $registros,
+            reported: $reported,
         );
 
+        $this->detectMissingParentRegistros(
+            lines: $lines,
+            registros: $registros,
+            reported: $reported,
+        );
+
+        $this->validateRequiredChildren(
+            lines: $lines,
+            positions: $positions,
+            registros: $registros,
+            reported: $reported,
+        );
+    }
+
+    private function validateRequiredChildren(
+        array $lines,
+        array $positions,
+        array $registros,
+        array &$reported,
+    ): void {
+        $requiredChildren = [];
+
+        foreach ($registros as $registro) {
+            $registros[$registro->identificacao] = $registro;
+
+            if ($registro->parent === null || !$registro->required) {
+                continue;
+            }
+
+            $requiredChildren[$registro->parent][] = $registro;
+        }
+
         foreach ($lines as $index => $line) {
-            $registro = $line->registro;
+            $parent = $line->registro;
 
-            if (
-                $registro->identificacao
-                === $rootRegistro->identificacao
-            ) {
+            $children = $requiredChildren[
+                $parent->identificacao
+            ] ?? [];
+
+            if ($children === []) {
                 continue;
             }
 
-            $hasRequiredExtension = array_any(
-                $registro->getExtensions(),
-                static fn (Registro $extension): bool =>
-                $extension->required,
+            $contextEnd = $this->findContextEnd(
+                positions: $positions,
+                registros: $registros,
+                parent: $parent,
+                index: $index,
+                total: count($lines),
             );
 
-            if (!$hasRequiredExtension) {
-                continue;
-            }
-
-            $lineBlock = $this->getBlock(
-                $index,
-                $registro,
-            );
-
-            $this->validateRequiredExtensions(
-                $lineBlock,
-                $registro,
-                $line
-            );
-
-            $requiredRegistros  = [];
-            $found = false;
-
-            foreach ($registros as $current) {
-                if (!$found) {
-                    if (
-                        $current->identificacao
-                        !== $registro->identificacao
-                    ) {
-                        continue;
-                    }
-
-                    $found = true;
-                }
-
-                if (
-                    !$current->required
-                    || $current->useParentAsContext
-                ) {
+            foreach ($children as $child) {
+                if ($this->existsBetween(
+                    positions: $positions,
+                    registro: $child->identificacao,
+                    start: $index + 1,
+                    end: $contextEnd,
+                )) {
                     continue;
                 }
 
-                $requiredRegistros[] = $current;
+                $key = $child->identificacao . ':' . $index;
 
-                if (
-                    $current !== $registro
-                    && array_any(
-                        $current->getExtensions(),
-                        static fn (Registro $extension): bool =>
-                        $extension->required,
-                    )
-                ) {
-                    break;
-                }
-            }
-
-            foreach ($requiredRegistros as $requiredRegistro) {
-                $found = array_any(
-                    $lineBlock,
-                    static fn (Line $line): bool =>
-                        $line->registro->identificacao
-                        === $requiredRegistro->identificacao,
-                );
-
-                if ($found) {
+                if (isset($reported[$key])) {
                     continue;
                 }
+
+                $reported[$key] = true;
 
                 $this->validation->add(
                     new LayoutError(
                         type: LayoutErrorType::MISSING_REQUIRED_REGISTRO,
                         line: $line,
-                        registro: $requiredRegistro,
+                        registro: $child,
                     )
                 );
             }
         }
     }
 
-    private function getBlock(
-        int $start,
-        Registro $registro,
-    ): array {
-        $block = [];
-
-        for ($index = $start; $index >= 0; $index--) {
-            $line = $this->lines[$index];
-
-            if (
-                $index !== $start
-                && $line->registro->identificacao
-                === $registro->identificacao
-            ) {
-                break;
-            }
-
-            $block[$index] = $line;
-        }
-
-        return $block;
-    }
-
-    /**
-     * @param Registro[] $registros
-     * @param Line[] $lines
-     */
-    private function validateRequiredParents(
-        array $registros,
+    private function validateRequiredParent(
         array $lines,
+        array $positions,
+        array $registros,
+        array &$reported,
     ): void {
         foreach ($lines as $index => $line) {
-            $extension = $line->registro;
+            $registro = $line->registro;
 
-            if (!$extension->useParentAsContext) {
+            if ($registro->parent === null) {
                 continue;
             }
 
-            $parent = array_find(
-                $registros,
-                static fn (Registro $registro): bool =>
-                    $registro->identificacao
-                    === $extension->parent,
+            $parent = $registros[$registro->parent] ?? null;
+
+            if ($parent === null) {
+                continue;
+            }
+
+            // Encontra o início do contexto em que
+            // o registro atual deveria estar.
+            $contextStart = $this->findContextStart(
+                positions: $positions,
+                registros: $registros,
+                parent: $parent,
+                index: $index,
             );
 
-            if (
-                $parent === null
-                || !$parent->required
-                || !$this->isBlockAnchor($extension, $parent)
-            ) {
+            // Procura o pai dentro do contexto atual.
+            $parentPosition = $this->findPreviousBetween(
+                positions: $positions,
+                registro: $parent->identificacao,
+                start: $contextStart,
+                end: $index,
+            );
+
+            if ($parentPosition !== null) {
                 continue;
             }
 
-            if ($this->hasExtendedParent($index, $extension)) {
+            if (!$parent->required) {
                 continue;
             }
+
+            $key = $parent->identificacao . ':' . $contextStart;
+
+            if (isset($reported[$key])) {
+                continue;
+            }
+
+            $reported[$key] = true;
 
             $this->validation->add(
                 new LayoutError(
@@ -531,79 +502,211 @@ final class Reader
         }
     }
 
-    private function hasExtendedParent(
-        int $index,
-        Registro $extension,
-    ): bool {
-        for (
-            $current = $index + 1;
-            isset($this->lines[$current]);
-            $current++
-        ) {
-            $registro = $this->lines[$current]->registro;
+    private function detectMissingParentRegistros(
+        array $lines,
+        array $registros,
+        array &$reported,
+    ): void {
+        // Estado das ocorrências de cada pai ativo.
+        $active = [];
+        $parents = [];
+
+        foreach ($registros as $registro) {
+            if ($registro->parent !== null) {
+                $parents[$registro->parent] = true;
+            }
+        }
+
+        foreach ($lines as $index => $line) {
+            $registro = $line->registro;
+            $id = $registro->identificacao;
+
+            // Identifica os ancestrais do registro atual.
+            $ancestors = [];
+            $parentId = $registro->parent;
+
+            while ($parentId !== null && isset($registros[$parentId])) {
+                $ancestors[$parentId] = true;
+                $parentId = $registros[$parentId]->parent;
+            }
+
+            // Encerra contextos que não contêm a linha atual.
+            foreach (array_keys($active) as $activeId) {
+                if (!isset($ancestors[$activeId])) {
+                    unset($active[$activeId]);
+                }
+            }
+
+            // Valida o registro atual dentro do contexto do pai.
+            $parentId = $registro->parent;
 
             if (
-                $registro->identificacao
-                === $extension->parent
+                $parentId !== null
+                && isset($active[$parentId])
+                && isset($parents[$parentId])
             ) {
+                $state = &$active[$parentId];
+                $count = ($state['counts'][$id] ?? 0) + 1;
+
+                if ($count > $registro->occurs) {
+                    $key = "sequence:$parentId:$index";
+
+                    if (!isset($reported[$key])) {
+                        $reported[$key] = true;
+
+                        $this->validation->add(
+                            new LayoutError(
+                                type: LayoutErrorType::MISSING_REQUIRED_REGISTRO,
+                                line: $line,
+                                registro: $this->schemaManager
+                                    ->getRegistroResolver()
+                                    ->get($parentId),
+                            )
+                        );
+                    }
+
+                    // Reinicia a contagem para o novo contexto lógico.
+                    $state['counts'] = [];
+                    $count = 1;
+                }
+
+                $state['counts'][$id] = $count;
+
+                unset($state);
+            }
+
+            // Um registro físico inicia o seu próprio contexto.
+            if (isset($parents[$id])) {
+                $active[$id] = [
+                    'counts' => [],
+                ];
+            }
+        }
+    }
+
+    private function findContextStart(
+        array $positions,
+        array $registros,
+        Registro $parent,
+        int $index,
+    ): int {
+        $start = 0;
+        $ancestors = [];
+
+        $current = $parent;
+
+        while ($current !== null) {
+            $ancestors[$current->identificacao] = true;
+
+            $current = $current->parent !== null
+                ? ($registros[$current->parent] ?? null)
+                : null;
+        }
+
+        // Limite estabelecido pelo ancestral imediato.
+        if ($parent->parent !== null) {
+            $position = $this->findPreviousBetween(
+                positions: $positions,
+                registro: $parent->parent,
+                start: 0,
+                end: $index,
+            );
+
+            $start = $position ?? 0;
+        }
+
+        // Identifica registros de fechamento dos contextos ancestrais.
+        foreach ($registros as $registro) {
+            if (
+                !$registro->deferred
+                || !$registro->required
+                || $registro->parent === null
+                || !isset($ancestors[$registro->parent])
+            ) {
+                continue;
+            }
+
+            $position = $this->findPreviousBetween(
+                positions: $positions,
+                registro: $registro->identificacao,
+                start: $start,
+                end: $index,
+            );
+
+            if ($position !== null) {
+                $start = max($start, $position + 1);
+            }
+        }
+
+        return $start;
+    }
+
+    private function findPreviousBetween(
+        array $positions,
+        string $registro,
+        int $start,
+        int $end,
+    ): ?int {
+        $previous = null;
+
+        foreach ($positions[$registro] ?? [] as $position) {
+            if ($position < $start) {
+                continue;
+            }
+
+            if ($position >= $end) {
+                break;
+            }
+
+            $previous = $position;
+        }
+
+        return $previous;
+    }
+
+    private function existsBetween(
+        array $positions,
+        string $registro,
+        int $start,
+        int $end,
+    ): bool {
+        foreach ($positions[$registro] ?? [] as $position) {
+            if ($position >= $start && $position < $end) {
                 return true;
             }
-
-            if (
-                $registro->useParentAsContext
-                && $registro->parent === $extension->parent
-            ) {
-                return false;
-            }
         }
 
         return false;
     }
 
-    private function isBlockAnchor(
-        Registro $extension,
+    private function findContextEnd(
+        array $positions,
+        array $registros,
         Registro $parent,
-    ): bool {
-        foreach ($parent->getExtensions() as $candidate) {
-            if (!$candidate->required) {
-                continue;
+        int $index,
+        int $total,
+    ): int {
+        $end = $total;
+        $current = $parent;
+
+        while ($current !== null) {
+            foreach (
+                $positions[$current->identificacao] ?? [] as $position
+            ) {
+                if ($position <= $index) {
+                    continue;
+                }
+
+                $end = min($end, $position);
+
+                break;
             }
 
-            return $candidate->identificacao
-                === $extension->identificacao;
+            $current = $current->parent !== null
+                ? ($registros[$current->parent] ?? null)
+                : null;
         }
 
-        return false;
-    }
-
-    private function validateRequiredExtensions(
-        array $lineBlock,
-        Registro $registro,
-        Line $line
-    ): void {
-        foreach ($registro->getExtensions() as $extension) {
-            if (!$extension->required) {
-                continue;
-            }
-
-            $found = array_any(
-                $lineBlock,
-                static fn (Line $line): bool =>
-                    $line->registro->identificacao
-                    === $extension->identificacao,
-            );
-
-            if ($found) {
-                continue;
-            }
-
-            $this->validation->add(
-                new LayoutError(
-                    type: LayoutErrorType::MISSING_REQUIRED_REGISTRO,
-                    line: $line,
-                    registro: $extension,
-                )
-            );
-        }
+        return $end;
     }
 }

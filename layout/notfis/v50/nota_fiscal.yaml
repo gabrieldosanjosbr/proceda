@@ -3,7 +3,6 @@ class: Proceda\NotaFiscal
 registro: "505"
 required: true
 collection: true
-occurs: 500
 label: Nota Fiscal
 
 serie:

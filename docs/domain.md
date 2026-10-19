@@ -115,8 +115,6 @@ O Schema define, entre outros aspectos:
 
 O Reader interpreta os registros de acordo com essas definições e utiliza os builders para compor os objetos e seus relacionamentos.
 
-> **Importante:** `Registro::parent` representa a hierarquia estrutural do EDI; não é, por si só, uma instrução para criar uma relação idêntica na árvore de DTOs. O compartilhamento de contexto de interpretação é configurado separadamente por `useParentAsContext`.
-
 ## Leitura entre versões
 
 O mesmo tipo de documento pode ser representado por conjuntos diferentes de registros em cada versão do layout. Por exemplo, as versões v31 e v50 do NOTFIS utilizam identificadores e estruturas físicas diferentes, mas ambas são interpretadas por meio do modelo de domínio correspondente ao NOTFIS.

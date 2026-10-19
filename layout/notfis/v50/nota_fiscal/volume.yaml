@@ -2,7 +2,6 @@ path: nota-fiscal/volume
 class: Proceda\NotaFiscal\Volume
 registro: "508"
 collection: true
-occurs: 50
 label: Volume
 
 marca:

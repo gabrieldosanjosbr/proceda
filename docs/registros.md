@@ -1,6 +1,6 @@
 # Registros
 
-Os arquivos `registros.yaml` descrevem os **tipos de registros físicos** de cada layout e versão do padrão PROCEDA. Cada definição identifica uma linha de largura fixa e pode declarar a sua posição na hierarquia do arquivo, o compartilhamento de contexto com outro registro e regras de processamento.
+Os arquivos `registros.yaml` descrevem os **tipos de registros físicos** de cada layout e versão do padrão PROCEDA. Cada definição identifica uma linha de largura fixa e pode declarar sua posição na hierarquia do arquivo, o compartilhamento de contexto com outro registro e regras de processamento.
 
 As definições dos registros são específicas de cada layout e versão. Por exemplo, o NOTFIS v3.1 e o NOTFIS v5.0 possuem identificadores, tamanhos e relacionamentos entre registros diferentes, embora representem o mesmo tipo de documento EDI.
 
@@ -10,31 +10,48 @@ Exemplo (OCOREN v5.0, trecho simplificado):
 - identificacao: "000"
   length: 250
   required: true
+  occurs: 1
 
 - identificacao: "540"
   length: 250
   parent: "000"
   required: true
+  occurs: 200
 
 - identificacao: "541"
   length: 250
   parent: "540"
-  useParentAsContext: true
   build: false
   required: true
+  occurs: 1
 
 - identificacao: "542"
   length: 250
   parent: "541"
   required: true
+  occurs: 9999
+
+- identificacao: "543"
+  length: 250
+  parent: "542"
+  useParentAsContext: true
+  build: false
+  required: false
+  occurs: 1
+
+- identificacao: "544"
+  length: 250
+  parent: "542"
+  required: false
+  occurs: 9999
 
 - identificacao: "545"
   length: 250
   parent: "542"
   useParentAsContext: true
-  deferred: true
   build: false
   required: false
+  occurs: 1
 
 - identificacao: "549"
   length: 250
@@ -43,14 +60,16 @@ Exemplo (OCOREN v5.0, trecho simplificado):
   deferred: true
   build: false
   required: true
+  occurs: 1
 ```
 
 ## Propriedades
 
 | Propriedade | Finalidade |
-| --- | --- |
+|---|---|
 | `identificacao` | Identificador do tipo de registro físico. |
 | `length` | Quantidade de caracteres/posições da linha física. |
+| `occurs` | Quantidade máxima de ocorrências físicas permitidas para o registro em seu contexto. |
 | `parent` | Identificador do registro pai na hierarquia estrutural EDI. |
 | `useParentAsContext` | Indica compartilhamento do contexto de construção e interpretação com o pai. |
 | `required` | Indica se a linha física é obrigatória quando aplicável ao layout e ao seu contexto. |
@@ -105,6 +124,7 @@ O registro raiz de intercâmbio (`000`) não possui `parent`.
 ### `useParentAsContext`
 
 Indica que o registro utiliza o contexto do registro pai, permitindo que ambos preencham a **mesma instância do objeto de domínio (DTO)**, em vez de criar uma nova instância para o registro filho.
+
 ```yaml
 - identificacao: "542"
   length: 250
@@ -120,13 +140,13 @@ Nesse exemplo, o `543` fornece informações complementares ao contexto do `542`
 
 ```text
 541 — Transportadora
-└── 542 — Ocorrência  ← contexto próprio
-    └── 543 — Complemento (mesmo contexto do 542)
+└── 542 — Ocorrência (contexto próprio)
+    └── 543 — Complemento (contexto do 542)
 ```
 
-Sem `useParentAsContext: true`, a propriedade `parent` representa **somente a relação estrutural**. O padrão do sinalizador é `false`.
+Sem `useParentAsContext: true`, a propriedade `parent` representa **somente a relação estrutural**. O valor padrão do sinalizador é `false`.
 
-Não marque todos os registros filhos com `useParentAsContext: true`: um filho pode possuir um Schema próprio, ainda que seu registro tenha `build: false`.
+Um registro filho pode possuir um Schema próprio, ainda que seu registro tenha `build: false`. Portanto, `useParentAsContext` deve ser utilizado apenas quando houver compartilhamento real de contexto.
 
 ### `required`
 
@@ -140,15 +160,15 @@ Indica se a **linha física precisa existir** quando o registro é aplicável ao
   required: false
 ```
 
-O fato de um registro ser obrigatório não implica que deva existir exatamente uma ocorrência em todo o arquivo. A obrigatoriedade precisa ser interpretada considerando a estrutura e as ocorrências às quais o registro se aplica.
+O fato de um registro ser obrigatório não implica que deva existir exatamente uma ocorrência em todo o arquivo. A obrigatoriedade considera a estrutura e as ocorrências às quais o registro se aplica.
 
 **Não confundir os níveis de obrigatoriedade:**
 
 | Nível | Significado |
-| --- | --- |
+|---|---|
 | `Registro.required` | A linha física precisa existir. |
-| `Schema.required` | O objeto deve ser construído/anexado mesmo sem campos preenchidos. |
-| `Field.required` | O valor precisa existir quando o registro/contexto é aplicável. |
+| `Schema.required` | O objeto deve ser construído e associado mesmo sem campos preenchidos. |
+| `Field.required` | O valor precisa existir quando o registro e o contexto são aplicáveis. |
 
 Essas propriedades pertencem a camadas diferentes e não são intercambiáveis.
 
@@ -171,7 +191,7 @@ Nesse exemplo, o registro `519` é emitido ao final do documento NOTFIS `500`, a
 
 O valor padrão é `false`.
 
-**Nota:** `deferred` controla exclusivamente a ordem de emissão no Writer. Não altera a interpretação dos registros pelo Reader.
+`deferred` controla exclusivamente a ordem de emissão no Writer. Não altera a interpretação dos registros pelo Reader.
 
 ### `build`
 
@@ -184,25 +204,11 @@ Controla se o processamento de determinada linha pode **disparar a construção 
   build: false
 ```
 
-`build: false` **não significa ignorar a linha**, nem significa que seus campos ou objetos filhos deixarão de ser processados. Apenas impede esse disparo de construção naquela etapa. A definição é distinta de `useParentAsContext`, e os dois sinalizadores não precisam ter o mesmo valor.
+`build: false` **não significa ignorar a linha**, nem significa que seus campos ou objetos filhos deixarão de ser processados. Apenas impede o disparo da construção naquela etapa.
 
-Na configuração atual, a ausência de `build` mantém o comportamento padrão de construção; `build: false` é declarado explicitamente onde necessário.
+A definição é distinta de `useParentAsContext`, e os dois sinalizadores não precisam ter o mesmo valor.
 
-## Relação com o Schema
-
-Os metadados de `registros.yaml` descrevem registros físicos e suas relações. Já os Schemas descrevem como essas informações são mapeadas para propriedades, objetos e coleções do modelo PHP.
-
-Por exemplo, um registro pode estar subordinado a outro em `registros.yaml`, sem que ambos preencham o mesmo DTO. Da mesma forma, registros físicos diferentes podem contribuir para um único contexto quando `useParentAsContext` estiver habilitado.
-
-As configurações abaixo pertencem ao **Schema**, não ao `registros.yaml`:
-
-| Propriedade do Schema | Significado |
-| --- | --- |
-| `occurs` | Cardinalidade máxima da relação ou coleção. |
-| `inline` | Quantidade de itens que cabem na mesma linha ou span. |
-| `overflow` | Define a continuação em outra linha quando os itens ultrapassam o limite inline. |
-
-Essas opções devem ser documentadas com mais detalhes na documentação de Schemas.
+Na ausência de `build`, o comportamento padrão de construção é mantido; `build: false` é declarado explicitamente onde necessário.
 
 ## Exemplo de hierarquia: NOTFIS v3.1
 
@@ -222,12 +228,15 @@ O NOTFIS v3.1 ilustra a diferença entre hierarquia estrutural e compartilhament
     └── 318 — Totalizador (contexto do 310; deferred)
 ```
 
-O `313` é filho estrutural do `312`, mas não utiliza seu contexto: a nota fiscal possui representação própria. Já o `333` e o `315` utilizam `useParentAsContext: true` para complementar o contexto do `313` na configuração do layout.
+O `313` é filho estrutural do `312`, mas não utiliza seu contexto: a nota fiscal possui representação própria.
+
+Já o `333` e o `315` utilizam `useParentAsContext: true` para complementar o contexto do `313` na configuração do layout.
 
 ## Boas práticas
 
 - Declare `parent` conforme a estrutura documentada para a **versão específica** do layout.
 - Use `useParentAsContext: true` apenas quando houver compartilhamento real de contexto; `parent` não implica esse comportamento.
+- Defina `occurs` de acordo com os limites de ocorrências físicas previstos na especificação do layout.
 - Preserve a distinção entre obrigatoriedade física (`Registro.required`), construção de objetos (`Schema.required`) e preenchimento de campos (`Field.required`).
 - Não confunda `deferred` com `required: false` ou `build: false`.
 - Valide mudanças nas definições com testes do Reader e, quando disponível, com testes de round-trip do Writer, especialmente para coleções e registros repetidos.

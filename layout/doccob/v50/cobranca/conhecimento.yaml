@@ -3,7 +3,6 @@ class: Proceda\Conhecimento
 registro: "555"
 required: true
 collection: true
-occurs: 5000
 label: Conhecimento
 
 serie:

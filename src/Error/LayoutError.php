@@ -45,7 +45,7 @@ final readonly class LayoutError implements Error
             sprintf(
                 'A coleção "%s" excedeu o limite máximo de %d ocorrências.',
                 $this->schema->path,
-                $this->schema->occurs,
+                $this->schema->registro->occurs,
             ),
         };
     }

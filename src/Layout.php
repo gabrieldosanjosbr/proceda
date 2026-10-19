@@ -4,11 +4,12 @@ namespace Proceda;
 
 use Proceda\Schema\LayoutType;
 use Proceda\Schema\LayoutVersion;
-use Proceda\Schema\RegistroResolver;
 use Proceda\Schema\Manager;
+use Proceda\Schema\RegistroResolver;
 use Proceda\Service\BuilderRegistry;
 use Proceda\Service\PropertyResolver;
 use Proceda\Service\TypeResolver;
+use Random\RandomException;
 
 final readonly class Layout
 {
@@ -26,7 +27,7 @@ final readonly class Layout
     ) {}
 
     /**
-     * @throws \ReflectionException
+     * @throws \ReflectionException|RandomException
      */
     public function read(string $filename): Result
     {
@@ -46,14 +47,14 @@ final readonly class Layout
             $reader->read($line);
         }
 
-        $reader->validateMissingRegistros();
+        $reader->validateRequiredRegistros();
 
         return $reader->getResult();
     }
 
 
     /**
-     * @throws \ReflectionException
+     * @throws \ReflectionException|RandomException
      */
     public function readFromString(string $contents): Result
     {
@@ -78,7 +79,7 @@ final readonly class Layout
             $reader->read($line);
         }
 
-        $reader->validateMissingRegistros();
+        $reader->validateRequiredRegistros();
 
         return $reader->getResult();
     }
@@ -204,13 +205,16 @@ final readonly class Layout
         fclose($handle);
     }
 
+    /**
+     * @throws RandomException
+     */
     private function createLine(string $content, int $number): ?Line
     {
-        $identificaca = trim(
+        $identificacao = trim(
             substr($content, 0, 3)
         );
 
-        if ($identificaca === '') {
+        if ($identificacao === '') {
             return null;
         }
 

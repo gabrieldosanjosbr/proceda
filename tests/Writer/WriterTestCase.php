@@ -9,13 +9,14 @@ use Proceda\Layout;
 use Proceda\Writer\Client;
 use Proceda\Writer\Response;
 use Proceda\Writer\Transport\UnixSocketTransport;
+use Random\RandomException;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 abstract class WriterTestCase extends TestCase
 {
     /**
      * @throws ExceptionInterface
-     * @throws \ReflectionException
+     * @throws \ReflectionException|RandomException
      */
     protected function assertRoundTrip(
         Intercambio $intercambio,

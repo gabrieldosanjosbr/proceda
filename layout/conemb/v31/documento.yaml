@@ -2,7 +2,6 @@ path: intercambio/documento
 class: Proceda\Documento\Conemb
 registro: "320"
 collection: true
-occurs: 200
 required: true
 label: Conemb
 

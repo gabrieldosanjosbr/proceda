@@ -1,27 +1,33 @@
 - identificacao: "000"
   length: 680
   required: true
+  occurs: 1
 
 - identificacao: "320"
   length: 680
   required: true
   parent: "000"
+  occurs: 200
 
 - identificacao: "321"
   length: 680
   required: true
   build: false
   parent: "320"
+  occurs: 1
 
 - identificacao: "322"
   length: 740
   required: true
+  parent: "321"
+  occurs: 1000
 
 - identificacao: "329"
   length: 680
   build: false
   required: false
   parent: "322"
+  occurs: 1
 
 - identificacao: "323"
   length: 680
@@ -30,3 +36,4 @@
   required: true
   parent: "320"
   useParentAsContext: true
+  occurs: 1

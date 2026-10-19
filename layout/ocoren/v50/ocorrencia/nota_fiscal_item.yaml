@@ -1,7 +1,6 @@
 path: ocorrencia/nota-fiscal/item
 class: Proceda\NotaFiscal\Item
 registro: "544"
-occurs: 9999
 collection: true
 required: false
 label: Item (Mercadoria)

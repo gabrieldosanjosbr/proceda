@@ -3,7 +3,6 @@ class: Proceda\Documento\Notfis
 registro: "500"
 required: true
 collection: true
-occurs: 200
 label: Notfis
 
 identificacao:

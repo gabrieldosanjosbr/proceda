@@ -4,7 +4,6 @@ registro: "314"
 collection: true
 overflow: true
 inline: 4
-occurs: 5
 label: Item (Mercadoria)
 
 quantidade:

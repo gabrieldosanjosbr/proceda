@@ -1,7 +1,6 @@
 path: intercambio/documento
 class: Proceda\Documento\Ocoren
 registro: "540"
-occurs: 200
 collection: true
 required: true
 label: Ocoren

@@ -29,7 +29,6 @@ Um `Schema` estabelece o contexto de construção de um objeto e seus relacionam
 | `property` | Propriedade pela qual a estrutura se relaciona com o objeto proprietário, quando aplicável.                                    |
 | `registro` | Registro físico ao qual a estrutura está associada.                                                                            |
 | `collection` | Indica uma relação composta por múltiplas ocorrências.                                                                         |
-| `occurs` | Cardinalidade máxima permitida para a relação ou Schema.                                                                       |
 | `inline` | Quantidade de ocorrências que podem ocupar uma mesma linha física.                                                             |
 | `overflow` | Permite continuar ocorrências excedentes ao limite `inline` em outras linhas físicas. Exclusivo do Writer.                     |
 | `required` | Exige que o objeto seja construído e associado ao seu proprietário, mesmo sem campos preenchidos, quando o contexto se aplica. |
@@ -61,19 +60,11 @@ label: Carga
 
 Não é necessário declarar o caminho completo `intercambio/documento/nota-fiscal/carga`. O `Compiler` utiliza as definições e os relacionamentos dos Schemas para construir a estrutura correspondente.
 
-### `collection` e `occurs`
-
-`collection` indica uma relação com múltiplos itens. `occurs` estabelece a quantidade máxima de ocorrências permitidas, conforme a especificação oficial do layout PROCEDA.
-
-Nos manuais, essa cardinalidade pode aparecer identificada como **`OCCURS`** ou **`OCORRE`**.
-
-Por exemplo, no NOTFIS v3.1, a especificação do registro `DEM — Dados da Embarcadora` estabelece:
-
 ### `inline`, `overflow` e `span`
 
 Essas propriedades controlam a representação de coleções inline nos registros físicos.
 
-- **`inline`**: quantidade máxima de itens de uma coleção que podem ser representados na mesma linha física.
+- **`inline`**: quantidade máxima de itens representados em uma mesma linha física.
 - **`overflow`**: permite ao Writer distribuir os itens excedentes à capacidade `inline` em linhas físicas adicionais.
 - **`span`**: espaço ocupado por cada item inline, calculado pelo `Compiler` a partir dos comprimentos (`length`) dos campos que compõem o Schema.
 
@@ -85,39 +76,19 @@ offset do item = offset inicial + (índice do item na linha × span)
 
 A propriedade `overflow` é utilizada exclusivamente pelo Writer. O Reader utiliza `inline` e `span` para interpretar os itens presentes em cada linha física.
 
-#### Cardinalidade das coleções inline
-
-Normalmente, uma coleção inline ocupa uma única linha física, sendo representada por `occurs: 1`.
-
-Entretanto, quando `overflow: true`, o Writer pode distribuir a coleção em múltiplas linhas, respeitando o limite estabelecido por `occurs`.
-
-Por exemplo, no NOTFIS v3.1, o registro `314` permite até cinco ocorrências físicas, com quatro itens de mercadoria por linha:
+Por exemplo:
 
 ```yaml
 path: nota-fiscal/item
 class: Proceda\NotaFiscal\Item
 registro: "314"
 collection: true
-overflow: true
 inline: 4
-occurs: 5
+overflow: true
 label: Item (Mercadoria)
 ```
 
-Nesse caso, cada linha comporta até quatro itens, e o Writer pode gerar até cinco linhas para representar a coleção:
-
-```text
-Registro 314 — linha 1: itens  1 a  4
-Registro 314 — linha 2: itens  5 a  8
-Registro 314 — linha 3: itens  9 a 12
-Registro 314 — linha 4: itens 13 a 16
-Registro 314 — linha 5: itens 17 a 20
-```
-
-Assim, a capacidade máxima de representação é de **20 itens**, distribuídos em até cinco ocorrências do registro `314`.
-
-Quando `overflow: false`, o Writer mantém os itens em uma única linha física. Se a coleção ultrapassar a capacidade definida por `inline`, os itens excedentes são descartados e um `LayoutError` do tipo `INLINE_LIMIT_EXCEEDED` é registrado.
-
+Nesse exemplo, cada linha física comporta até quatro itens. Quando `overflow: true`, o Writer pode distribuir os itens excedentes em linhas adicionais.
 ## Field: campos de largura fixa
 
 `Field` representa um valor escalar armazenado em posições determinadas de um registro.

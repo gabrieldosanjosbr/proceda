@@ -1,26 +1,31 @@
 - identificacao: "000"
   length: 240
   required: true
+  occurs: 1
 
 - identificacao: "310"
   length: 240
   parent: "000"
   required: true
+  occurs: 200
 
 - identificacao: "311"
   length: 240
   parent: "310"
   required: true
+  occurs: 10
 
 - identificacao: "312"
   length: 240
   parent: "311"
   required: true
+  occurs: 500
 
 - identificacao: "313"
   length: 240
   parent: "312"
   required: true
+  occurs: 40
 
 - identificacao: "333"
   length: 240
@@ -28,30 +33,35 @@
   useParentAsContext: true
   build: false
   required: false
+  occurs: 1
 
 - identificacao: "314"
   length: 240
   parent: "313"
   build: false
   required: false
+  occurs: 5
 
 - identificacao: "315"
   length: 240
   parent: "313"
   build: false
   required: false
+  occurs: 1
 
 - identificacao: "316"
   length: 240
   parent: "313"
   build: false
   required: false
+  occurs: 1
 
 - identificacao: "317"
   length: 240
   parent: "313"
   build: false
   required: false
+  occurs: 1
 
 - identificacao: "318"
   length: 240
@@ -60,3 +70,4 @@
   deferred: true
   build: false
   required: true
+  occurs: 1
