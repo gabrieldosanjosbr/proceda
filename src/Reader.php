@@ -507,7 +507,10 @@ final class Reader
         array $registros,
         array &$reported,
     ): void {
-        // Estado das ocorrências de cada pai ativo.
+        /**
+         * Estado das ocorrências de cada pai ativo.
+         * @var array<string, array{counts: array<string, int>}> $active
+         */
         $active = [];
         $parents = [];
 
@@ -546,7 +549,7 @@ final class Reader
                 && isset($parents[$parentId])
             ) {
                 $state = &$active[$parentId];
-                $count = ($state['counts'][$id] ?? 0) + 1;
+                $count = ($state['counts'][$id] ?? 0) + 1; //549
 
                 if ($count > $registro->occurs) {
                     $key = "sequence:$parentId:$index";
