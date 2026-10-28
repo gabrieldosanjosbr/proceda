@@ -67,7 +67,7 @@ composer require proceda/proceda
 
 ## Exemplo de utilização
 
-O layout é criado através da facade `Proceda`, informando **explicitamente a versão** desejada. Não existe uma versão padrão implícita.
+O layout é criado através da facade `Proceda`, informando a versão desejada.
 
 Por exemplo, para ler um arquivo NOTFIS v31:
 
