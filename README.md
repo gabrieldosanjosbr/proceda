@@ -233,7 +233,7 @@ Novos layouts, versões e integrações poderão ser avaliados futuramente confo
 
 ## Documentação
 
-A documentação técnica e os manuais utilizados como referência para implementação dos layouts PROCEDA estão disponíveis em [`docs/`](docs/). **Parte da documentação está em revisão** para refletir a arquitetura atual, incluindo Profiles e a separação entre Reader e Writer.
+A documentação técnica e os manuais utilizados como referência para implementação dos layouts PROCEDA estão disponíveis em [`docs/`](docs/).
 
 * [Modelo de domínio](docs/domain.md)
 * [Arquitetura](docs/arch.md)
