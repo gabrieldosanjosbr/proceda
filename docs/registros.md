@@ -230,7 +230,7 @@ O NOTFIS v3.1 ilustra a diferença entre hierarquia estrutural e compartilhament
 
 O `313` é filho estrutural do `312`, mas não utiliza seu contexto: a nota fiscal possui representação própria.
 
-Já o `333` e o `315` utilizam `useParentAsContext: true` para complementar o contexto do `313` na configuração do layout.
+Já o `333` utiliza `useParentAsContext: true` para complementar o contexto do `313` na configuração do layout.
 
 ## Boas práticas
 
