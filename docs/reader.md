@@ -35,7 +35,7 @@ Reader::read(Line)
     ├── preenchimento dos Builders
     └── construção e associação dos objetos nos registros com build
     ↓
-Reader::validateMissingRegistros()
+Reader::validateRequiredRegistros()
     ↓
 Reader::getResult()
     ↓
