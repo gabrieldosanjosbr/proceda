@@ -94,7 +94,7 @@ A obrigatoriedade existe em níveis distintos e não deve ser confundida:
 | `Schema.required` | O objeto deve ser construído e anexado, mesmo sem campos preenchidos |
 | `Field.required` | O valor deve estar presente quando o registro e o contexto do campo forem aplicáveis |
 
-Após percorrer as linhas, `Layout::read()` chama `Reader::validateMissingRegistros()` para verificar a ausência de registros obrigatórios antes de produzir o resultado.
+Após percorrer as linhas, `Layout::read()` chama `Reader::validateRequiredRegistros()` para verificar a ausência de registros obrigatórios antes de produzir o resultado.
 
 ## Validação e erros
 
