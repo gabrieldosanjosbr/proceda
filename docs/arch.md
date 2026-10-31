@@ -272,8 +272,6 @@ Line
 
 O identificador `id` permite distinguir uma linha independentemente da sua posição no arquivo.
 
-A numeração pode ser atribuída após operações que alterem a ordem das linhas, como buffering, flush ou reordenação.
-
 As informações de validação não são armazenadas em `Line`. Os erros são representados separadamente por `FieldError` e `LayoutError` e agrupados em `Validation`.
 
 ------------------------------------------------------------------------
