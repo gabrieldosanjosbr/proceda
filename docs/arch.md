@@ -282,8 +282,6 @@ As informações de validação não são armazenadas em `Line`. Os erros são r
 e utiliza o schema compilado para interpretar seus campos e estruturas.
 No fluxo atual, após o processamento das linhas, a validação de
 registros ausentes ocorre separadamente, antes da obtenção do resultado.
-A construção de objetos de domínio não exige uma chamada adicional a `finish()` para
-reprocessar toda a árvore.
 
 ``` text
 Arquivo TXT
