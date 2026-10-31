@@ -81,16 +81,6 @@ jobs:
             -f docker-compose.ci.yaml \
             up -d --build --no-deps proceda-reader
 
-      - name: Configure Composer authentication
-        env:
-          FIXTURES_TOKEN: ${{ secrets.PROCEDA_FIXTURES_TOKEN }}
-        run: |
-          docker compose \
-            -f docker-compose.yaml \
-            -f docker-compose.ci.yaml \
-            exec -T proceda-reader \
-            composer config --global github-oauth.github.com "$FIXTURES_TOKEN"
-
       - name: Install dependencies
         run: |
           docker compose \
