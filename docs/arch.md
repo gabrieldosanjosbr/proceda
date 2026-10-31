@@ -288,7 +288,7 @@ Arquivo TXT
     ↓
 Line
     ↓
-RegistroResolver
+SchemaManager (findSchemaByRegistro)
     ↓
 Schema
     ↓
