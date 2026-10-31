@@ -29,8 +29,6 @@ Arquivo PROCEDA
      DTOs imutáveis
 ```
 
-Os layouts oficiais são definidos declarativamente em YAML. A arquitetura separa o carregamento das definições de sua compilação, permitindo fornecer schemas, registros, propriedades e tipos a partir de outras fontes.
-
 ## Recursos
 
 * API unificada para diferentes versões dos layouts PROCEDA
