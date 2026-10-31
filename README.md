@@ -114,10 +114,8 @@ $result = $layout->read('/caminho/para/notfis-v50.txt');
 $intercambio = $result->intercambio;
 $validation = $result->validation;
 
-if ($validation->hasErrors()) {
-    foreach ($validation->getErrors() as $error) {
-        echo $error->message() . PHP_EOL;
-    }
+foreach ($validation->getErrors() as $error) {
+    echo $error->message() . PHP_EOL;
 }
 ```
 
