@@ -227,20 +227,6 @@ correspondente, como:
 -   restrições `allowed` e `excluded`;
 -   demais metadados específicos do campo.
 
-`Field` é uma definição compilada e não armazena estado de uma execução.
-Erros encontrados durante Reader ou Writer referenciam o `Field` que
-originou a validação, mas não são armazenados nele.
-
-``` text
-Field
-  ↑
-  │ referência
-FieldError
-```
-
-Isso permite reutilizar o mesmo schema compilado em diferentes operações
-sem misturar resultados de validação com a definição do layout.
-
 ------------------------------------------------------------------------
 
 ## Registros
