@@ -181,10 +181,6 @@ Schema
     └── Schema
 ```
 
-Um `Schema` não é tratado como um `Field`. Estruturas compostas
-pertencem à árvore de schemas, enquanto valores escalares pertencem à
-coleção de fields.
-
 ### Ocorrências inline
 
 `inline` define quantas ocorrências de uma coleção podem ser representadas
