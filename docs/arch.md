@@ -252,12 +252,6 @@ Nos arquivos `registros.yaml`, cada layout e versão pode declarar:
 - `deferred`: controla o adiamento da emissão pelo Writer, sem alterar
   a interpretação do Reader.
 
-O relacionamento físico `parent` não precisa reproduzir exatamente a
-árvore de objetos descrita pelos Schemas. Da mesma forma, `required`
-em um `Registro` difere de `Schema.required` (construção/anexação da
-estrutura) e de `Field.required` (obrigatoriedade de um valor quando
-o respectivo contexto é aplicável).
-
 Consulte também [Registros](registros.md) e [Modelo de domínio](domain.md).
 
 ------------------------------------------------------------------------
