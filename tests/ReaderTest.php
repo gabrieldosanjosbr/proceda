@@ -29,10 +29,7 @@ class ReaderTest extends TestCase
             build: true,
         );
 
-        $reader = new Reader(
-            schemaManager: $layout->getSchemaManager(),
-            builderRegistry: new BuilderRegistry(),
-        );
+        $reader = new Reader($layout->getSchemaManager());
 
         $this->expectException(\LogicException::class);
         $this->expectExceptionMessage(

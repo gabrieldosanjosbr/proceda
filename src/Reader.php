@@ -17,7 +17,7 @@ final class Reader
 
     public function __construct(
         private readonly Manager         $schemaManager,
-        private readonly BuilderRegistry $builderRegistry,
+        private readonly BuilderRegistry $builderRegistry = new BuilderRegistry(),
         private readonly Validation      $validation = new Validation(),
     ) {}
 

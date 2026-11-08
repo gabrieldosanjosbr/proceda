@@ -31,10 +31,7 @@ final readonly class Layout
      */
     public function read(string $filename): Result
     {
-        $reader = new Reader(
-            $this->schemaManager,
-            new BuilderRegistry(),
-        );
+        $reader = new Reader($this->schemaManager);
 
         foreach ($this->readFile($filename) as $lineNumber => $content) {
             $line = $this->createLine($content, $lineNumber);
@@ -57,10 +54,7 @@ final readonly class Layout
      */
     public function readFromString(string $contents): Result
     {
-        $reader = new Reader(
-            $this->schemaManager,
-            new BuilderRegistry(),
-        );
+        $reader = new Reader($this->schemaManager);
 
         $lines = preg_split(
             "/\r\n|\n|\r/",
