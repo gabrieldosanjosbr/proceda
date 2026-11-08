@@ -17,7 +17,7 @@ class ReaderTest extends TestCase
      * @throws \ReflectionException
      * @throws RandomException
      */
-    public function testReadWithoutContextThrowsException(): void
+    public function testSchemaNotFoundForRegistro(): void
     {
         $layout = Proceda::notfis(
             layoutVersion: LayoutVersion::V50,
