@@ -9,7 +9,6 @@ use Proceda\Reader;
 use Proceda\Schema\LayoutVersion;
 use Proceda\Schema\Registro;
 use Proceda\Service\BuilderRegistry;
-use Proceda\Service\TypeResolver;
 use Random\RandomException;
 
 class ReaderTest extends TestCase
@@ -33,12 +32,11 @@ class ReaderTest extends TestCase
         $reader = new Reader(
             schemaManager: $layout->getSchemaManager(),
             builderRegistry: new BuilderRegistry(),
-            typeResolver: TypeResolver::yaml(),
         );
 
         $this->expectException(\LogicException::class);
         $this->expectExceptionMessage(
-            'Context not found for registro 999',
+            'Schema not found for registro 999',
         );
 
         $reader->read(

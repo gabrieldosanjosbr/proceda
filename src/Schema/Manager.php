@@ -71,6 +71,11 @@ final class Manager
         return $this->registroResolver;
     }
 
+    public function getTypeResolver(): TypeResolver
+    {
+        return $this->typeResolver;
+    }
+
     public function findSchemaByRegistro(
         Registro $registro,
         bool     $includeParentContext = true,

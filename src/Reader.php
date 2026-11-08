@@ -9,19 +9,15 @@ use Proceda\Error\Validation;
 use Proceda\Schema\Manager;
 use Proceda\Schema\Registro;
 use Proceda\Service\BuilderRegistry;
-use Proceda\Service\TypeResolver;
 
 final class Reader
 {
-    private Line $line;
-
     /** @var Line[] */
     private array $lines = [];
 
     public function __construct(
         private readonly Manager         $schemaManager,
         private readonly BuilderRegistry $builderRegistry,
-        private readonly TypeResolver    $typeResolver,
         private readonly Validation      $validation = new Validation(),
     ) {}
 
@@ -30,16 +26,22 @@ final class Reader
      */
     public function read(Line $line): void
     {
-        $this->line = $line;
         $this->lines[] = $line;
 
         $schema = $this->schemaManager->findSchemaByRegistro(
             $line->registro,
         );
 
-        if ($schema !== null) {
-            $this->parseSchema($schema);
+        if (!$schema) {
+            throw new \LogicException(
+                sprintf(
+                    'Schema not found for registro %s',
+                    $line->registro->identificacao,
+                ),
+            );
         }
+
+        $this->parseSchema($schema, $line);
 
         if (!$line->registro->build) {
             return;
@@ -82,12 +84,14 @@ final class Reader
      */
     private function parseSchema(
         Schema $schema,
+        Line   $line,
         int    $offsetAdjustment = 0,
         bool   $expandInline = true,
     ): ?BuilderInterface {
         if ($expandInline && $schema->isInline()) {
             $this->parseInline(
                 $schema,
+                $line,
                 $offsetAdjustment,
             );
 
@@ -106,7 +110,7 @@ final class Reader
 
             $match = $field->matchesRegistro(
                 $field->registro,
-                $this->line->registro,
+                $line->registro,
             );
 
             if ($match === false) {
@@ -114,9 +118,9 @@ final class Reader
             }
 
             $value = $field->getValue(
-                line: $this->line,
+                line: $line,
                 propertyReflection: $reflectionProperty,
-                typeResolver: $this->typeResolver,
+                typeResolver: $this->schemaManager->getTypeResolver(),
                 validation: $this->validation,
                 offsetAdjustment: $offsetAdjustment,
             );
@@ -126,12 +130,12 @@ final class Reader
             if (
                 $currentValue === null
                 && $field->fallback
-                && $this->line->registro->identificacao !== $field->registro->identificacao
+                && $line->registro->identificacao !== $field->registro->identificacao
             ) {
                 $value = $field->fallback->getValue(
-                    $this->line,
+                    $line,
                     $reflectionProperty,
-                    $this->typeResolver,
+                    $this->schemaManager->getTypeResolver(),
                     $this->validation,
                     $offsetAdjustment,
                 );
@@ -152,6 +156,7 @@ final class Reader
         foreach ($schema->children as $child) {
             $this->parseSchema(
                 schema: $child,
+                line: $line,
                 offsetAdjustment: $offsetAdjustment,
                 expandInline: $expandInline,
             );
@@ -171,6 +176,7 @@ final class Reader
      */
     private function parseInline(
         Schema $schema,
+        Line   $line,
         int $offsetAdjustment,
     ): void {
         $builders = [];
@@ -178,6 +184,7 @@ final class Reader
         for ($i = 0; $i < $schema->inline; $i++) {
             $builder = $this->parseSchema(
                 schema: $schema,
+                line: $line,
                 offsetAdjustment: $offsetAdjustment + ($i * $schema->span),
                 expandInline: false,
             );

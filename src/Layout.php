@@ -34,7 +34,6 @@ final readonly class Layout
         $reader = new Reader(
             $this->schemaManager,
             new BuilderRegistry(),
-            $this->typeResolver,
         );
 
         foreach ($this->readFile($filename) as $lineNumber => $content) {
@@ -61,7 +60,6 @@ final readonly class Layout
         $reader = new Reader(
             $this->schemaManager,
             new BuilderRegistry(),
-            $this->typeResolver
         );
 
         $lines = preg_split(
