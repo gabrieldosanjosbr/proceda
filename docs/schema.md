@@ -108,16 +108,15 @@ Nesse exemplo, cada linha física comporta até quatro itens. Quando `overflow: 
 Exemplo ilustrativo de campos:
 
 ```yaml
-fields:
-  numero:
-    offset: 7
-    length: 8
-    required: true
+numero:
+  offset: 7
+  length: 8
+  required: true
 
-  valor:
-    offset: 31
-    length: 15
-    decimals: 2
+valor:
+  offset: 31
+  length: 15
+  decimals: 2
 ```
 
 > O exemplo demonstra o significado das propriedades. A forma de agrupá-las deve seguir a convenção dos arquivos de Schema atuais do projeto.
