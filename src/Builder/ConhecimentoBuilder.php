@@ -27,6 +27,9 @@ class ConhecimentoBuilder extends Builder
     protected ?Veiculo $veiculo = null;
     protected ?Conhecimento $originador = null;
     protected ?Cte $cte = null;
+    protected ?string $codSolicitacaoColeta = null;
+    protected ?string $idDocTransporte = null;
+    protected ?string $idDocAutorizacao = null;
 
     /** @var NotaFiscal[] */
     protected array $notasFiscais = [];
@@ -110,6 +113,24 @@ class ConhecimentoBuilder extends Builder
         return $this;
     }
 
+    public function idDocAutorizacao(?string $idDocAutorizacao): static
+    {
+        $this->idDocAutorizacao = $idDocAutorizacao;
+        return $this;
+    }
+
+    public function idDocTransporte(?string $idDocTransporte): static
+    {
+        $this->idDocTransporte = $idDocTransporte;
+        return $this;
+    }
+
+    public function codSolicitacaoColeta(?string $codSolicitacaoColeta): static
+    {
+        $this->codSolicitacaoColeta = $codSolicitacaoColeta;
+        return $this;
+    }
+
     public function addNotaFiscal(NotaFiscal $notaFiscal): static
     {
         $this->notasFiscais[] = $notaFiscal;
@@ -133,6 +154,9 @@ class ConhecimentoBuilder extends Builder
             contaRazao: $this->contaRazao,
             codigoIva: $this->codigoIva,
             devolucao: $this->devolucao,
+            codSolicitacaoColeta: $this->codSolicitacaoColeta,
+            idDocTransporte: $this->idDocTransporte,
+            idDocAutorizacao: $this->idDocAutorizacao,
             resumo: $this->resumo,
             contratante: $this->contratante,
             emissor: $this->emissor,

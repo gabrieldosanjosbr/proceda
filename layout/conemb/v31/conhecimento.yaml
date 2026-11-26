@@ -35,3 +35,24 @@ acaoDocumento:
   length: 1
   offset: 673
   required: false
+
+codSolicitacaoColeta:
+  label: Código da Solitação de Coleta
+  length: 15
+  offset: 66
+  registro: "329"
+  required: false
+
+idDocTransporte:
+  label: Ident. do Doc de Transporte da Embarcadora
+  length: 20
+  offset: 81
+  registro: "329"
+  required: false
+
+idDocAutorizacao:
+  label: Ident. do Doc de Autorização de Carregamento e Transporte
+  length: 20
+  offset: 101
+  registro: "329"
+  required: false

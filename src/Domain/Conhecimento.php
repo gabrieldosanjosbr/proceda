@@ -15,6 +15,9 @@ readonly class Conhecimento
         protected ?string       $contaRazao = null,
         protected ?Type         $codigoIva = null,
         protected ?bool         $devolucao = null,
+        protected ?string       $codSolicitacaoColeta = null,
+        protected ?string       $idDocTransporte = null,
+        protected ?string       $idDocAutorizacao = null,
         protected ?NotaFiscal   $resumo = null,
         protected ?Empresa      $contratante = null,
         protected ?Empresa      $emissor = null,
@@ -66,6 +69,21 @@ readonly class Conhecimento
     public function getDevolucao(): ?bool
     {
         return $this->devolucao;
+    }
+
+    public function getCodSolicitacaoColeta(): ?string
+    {
+        return $this->codSolicitacaoColeta;
+    }
+
+    public function getIdDocTransporte(): ?string
+    {
+        return $this->idDocTransporte;
+    }
+
+    public function getIdDocAutorizacao(): ?string
+    {
+        return $this->idDocAutorizacao;
     }
 
     public function getResumo(): ?NotaFiscal
